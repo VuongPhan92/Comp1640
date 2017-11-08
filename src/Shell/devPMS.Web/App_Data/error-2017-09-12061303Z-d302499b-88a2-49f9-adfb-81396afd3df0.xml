@@ -1,0 +1,452 @@
+﻿<error errorId="d302499b-88a2-49f9-adfb-81396afd3df0" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.ArgumentException" message="DbSortClause expressions must have a type that is order comparable.&#xD;&#xA;Parameter name: key" source="EntityFramework" detail="System.ArgumentException: DbSortClause expressions must have a type that is order comparable.&#xD;&#xA;Parameter name: key&#xD;&#xA;   at System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.Internal.ArgumentValidation.ValidateSortClause(DbExpression key)&#xD;&#xA;   at System.Data.Entity.Core.Common.CommandTrees.ExpressionBuilder.DbExpressionBuilder.ToSortClause(DbExpression key)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OrderByTranslatorBase.TranslateOneLambda(ExpressionConverter parent, DbExpressionBinding sourceBinding, DbExpression lambda)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, DbExpression&amp; source, DbExpressionBinding&amp; sourceBinding, DbExpression&amp; lambda)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.OneLambdaTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.ThenByTranslatorBase.Translate(ExpressionConverter parent, MethodCallExpression call)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.AggregateTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;&gt;c__DisplayClass7.&lt;GetResults&gt;b__6()&#xD;&#xA;   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;&gt;c__DisplayClass7.&lt;GetResults&gt;b__5()&#xD;&#xA;   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ObjectQuery`1.&lt;System.Collections.Generic.IEnumerable&lt;T&gt;.GetEnumerator&gt;b__0()&#xD;&#xA;   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()&#xD;&#xA;   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.&lt;GetElementFunction&gt;b__3[TResult](IEnumerable`1 sequence)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)&#xD;&#xA;   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)&#xD;&#xA;   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)&#xD;&#xA;   at System.Linq.Queryable.Count[TSource](IQueryable`1 source)&#xD;&#xA;   at DDoCommon.Collections.Pagination.LazyPagination`1.TryExecuteQuery() in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Common\DDoCommon\Collections\Pagination\LazyPagination.cs:line 66&#xD;&#xA;   at DDoCommon.Collections.Pagination.LazyPagination`1.get_TotalItems() in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Common\DDoCommon\Collections\Pagination\LazyPagination.cs:line 92&#xD;&#xA;   at DDoCommon.Collections.Pagination.LazyPagination`1.get_TotalPages() in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Common\DDoCommon\Collections\Pagination\LazyPagination.cs:line 99&#xD;&#xA;   at devPMS.Services.SearchProjectQueryHandler.Handle(SearchProjectQuery query) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Business\Services\devPMS.Services\Queries\ProjectFilters\SearchProjectQueryHandler.cs:line 61&#xD;&#xA;   at devPMS.Services.ProjectService.&lt;&gt;c__DisplayClass14_0.&lt;SearchProject&gt;b__0() in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Business\Services\devPMS.Services\ProjectService.cs:line 67&#xD;&#xA;   at devPMS.Domain.Interfaces.Impl.CacheService.CachePerRequest[T](String cacheKey, Func`1 getCacheItem) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Business\devPMS.Domain\Interfaces\Impl\CacheService.cs:line 130&#xD;&#xA;   at devPMS.Services.ProjectService.SearchProject(SearchRequest searchRequest, String searchText, Int32 pageNumber, Int32 pageSize) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Business\Services\devPMS.Services\ProjectService.cs:line 65&#xD;&#xA;   at devPMS.Web.Controllers.ProjectController.LoadProjectData(jQueryDataTableParamModel param, SearchRequest searchRequest) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Controllers\ProjectController.cs:line 112&#xD;&#xA;   at devPMS.Web.Controllers.ProjectController.AjaxGetJsonProjectData(jQueryDataTableParamModel param, Guid Id, SearchRequest searchRequest, Boolean searchAll) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Controllers\ProjectController.cs:line 81&#xD;&#xA;   at lambda_method(Closure , ControllerBase , Object[] )&#xD;&#xA;   at System.Web.Mvc.ActionMethodDispatcher.Execute(ControllerBase controller, Object[] parameters)&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;BeginInvokeSynchronousActionMethod&gt;b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__3d()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass46.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__3f()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass33.&lt;BeginInvokeActionMethodWithFilters&gt;b__32(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;&gt;c__DisplayClass2b.&lt;BeginInvokeAction&gt;b__1c()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;BeginInvokeAction&gt;b__1e(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecuteCore&gt;b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecute&gt;b__15(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;BeginProcessRequest&gt;b__5(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-09-12T06:13:03.0551887Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_CONTENT_LENGTH:3775&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:application/json, text/javascript, */*; q=0.01&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=SPX_VpMlNWhsMs8tKXtgIsdV4dk_naNVMqEDQQQbb-O7Cblnrs8qsYySIRuVfz4J29EVjjjt8a8s-JgvCyPR23Smo0LR6wFZnuEecI2qMo41; Log In=E038F03E87612E5C79C4EAD6CDC247E65FE843653E4C52EAE1976508DF1E8846A43656B4F79B270AC2CD5DC0BD93D9CF995F0205EDFDBE5FA46581C7A07147DBBAB0BF07DC8F620F4465D72B923C73760AFBF6633FF1B7E59287991A582460FDC0ABCB8EC9DF8ED66C690C8BFA659013C3F94C69CE026A6A64FE2404D412C55983BCA5B781FC1FD0083B642777DDEAC15EB3F65CBED80CC36CE1B4C2FDFF002772C1A1210790C2D37995807E16B719F0819279309611F5F4BA54E8188C3AFB9213D6494A15D33851392BB8E1AD375AA2E839A218811AAC93B59E59D3CE17796E79CF35CFE7487819BE046ADD5CB302B9C01485FCF8482D2F0DC016E7A62504B9EA2BD911AEDCB2E33E474FB924CFF70EB90ED787C3A7683BCC9B15C693A85EA89F6218C0C9057B7AAE08E32917844633AE9182D16CC6AAF2F71D475FFEE50FC3C4B33CEDEFEF20ED1B0DBC0D0BC136F01916C74179F260D044C0DC2319D5B1060474A14768EACDDDBE7C85B9B1061CD88506A2E326B09586D0DB173020AF71B979730D74700D52818038EAD4A0A68A0B61DEC11162CBFAA802280F0B2C548B62CC257C2AAB299005DC11A8C235F293CE61E8B4B7BFE88A665D449D02E9A0D68B458E245069011DD1714338FA44F45099; treeView=Projectsactive&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Table/ccc45bf7-02fb-4252-9203-a7b500ae8654?filter=INTAKE&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:5224&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Content-Length: 3775&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: application/json, text/javascript, */*; q=0.01&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=SPX_VpMlNWhsMs8tKXtgIsdV4dk_naNVMqEDQQQbb-O7Cblnrs8qsYySIRuVfz4J29EVjjjt8a8s-JgvCyPR23Smo0LR6wFZnuEecI2qMo41; Log In=E038F03E87612E5C79C4EAD6CDC247E65FE843653E4C52EAE1976508DF1E8846A43656B4F79B270AC2CD5DC0BD93D9CF995F0205EDFDBE5FA46581C7A07147DBBAB0BF07DC8F620F4465D72B923C73760AFBF6633FF1B7E59287991A582460FDC0ABCB8EC9DF8ED66C690C8BFA659013C3F94C69CE026A6A64FE2404D412C55983BCA5B781FC1FD0083B642777DDEAC15EB3F65CBED80CC36CE1B4C2FDFF002772C1A1210790C2D37995807E16B719F0819279309611F5F4BA54E8188C3AFB9213D6494A15D33851392BB8E1AD375AA2E839A218811AAC93B59E59D3CE17796E79CF35CFE7487819BE046ADD5CB302B9C01485FCF8482D2F0DC016E7A62504B9EA2BD911AEDCB2E33E474FB924CFF70EB90ED787C3A7683BCC9B15C693A85EA89F6218C0C9057B7AAE08E32917844633AE9182D16CC6AAF2F71D475FFEE50FC3C4B33CEDEFEF20ED1B0DBC0D0BC136F01916C74179F260D044C0DC2319D5B1060474A14768EACDDDBE7C85B9B1061CD88506A2E326B09586D0DB173020AF71B979730D74700D52818038EAD4A0A68A0B61DEC11162CBFAA802280F0B2C548B62CC257C2AAB299005DC11A8C235F293CE61E8B4B7BFE88A665D449D02E9A0D68B458E245069011DD1714338FA44F45099; treeView=Projectsactive&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Table/ccc45bf7-02fb-4252-9203-a7b500ae8654?filter=INTAKE&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;Origin: http://localhost:5224&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="3775" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/AjaxGetJsonProjectData/ccc45bf7-02fb-4252-9203-a7b500ae8654" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\AjaxGetJsonProjectData\ccc45bf7-02fb-4252-9203-a7b500ae8654" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="60906" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/AjaxGetJsonProjectData/ccc45bf7-02fb-4252-9203-a7b500ae8654" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/AjaxGetJsonProjectData/ccc45bf7-02fb-4252-9203-a7b500ae8654" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="3775" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="application/json, text/javascript, */*; q=0.01" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=SPX_VpMlNWhsMs8tKXtgIsdV4dk_naNVMqEDQQQbb-O7Cblnrs8qsYySIRuVfz4J29EVjjjt8a8s-JgvCyPR23Smo0LR6wFZnuEecI2qMo41; Log In=E038F03E87612E5C79C4EAD6CDC247E65FE843653E4C52EAE1976508DF1E8846A43656B4F79B270AC2CD5DC0BD93D9CF995F0205EDFDBE5FA46581C7A07147DBBAB0BF07DC8F620F4465D72B923C73760AFBF6633FF1B7E59287991A582460FDC0ABCB8EC9DF8ED66C690C8BFA659013C3F94C69CE026A6A64FE2404D412C55983BCA5B781FC1FD0083B642777DDEAC15EB3F65CBED80CC36CE1B4C2FDFF002772C1A1210790C2D37995807E16B719F0819279309611F5F4BA54E8188C3AFB9213D6494A15D33851392BB8E1AD375AA2E839A218811AAC93B59E59D3CE17796E79CF35CFE7487819BE046ADD5CB302B9C01485FCF8482D2F0DC016E7A62504B9EA2BD911AEDCB2E33E474FB924CFF70EB90ED787C3A7683BCC9B15C693A85EA89F6218C0C9057B7AAE08E32917844633AE9182D16CC6AAF2F71D475FFEE50FC3C4B33CEDEFEF20ED1B0DBC0D0BC136F01916C74179F260D044C0DC2319D5B1060474A14768EACDDDBE7C85B9B1061CD88506A2E326B09586D0DB173020AF71B979730D74700D52818038EAD4A0A68A0B61DEC11162CBFAA802280F0B2C548B62CC257C2AAB299005DC11A8C235F293CE61E8B4B7BFE88A665D449D02E9A0D68B458E245069011DD1714338FA44F45099; treeView=Projectsactive" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Table/ccc45bf7-02fb-4252-9203-a7b500ae8654?filter=INTAKE" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:5224" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="draw">
+      <value string="3" />
+    </item>
+    <item name="columns[0][data]">
+      <value string="Status" />
+    </item>
+    <item name="columns[0][name]">
+      <value string="" />
+    </item>
+    <item name="columns[0][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[0][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[0][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[0][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[1][data]">
+      <value string="ProjectNo" />
+    </item>
+    <item name="columns[1][name]">
+      <value string="" />
+    </item>
+    <item name="columns[1][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[1][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[1][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[1][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[2][data]">
+      <value string="Name" />
+    </item>
+    <item name="columns[2][name]">
+      <value string="" />
+    </item>
+    <item name="columns[2][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[2][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[2][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[2][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[3][data]">
+      <value string="ScopeOfService" />
+    </item>
+    <item name="columns[3][name]">
+      <value string="" />
+    </item>
+    <item name="columns[3][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[3][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[3][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[3][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[4][data]">
+      <value string="Branch" />
+    </item>
+    <item name="columns[4][name]">
+      <value string="" />
+    </item>
+    <item name="columns[4][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[4][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[4][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[4][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[5][data]">
+      <value string="DatetoVN" />
+    </item>
+    <item name="columns[5][name]">
+      <value string="" />
+    </item>
+    <item name="columns[5][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[5][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[5][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[5][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[6][data]">
+      <value string="DueDate" />
+    </item>
+    <item name="columns[6][name]">
+      <value string="" />
+    </item>
+    <item name="columns[6][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[6][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[6][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[6][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[7][data]">
+      <value string="EOR" />
+    </item>
+    <item name="columns[7][name]">
+      <value string="" />
+    </item>
+    <item name="columns[7][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[7][orderable]">
+      <value string="true" />
+    </item>
+    <item name="columns[7][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[7][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="columns[8][data]">
+      <value string="ID" />
+    </item>
+    <item name="columns[8][name]">
+      <value string="" />
+    </item>
+    <item name="columns[8][searchable]">
+      <value string="true" />
+    </item>
+    <item name="columns[8][orderable]">
+      <value string="false" />
+    </item>
+    <item name="columns[8][search][value]">
+      <value string="" />
+    </item>
+    <item name="columns[8][search][regex]">
+      <value string="false" />
+    </item>
+    <item name="order[0][column]">
+      <value string="3" />
+    </item>
+    <item name="order[0][dir]">
+      <value string="asc" />
+    </item>
+    <item name="start">
+      <value string="0" />
+    </item>
+    <item name="length">
+      <value string="10" />
+    </item>
+    <item name="search[value]">
+      <value string="" />
+    </item>
+    <item name="search[regex]">
+      <value string="false" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][0][Value]">
+      <value string="4" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][0][Field]">
+      <value string="ScopeId" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][0][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][1][Value]">
+      <value string="28" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][1][Field]">
+      <value string="ScopeId" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][1][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][2][Value]">
+      <value string="29" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][2][Field]">
+      <value string="ScopeId" />
+    </item>
+    <item name="searchRequest[Search][0][Filters][2][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][0][LogicalOp]">
+      <value string="Or" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][0][Value]">
+      <value string="1" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][0][Field]">
+      <value string="StatusId" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][0][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][1][Value]">
+      <value string="2" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][1][Field]">
+      <value string="StatusId" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][1][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][2][Value]">
+      <value string="3" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][2][Field]">
+      <value string="StatusId" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][2][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][3][Value]">
+      <value string="4" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][3][Field]">
+      <value string="StatusId" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][3][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][4][Value]">
+      <value string="5" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][4][Field]">
+      <value string="StatusId" />
+    </item>
+    <item name="searchRequest[Search][1][Filters][4][Op]">
+      <value string="eq" />
+    </item>
+    <item name="searchRequest[Search][1][LogicalOp]">
+      <value string="Or" />
+    </item>
+    <item name="searchAll">
+      <value string="false" />
+    </item>
+  </form>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="SPX_VpMlNWhsMs8tKXtgIsdV4dk_naNVMqEDQQQbb-O7Cblnrs8qsYySIRuVfz4J29EVjjjt8a8s-JgvCyPR23Smo0LR6wFZnuEecI2qMo41" />
+    </item>
+    <item name="Log In">
+      <value string="E038F03E87612E5C79C4EAD6CDC247E65FE843653E4C52EAE1976508DF1E8846A43656B4F79B270AC2CD5DC0BD93D9CF995F0205EDFDBE5FA46581C7A07147DBBAB0BF07DC8F620F4465D72B923C73760AFBF6633FF1B7E59287991A582460FDC0ABCB8EC9DF8ED66C690C8BFA659013C3F94C69CE026A6A64FE2404D412C55983BCA5B781FC1FD0083B642777DDEAC15EB3F65CBED80CC36CE1B4C2FDFF002772C1A1210790C2D37995807E16B719F0819279309611F5F4BA54E8188C3AFB9213D6494A15D33851392BB8E1AD375AA2E839A218811AAC93B59E59D3CE17796E79CF35CFE7487819BE046ADD5CB302B9C01485FCF8482D2F0DC016E7A62504B9EA2BD911AEDCB2E33E474FB924CFF70EB90ED787C3A7683BCC9B15C693A85EA89F6218C0C9057B7AAE08E32917844633AE9182D16CC6AAF2F71D475FFEE50FC3C4B33CEDEFEF20ED1B0DBC0D0BC136F01916C74179F260D044C0DC2319D5B1060474A14768EACDDDBE7C85B9B1061CD88506A2E326B09586D0DB173020AF71B979730D74700D52818038EAD4A0A68A0B61DEC11162CBFAA802280F0B2C548B62CC257C2AAB299005DC11A8C235F293CE61E8B4B7BFE88A665D449D02E9A0D68B458E245069011DD1714338FA44F45099" />
+    </item>
+    <item name="treeView">
+      <value string="Projectsactive" />
+    </item>
+  </cookies>
+</error>

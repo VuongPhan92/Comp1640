@@ -1,0 +1,51 @@
+﻿@model IEnumerable<devPMS.Data.Employee>
+
+<div class="modal fade " id="participantModal"  role="dialog" aria-labelledby="participantModal" aria-hidden="true">
+    <div class="modal-dialog modal-lg ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title pull-left" id="participantModalLabel">Add Participant </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @using (Ajax.BeginForm("CreateThreadAjax", "Forum", new AjaxOptions { AllowCache = false }))
+            {
+                <div class="modal-body">
+                    <div class="form-group">
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="AssignToMe" value="">
+                                I want to take part in this Project !
+                            </label>
+                        </div>
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="optionsRadios" id="AssignToOther" value="" checked="checked">
+                                I want my members join this Project and they are
+                            </label>
+                        </div>
+                     
+                        
+                       @Html.DropDownList("participants", new SelectList(Model,"EmployeeId","FullName"), new { @class = "form-control select2",@multiple="multiple", @style = "width: 100%" })
+                         
+                            @*var a = string.Format("H{0}_{1} {2}.jpg", item.EmployeeID, item.FirstName, item.LastName);
+                                <div class="project-people">
+                                    <a href="#">
+                                        <img class="img-circle" src="~/images/Hinh 3 x 4/@a">
+                                    </a>
+                                </div>*@
+
+                        
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="closeParticipantModal" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="addParticipantModal">Add participants</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+

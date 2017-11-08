@@ -1,0 +1,19 @@
+﻿@model IEnumerable<devPMS.Data.ProjectComment>
+
+@foreach (var c in Model)
+{
+    <div class="box-comment" id="comment-@c.CommentId">
+        <!-- User image -->
+        <img class="img-circle img-sm" src="~/images/myPic.jpg" alt="User Image">
+
+        <div class="comment-text">
+            <span class="username">
+                @c.Employee.FullName
+                <span class="text-muted pull-right">@c.ModifiedDT.ToString("M/d/yy hh:mm tt")</span>
+            </span><!-- /.username -->
+            @Html.Raw(c.Body)
+        </div>
+        <!-- /.comment-text -->
+    </div>
+    <!-- /.box-comment -->
+}

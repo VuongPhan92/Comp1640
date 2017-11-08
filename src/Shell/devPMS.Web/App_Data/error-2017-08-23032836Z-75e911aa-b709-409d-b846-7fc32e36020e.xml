@@ -1,0 +1,171 @@
+﻿<error errorId="75e911aa-b709-409d-b846-7fc32e36020e" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.Web.HttpException" message="The controller for path '/vendors/datepicker/bootstrap-datepicker.js' was not found or does not implement IController." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): The controller for path '/vendors/datepicker/bootstrap-datepicker.js' was not found or does not implement IController.&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-08-23T03:28:36.4534871Z" statusCode="404">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=D-inH2p1Y19pJ89no9F4ZmShLBrNoLNn_8ytdLJPWU0x6p05K391mbv4lOtuAZ56UA44rt3c1u_TbzKkq7GxwlmjyhYAJ5pgsJhEREhnxeE1; Log In=5C256051B5F51F4C0DE41E94CD29779EB6A53D4C87479FB4A1980FCA43E6F054F1EFC28665E975173C9A6B233B06346B0CD4A52EF5D12F6F851666E3799FEF6A53627126C6F8FB17C46C3D85AA80EAC145C1BA1EA4C1E1ED73BB114F66E43E89D661FC40FE0D5888B0663409B80434641B77C41C1E40C812F8EDEC281113B32891F489C9E66C1CE4270C42C7A2ECC85B133E4D22B3FFB2FE28728FDF0B35BB9ACA4E695AA7AD9FA2CDBDC66D2D19D6CFE022BA3A2BAB6950BA1D8F6BCB3E34109CFB921152DFA9379B02A144D96CADE636E9C8055FB6527256B8CEB715C84C29E9C0A9F6C5B2A826D07DF21F94F2C2C4B9900EBE933325E02A69119F26912C6CEF3A3BAEA00AA28817FD5F06F501BF43645C38A33AF8DCF965D93D538B232536E5C5E0237154395DBB2F05B4E39186E1313ADF53911195A9B7CBFA45E3464E273F3DDA17C16B04CEFBFDD98A7F9F1AB4CBC8F8AB457C0397A9E2CC56B462E53259E8070D12E49E082164394BF89322E15DA272FF2E0ECF40D08F6098B93EF98447FEE5473314F8D0FF405EA298BD09DB0F0DAF8CBF11B0ECE710AE67E86586B66F050522C719101F52EF3BFB1AF312456AE8335F41BE4720C56B0967649198D3&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Detail/38061&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=D-inH2p1Y19pJ89no9F4ZmShLBrNoLNn_8ytdLJPWU0x6p05K391mbv4lOtuAZ56UA44rt3c1u_TbzKkq7GxwlmjyhYAJ5pgsJhEREhnxeE1; Log In=5C256051B5F51F4C0DE41E94CD29779EB6A53D4C87479FB4A1980FCA43E6F054F1EFC28665E975173C9A6B233B06346B0CD4A52EF5D12F6F851666E3799FEF6A53627126C6F8FB17C46C3D85AA80EAC145C1BA1EA4C1E1ED73BB114F66E43E89D661FC40FE0D5888B0663409B80434641B77C41C1E40C812F8EDEC281113B32891F489C9E66C1CE4270C42C7A2ECC85B133E4D22B3FFB2FE28728FDF0B35BB9ACA4E695AA7AD9FA2CDBDC66D2D19D6CFE022BA3A2BAB6950BA1D8F6BCB3E34109CFB921152DFA9379B02A144D96CADE636E9C8055FB6527256B8CEB715C84C29E9C0A9F6C5B2A826D07DF21F94F2C2C4B9900EBE933325E02A69119F26912C6CEF3A3BAEA00AA28817FD5F06F501BF43645C38A33AF8DCF965D93D538B232536E5C5E0237154395DBB2F05B4E39186E1313ADF53911195A9B7CBFA45E3464E273F3DDA17C16B04CEFBFDD98A7F9F1AB4CBC8F8AB457C0397A9E2CC56B462E53259E8070D12E49E082164394BF89322E15DA272FF2E0ECF40D08F6098B93EF98447FEE5473314F8D0FF405EA298BD09DB0F0DAF8CBF11B0ECE710AE67E86586B66F050522C719101F52EF3BFB1AF312456AE8335F41BE4720C56B0967649198D3&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Detail/38061&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/vendors/datepicker/bootstrap-datepicker.js" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\vendors\datepicker\bootstrap-datepicker.js" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="26874" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/vendors/datepicker/bootstrap-datepicker.js" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/vendors/datepicker/bootstrap-datepicker.js" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=D-inH2p1Y19pJ89no9F4ZmShLBrNoLNn_8ytdLJPWU0x6p05K391mbv4lOtuAZ56UA44rt3c1u_TbzKkq7GxwlmjyhYAJ5pgsJhEREhnxeE1; Log In=5C256051B5F51F4C0DE41E94CD29779EB6A53D4C87479FB4A1980FCA43E6F054F1EFC28665E975173C9A6B233B06346B0CD4A52EF5D12F6F851666E3799FEF6A53627126C6F8FB17C46C3D85AA80EAC145C1BA1EA4C1E1ED73BB114F66E43E89D661FC40FE0D5888B0663409B80434641B77C41C1E40C812F8EDEC281113B32891F489C9E66C1CE4270C42C7A2ECC85B133E4D22B3FFB2FE28728FDF0B35BB9ACA4E695AA7AD9FA2CDBDC66D2D19D6CFE022BA3A2BAB6950BA1D8F6BCB3E34109CFB921152DFA9379B02A144D96CADE636E9C8055FB6527256B8CEB715C84C29E9C0A9F6C5B2A826D07DF21F94F2C2C4B9900EBE933325E02A69119F26912C6CEF3A3BAEA00AA28817FD5F06F501BF43645C38A33AF8DCF965D93D538B232536E5C5E0237154395DBB2F05B4E39186E1313ADF53911195A9B7CBFA45E3464E273F3DDA17C16B04CEFBFDD98A7F9F1AB4CBC8F8AB457C0397A9E2CC56B462E53259E8070D12E49E082164394BF89322E15DA272FF2E0ECF40D08F6098B93EF98447FEE5473314F8D0FF405EA298BD09DB0F0DAF8CBF11B0ECE710AE67E86586B66F050522C719101F52EF3BFB1AF312456AE8335F41BE4720C56B0967649198D3" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Detail/38061" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.101 Safari/537.36" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="D-inH2p1Y19pJ89no9F4ZmShLBrNoLNn_8ytdLJPWU0x6p05K391mbv4lOtuAZ56UA44rt3c1u_TbzKkq7GxwlmjyhYAJ5pgsJhEREhnxeE1" />
+    </item>
+    <item name="Log In">
+      <value string="5C256051B5F51F4C0DE41E94CD29779EB6A53D4C87479FB4A1980FCA43E6F054F1EFC28665E975173C9A6B233B06346B0CD4A52EF5D12F6F851666E3799FEF6A53627126C6F8FB17C46C3D85AA80EAC145C1BA1EA4C1E1ED73BB114F66E43E89D661FC40FE0D5888B0663409B80434641B77C41C1E40C812F8EDEC281113B32891F489C9E66C1CE4270C42C7A2ECC85B133E4D22B3FFB2FE28728FDF0B35BB9ACA4E695AA7AD9FA2CDBDC66D2D19D6CFE022BA3A2BAB6950BA1D8F6BCB3E34109CFB921152DFA9379B02A144D96CADE636E9C8055FB6527256B8CEB715C84C29E9C0A9F6C5B2A826D07DF21F94F2C2C4B9900EBE933325E02A69119F26912C6CEF3A3BAEA00AA28817FD5F06F501BF43645C38A33AF8DCF965D93D538B232536E5C5E0237154395DBB2F05B4E39186E1313ADF53911195A9B7CBFA45E3464E273F3DDA17C16B04CEFBFDD98A7F9F1AB4CBC8F8AB457C0397A9E2CC56B462E53259E8070D12E49E082164394BF89322E15DA272FF2E0ECF40D08F6098B93EF98447FEE5473314F8D0FF405EA298BD09DB0F0DAF8CBF11B0ECE710AE67E86586B66F050522C719101F52EF3BFB1AF312456AE8335F41BE4720C56B0967649198D3" />
+    </item>
+  </cookies>
+</error>

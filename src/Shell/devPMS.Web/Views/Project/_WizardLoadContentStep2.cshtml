@@ -1,0 +1,30 @@
+﻿@model ProjectReferenceData
+
+<div class="col-md-6 col-md-push-3 mode2">
+    <h3 class="StepTitle"> Specific Information</h3>
+    <!-- step content -->
+    <div class="item form-group">
+        <label class="control-label">Priority  <span style="color:red; display:inline-block"> *  </span></label>
+        <span class="fa fa-fw fa-gg pull-right" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip for this field"></span>
+        @*<input maxlength="100" type="text" required="required" id="Priority" name="Priority" list="PriorityList" class="form-control" placeholder="Select project priority" />*@
+        @Html.DropDownList("Priority", Model.PriorityList, new { @class = "form-control select2", @style = "width: 100%" })
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Project description</label>
+        <span class="fa fa-fw fa-gg pull-right" data-toggle="tooltip" data-placement="right" data-original-title="Tooltip for this field"></span>
+        <textarea maxlength="100" class="form-control animated" name="TaskDescription" id="ProjectDescription_summernote"></textarea>
+    </div>
+    @*<datalist id="PriorityList">
+        <option> None</option>
+        <option> 1</option>
+        <option> 2</option>
+        <option> 3</option>
+        <option> 4</option>
+        <option> 5</option>
+    </datalist>*@
+</div>
+<script>
+    //"Value", "Text"
+    $("#Priority").select2();
+</script>

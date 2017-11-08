@@ -1,0 +1,62 @@
+﻿@model ThreadViewModel
+@using devPMS.Web.Models;
+@using SSTVN.DDo.Utility.Extension
+@using devPMS.Web.CustomMembership
+@{
+    var identity = (HttpContext.Current.User as CusPrincipal).Identity as CusIdentity;
+}
+<div class="box box-widget">
+    <div class="box-header with-border">
+        <h2 class="no-margin"><strong>@Html.ThreadLink(Model)</strong></h2>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <!-- body thread-->
+        @if (Model.Image != null)
+        {
+            <a href="@Url.Action("Thread", "Forum", new { year = Model.CreatedDT.Year, month = Model.CreatedDT.Month, day = Model.CreatedDT.Day, title = Model.UrlSeo })"><img src="~/images/img/photo2.png" class="img-responsive"></a>
+        }
+        <p>@Html.Raw(Model.ShortDescription)</p>
+        <!-- /body thread-->
+        <hr />
+        <div class="user-block margin-bottom">
+            @*<img class="img-circle" src="~/images/myPic.jpg" alt="User Image">*@
+            <span class="username"><a href="#">@Model.Author.FullName</a></span>
+            <span class="description">Post in&nbsp;@Html.CategoryLink(Model.ThreadCategory) - @Model.CreatedDT.TimePassed()</span>
+        </div>
+        <!-- /.user-block -->
+        <div class="user-block pad">
+            @*<button type="button" class="btn btn-default btn-xs"><i class="fa fa-thumbs-o-up"></i> Like</button>*@
+            @{
+                var btnClass = "";
+                var btnStyle = "";
+                if (Model.ThreadLikes.Any(p => p.UserId == identity.User.UserId && p.Like==true))
+                {
+                    btnClass = "badge bg-blue";
+                    btnStyle = "thumb-color-blue";
+                }
+                else
+                {
+                    btnClass = "badge";
+                }
+            }
+            @Ajax.ActionLink("Like", "LikeThread", "Forum", new { userId = @identity.User.UserId, threadId = @Model.ThreadId, authorId = @Model.Author.EmployeeID },
+                new AjaxOptions
+                {
+                    HttpMethod = "Get",
+                    OnSuccess = "UpdateLikeNumber",
+                }
+                , new { @class = btnClass, @id = "like_thread" + @Model.ThreadId })
+            @*<a class="btn btn-def)ault btn-xs" data-ajax="true" data-ajax-failure="Error" data-ajax-method="Get" data-ajax-success="UpdateLikeNumber" href="/Forum/LikeThread?userId=138&amp;threadId=18&amp;authorId=138"><span class="fa fa-thumbs-o-up"> Like</span></a>*@
+            <span class="pull-right text-muted" >
+                <span id="view_@Model.ThreadId">@Model.View <span class="glyphicon glyphicon-eye-open"></span></span>&nbsp;
+                <span id="like_@Model.ThreadId">@Model.Likes <span class="fa fa-thumbs-o-up @btnStyle" > </span></span>&nbsp;
+                <span id="comment_@Model.ThreadId">@Model.CommentViewModel.Comments.Count <span class="glyphicon glyphicon-comment"></span></span>&nbsp;
+            </span>
+
+        </div>
+    </div>
+    <!-- /.box-body -->
+</div>
+
+

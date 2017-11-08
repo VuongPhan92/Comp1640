@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "Project services";
+    Layout = "~/Views/Shared/_LayoutLTE.cshtml";
+}
+@section MoreStyles{
+    <!-- Creative-->
+    <link href="~/vendors/creative/css/creative.min.css" rel="stylesheet">
+    <!-- Daterangepicker  Style -->
+    <link href="~/vendors/datepicker/css/daterangepicker.css" rel="stylesheet">
+    <!-- iCheck Style -->
+    <link href="~/vendors/iCheck/skins/flat/green.css" rel="stylesheet">
+    <!--test-->
+    @*<link href="~/vendors/Test/custom.css" rel="stylesheet">*@
+    <link href="~/vendors/validator/fv.css" rel="stylesheet">
+
+    <!-- summernote -->
+    <link href="~/vendors/summernote-master/dist/summernote.css" rel="stylesheet" />
+
+    <!-- smartwizard -->
+    <link href="~/vendors/SmartWizard-master/css/smart_wizard.css" rel="stylesheet" />
+    <link href="~/vendors/SmartWizard-master/css/smart_wizard_theme_dots.css" rel="stylesheet" />
+    
+    <!-- select2-->
+    @*<link href="~/vendors/select2/select2.min.css" rel="stylesheet" />*@
+    @Styles.Render("~/bundles/select2CSS")
+
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Submit a Request
+        <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Project</a></li>
+        <li class="active"> Create project</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+
+    @Html.Action("_ScopeOfService")
+
+    <!-- Wizard -->
+    <div class="box box-primary hidden" id="wizardform">
+        <div class="box-header with-border">
+            <h3 class="box-title" id="wizard-title">Create Project</h3>
+
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                    <i id="wizardpanelicon" class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+        <div class="box-body ">
+            @Html.Action("_WizardProject")
+        </div>
+    </div>
+    <!-- /.Wizard -->
+</section>
+<!-- /.content -->
+@section scripts{
+    <!-- Creative-->
+    <script src="~/vendors/creative/js/creative.min.js"></script>
+
+    <!-- Daterange Scripts -->
+    <script src="~/vendors/moment/moment.js"></script>
+    <script src="~/vendors/datepicker/js/daterangepicker.js"></script>
+    
+    <!-- SmartWizard Scripts -->
+    @*<script src="~/vendors/SmartWizard/js/jquery.smartWizard.js"></script>*@
+    <script src="~/vendors/SmartWizard-master/js/jquery.smartWizard.min.js"></script>
+    
+    <!-- iCheck Scripts -->
+    <script src="~/vendors/iCheck/icheck.min.js"></script>
+    
+    <!-- Validator -->
+    @*<script src="~/vendors/validator/validator.js"></script>*@
+    <!-- Bootstrap-validator Include jQuery Validator plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+    
+    <!-- summernote js-->
+    <script src="~/vendors/summernote-master/dist/summernote.min.js"></script>
+
+    <!-- select2 -->
+    @*<script src="~/vendors/select2/select2.min.js"></script>*@
+    @Scripts.Render("~/bundles/select2JS")
+
+    <!-- Script initializing-->
+    @*<script src="~/Scripts/SubmitProject.js"></script>*@
+    <script src="~/Scripts/SubmitProjectFV.js"></script>
+}

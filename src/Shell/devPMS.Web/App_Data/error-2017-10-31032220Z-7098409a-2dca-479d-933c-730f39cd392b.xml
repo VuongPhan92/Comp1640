@@ -1,0 +1,168 @@
+﻿<error errorId="7098409a-2dca-479d-933c-730f39cd392b" application="/LM/W3SVC/2/ROOT" host="105VN66" type="SimpleInjector.ActivationException" message="The constructor of type ForumServices contains the parameter with name 'createThreadCommand' and type ICommandHandler&lt;CreateThreadCommand&gt; that is not registered. Please ensure ICommandHandler&lt;CreateThreadCommand&gt; is registered, or change the constructor of ForumServices. Note that there exists a registration for a different type DDoCommon.Decorator.ICommandHandler&lt;TCommand&gt; while the requested type is Infrastructure.Decorator.ICommandHandler&lt;devPMS.WebCore.Business.CreateThreadCommand&gt;." source="SimpleInjector" detail="System.InvalidOperationException: An error occurred when trying to create a controller of type 'devPMS.Web.Controllers.ForumController'. Make sure that the controller has a parameterless public constructor. ---&gt; SimpleInjector.ActivationException: No registration for type ForumServices could be found and an implicit registration could not be made. The constructor of type ForumServices contains the parameter with name 'createThreadCommand' and type ICommandHandler&lt;CreateThreadCommand&gt; that is not registered. Please ensure ICommandHandler&lt;CreateThreadCommand&gt; is registered, or change the constructor of ForumServices. Note that there exists a registration for a different type DDoCommon.Decorator.ICommandHandler&lt;TCommand&gt; while the requested type is Infrastructure.Decorator.ICommandHandler&lt;devPMS.WebCore.Business.CreateThreadCommand&gt;. ---&gt; SimpleInjector.ActivationException: The constructor of type ForumServices contains the parameter with name 'createThreadCommand' and type ICommandHandler&lt;CreateThreadCommand&gt; that is not registered. Please ensure ICommandHandler&lt;CreateThreadCommand&gt; is registered, or change the constructor of ForumServices. Note that there exists a registration for a different type DDoCommon.Decorator.ICommandHandler&lt;TCommand&gt; while the requested type is Infrastructure.Decorator.ICommandHandler&lt;devPMS.WebCore.Business.CreateThreadCommand&gt;.&#xD;&#xA;   at SimpleInjector.Container.ThrowParameterTypeMustBeRegistered(InjectionTargetInfo target)&#xD;&#xA;   at SimpleInjector.Advanced.DefaultDependencyInjectionBehavior.GetInstanceProducer(InjectionConsumerInfo consumer, Boolean throwOnFailure)&#xD;&#xA;   at SimpleInjector.ContainerOptions.GetInstanceProducerFor(InjectionConsumerInfo consumer)&#xD;&#xA;   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)&#xD;&#xA;   at SimpleInjector.Registration.BuildNewExpression()&#xD;&#xA;   at SimpleInjector.Registration.BuildTransientExpression()&#xD;&#xA;   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`1.BuildExpression()&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildExpressionInternal()&#xD;&#xA;   at System.Lazy`1.CreateValue()&#xD;&#xA;   at System.Lazy`1.LazyInitValue()&#xD;&#xA;   at System.Lazy`1.get_Value()&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildExpression()&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildExpression()&#xD;&#xA;   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)&#xD;&#xA;   at SimpleInjector.Registration.BuildNewExpression()&#xD;&#xA;   at SimpleInjector.Registration.BuildTransientExpression()&#xD;&#xA;   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`1.BuildExpression()&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildExpressionInternal()&#xD;&#xA;   at System.Lazy`1.CreateValue()&#xD;&#xA;   at System.Lazy`1.LazyInitValue()&#xD;&#xA;   at System.Lazy`1.get_Value()&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildInstanceCreator()&#xD;&#xA;   at SimpleInjector.InstanceProducer.BuildAndReplaceInstanceCreatorAndCreateFirstInstance()&#xD;&#xA;   at SimpleInjector.InstanceProducer.GetInstance()&#xD;&#xA;   at SimpleInjector.Container.GetInstanceForRootType(Type serviceType)&#xD;&#xA;   at SimpleInjector.Container.GetInstance(Type serviceType)&#xD;&#xA;   at SimpleInjector.Integration.Web.Mvc.SimpleInjectorDependencyResolver.GetService(Type serviceType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.DefaultControllerActivator.Create(RequestContext requestContext, Type controllerType)&#xD;&#xA;   --- End of inner exception stack trace ---&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.DefaultControllerActivator.Create(RequestContext requestContext, Type controllerType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-10-31T03:22:20.8538623Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=g4abAcKmI98aJPwZIoJEc06t9Kr26u1Ger1Bxl4EYcUJPupLUDrxnxhExSsYrVt5CMER5mrwK1MBY2DBLK8eLotGT4QG5oPeRgz4tBfkp8Y1; Log In=D698BBEF940CCCDF53B60FEC976A688588E44B2B74DEDE509124620AFEE8D716A359A5513FC1C2689FAAC90502F97B39496DE140CFDAABC08FEAF6B3DA3BD7AA1E3AA5D68AD95F249E570AD6C0F2B21C4484689E1C50D563A6158E91D8E8B77224E8CFB47E2E55915FDA4D47F8679AE843BBBCE2AD7018B995309B57763AA7DFA45F6D98A4820A4665867F7AF286D0DBDA3EA0E9F660027AEC50F05D45787D278A555979F4367D462A9821690E97FA7BAF8EA668D902C640240C27A6359029D7F117B0C8281A170CCABDCF577CC808C9A0368C3FE0D040D180384BD98F4C28FA2F17AA4DECF1E733076AF71C0416A7FF14CA53D714814D94E3C9126C552214D6F651B35C45B830882D5B0F44C3C39D269F474ED98D4B5067B09A1D022859C4496164C80A91C944C97D8C9F28DBDD6905E939C64AE0543310926725443E8B41EE8E6253E7F5523052E3D544BFC195EDB6720B92FB9E56E26DCC1666C7D4F5259DA34709F1BDCA6C5ECC10D00D382F938FCDF0A64618A12588698CB3C8A5BA729B316F8439D3B9918B98AFD63255B48F5DCA0E0B29E96DD4250395EA5779349A5796A17478593CE4649C721D10F2724622A732705A269B58E83E810654B4059D93; treeView=Projectsactive&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=g4abAcKmI98aJPwZIoJEc06t9Kr26u1Ger1Bxl4EYcUJPupLUDrxnxhExSsYrVt5CMER5mrwK1MBY2DBLK8eLotGT4QG5oPeRgz4tBfkp8Y1; Log In=D698BBEF940CCCDF53B60FEC976A688588E44B2B74DEDE509124620AFEE8D716A359A5513FC1C2689FAAC90502F97B39496DE140CFDAABC08FEAF6B3DA3BD7AA1E3AA5D68AD95F249E570AD6C0F2B21C4484689E1C50D563A6158E91D8E8B77224E8CFB47E2E55915FDA4D47F8679AE843BBBCE2AD7018B995309B57763AA7DFA45F6D98A4820A4665867F7AF286D0DBDA3EA0E9F660027AEC50F05D45787D278A555979F4367D462A9821690E97FA7BAF8EA668D902C640240C27A6359029D7F117B0C8281A170CCABDCF577CC808C9A0368C3FE0D040D180384BD98F4C28FA2F17AA4DECF1E733076AF71C0416A7FF14CA53D714814D94E3C9126C552214D6F651B35C45B830882D5B0F44C3C39D269F474ED98D4B5067B09A1D022859C4496164C80A91C944C97D8C9F28DBDD6905E939C64AE0543310926725443E8B41EE8E6253E7F5523052E3D544BFC195EDB6720B92FB9E56E26DCC1666C7D4F5259DA34709F1BDCA6C5ECC10D00D382F938FCDF0A64618A12588698CB3C8A5BA729B316F8439D3B9918B98AFD63255B48F5DCA0E0B29E96DD4250395EA5779349A5796A17478593CE4649C721D10F2724622A732705A269B58E83E810654B4059D93; treeView=Projectsactive&#xD;&#xA;Host: localhost:5224&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_SourceBackup\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/forum" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_SourceBackup\devPMS_Latest\src\Shell\devPMS.Web\forum" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="30989" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/forum" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/forum" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=g4abAcKmI98aJPwZIoJEc06t9Kr26u1Ger1Bxl4EYcUJPupLUDrxnxhExSsYrVt5CMER5mrwK1MBY2DBLK8eLotGT4QG5oPeRgz4tBfkp8Y1; Log In=D698BBEF940CCCDF53B60FEC976A688588E44B2B74DEDE509124620AFEE8D716A359A5513FC1C2689FAAC90502F97B39496DE140CFDAABC08FEAF6B3DA3BD7AA1E3AA5D68AD95F249E570AD6C0F2B21C4484689E1C50D563A6158E91D8E8B77224E8CFB47E2E55915FDA4D47F8679AE843BBBCE2AD7018B995309B57763AA7DFA45F6D98A4820A4665867F7AF286D0DBDA3EA0E9F660027AEC50F05D45787D278A555979F4367D462A9821690E97FA7BAF8EA668D902C640240C27A6359029D7F117B0C8281A170CCABDCF577CC808C9A0368C3FE0D040D180384BD98F4C28FA2F17AA4DECF1E733076AF71C0416A7FF14CA53D714814D94E3C9126C552214D6F651B35C45B830882D5B0F44C3C39D269F474ED98D4B5067B09A1D022859C4496164C80A91C944C97D8C9F28DBDD6905E939C64AE0543310926725443E8B41EE8E6253E7F5523052E3D544BFC195EDB6720B92FB9E56E26DCC1666C7D4F5259DA34709F1BDCA6C5ECC10D00D382F938FCDF0A64618A12588698CB3C8A5BA729B316F8439D3B9918B98AFD63255B48F5DCA0E0B29E96DD4250395EA5779349A5796A17478593CE4649C721D10F2724622A732705A269B58E83E810654B4059D93; treeView=Projectsactive" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="g4abAcKmI98aJPwZIoJEc06t9Kr26u1Ger1Bxl4EYcUJPupLUDrxnxhExSsYrVt5CMER5mrwK1MBY2DBLK8eLotGT4QG5oPeRgz4tBfkp8Y1" />
+    </item>
+    <item name="Log In">
+      <value string="D698BBEF940CCCDF53B60FEC976A688588E44B2B74DEDE509124620AFEE8D716A359A5513FC1C2689FAAC90502F97B39496DE140CFDAABC08FEAF6B3DA3BD7AA1E3AA5D68AD95F249E570AD6C0F2B21C4484689E1C50D563A6158E91D8E8B77224E8CFB47E2E55915FDA4D47F8679AE843BBBCE2AD7018B995309B57763AA7DFA45F6D98A4820A4665867F7AF286D0DBDA3EA0E9F660027AEC50F05D45787D278A555979F4367D462A9821690E97FA7BAF8EA668D902C640240C27A6359029D7F117B0C8281A170CCABDCF577CC808C9A0368C3FE0D040D180384BD98F4C28FA2F17AA4DECF1E733076AF71C0416A7FF14CA53D714814D94E3C9126C552214D6F651B35C45B830882D5B0F44C3C39D269F474ED98D4B5067B09A1D022859C4496164C80A91C944C97D8C9F28DBDD6905E939C64AE0543310926725443E8B41EE8E6253E7F5523052E3D544BFC195EDB6720B92FB9E56E26DCC1666C7D4F5259DA34709F1BDCA6C5ECC10D00D382F938FCDF0A64618A12588698CB3C8A5BA729B316F8439D3B9918B98AFD63255B48F5DCA0E0B29E96DD4250395EA5779349A5796A17478593CE4649C721D10F2724622A732705A269B58E83E810654B4059D93" />
+    </item>
+    <item name="treeView">
+      <value string="Projectsactive" />
+    </item>
+  </cookies>
+</error>

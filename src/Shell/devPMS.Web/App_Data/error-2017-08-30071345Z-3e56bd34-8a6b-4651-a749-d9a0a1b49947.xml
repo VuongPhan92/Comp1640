@@ -1,0 +1,200 @@
+﻿<error errorId="3e56bd34-8a6b-4651-a749-d9a0a1b49947" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.InvalidOperationException" message="There is no ViewData item of type 'IEnumerable&lt;SelectListItem&gt;' that has the key 'SubTaskID'." source="System.Web.Mvc" detail="System.InvalidOperationException: There is no ViewData item of type 'IEnumerable&lt;SelectListItem&gt;' that has the key 'SubTaskID'.&#xD;&#xA;   at System.Web.Mvc.Html.SelectExtensions.GetSelectData(HtmlHelper htmlHelper, String name)&#xD;&#xA;   at System.Web.Mvc.Html.SelectExtensions.SelectInternal(HtmlHelper htmlHelper, ModelMetadata metadata, String optionLabel, String name, IEnumerable`1 selectList, Boolean allowMultiple, IDictionary`2 htmlAttributes)&#xD;&#xA;   at System.Web.Mvc.Html.SelectExtensions.DropDownList(HtmlHelper htmlHelper, String name, IEnumerable`1 selectList, Object htmlAttributes)&#xD;&#xA;   at ASP._Page_Views_Project__LogWork_cshtml.Execute() in c:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Views\Project\_LogWork.cshtml:line 31&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)&#xD;&#xA;   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)&#xD;&#xA;   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;&gt;c__DisplayClass2b.&lt;BeginInvokeAction&gt;b__1c()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;BeginInvokeAction&gt;b__1e(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecuteCore&gt;b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecute&gt;b__15(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;BeginProcessRequest&gt;b__5(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-08-30T07:13:45.5082979Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:244&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=2yfvs8JgFiGudPW4GURfaPaIYXEP_avwrTNVuqEgqJngRYFErWruGKZWPtc_kyTaMNlUsOQVheMlWuII3qS1ZN_NX6hmG77t4hGqYXbGZdE1; Log In=D7680CC9E8390A426068C3374E14C75DB8B4E8BB4AA52A819B2B3D814AAD3B6202984042AB69DF66D84D693F95A46F1B5189720333FEF462CCDA9ECFC86BB9B0483F88B7676E82E4212BE4C853C8CB4D533DBA3318C83938FFAAFA017206B642778229FA962D344170666DF9DE5D33DA1335FA9771D23EB8988E9C408183C9BC44EE26D8B0C4A8CE53FF850205BA7BFEA0AB9926C85D8FD50B1B45BA29987E88D5A2B640E51C1373FC05A9C6C96B9B85DF0A9F532B9B3E8247B40E29109E663BEB3E6EEB43EE3F1DA82A42DF56A2396C576531068A602952B82021B4715578A4445042E39BE35A6F406BF0DE2B4226727FEB609C55316A528A7F801AEE82E58FEBCB870A99A01C53614DDD9231478615F4D2937242F5F4AD12BA3579D81385E6CBA019C9B7315106AF04E2ACFAA769FBEB9D829847559AA2717343391AB4A2B1DD33F2B8C6682BAD95E4A2459DF8059BF28B84EA3777A5C9ABE9751BD7E14D488A6D084898E814CD4C78F15CAC6B97B404D4FCE20D6D9DC3DF75D2F32A607E8EB9EE92897005C8718C4839F58049E69B8706C5C9D078F3CFA9FED405831E5F1788982DD37BA0484302719462664FAA9993DA174FF2962E6DFE6E0814BD52A7E45C9717E981C0B08A41E3D9C94C895468&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Detail/38614&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:5224&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 244&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8&#xD;&#xA;Cookie: __RequestVerificationToken=2yfvs8JgFiGudPW4GURfaPaIYXEP_avwrTNVuqEgqJngRYFErWruGKZWPtc_kyTaMNlUsOQVheMlWuII3qS1ZN_NX6hmG77t4hGqYXbGZdE1; Log In=D7680CC9E8390A426068C3374E14C75DB8B4E8BB4AA52A819B2B3D814AAD3B6202984042AB69DF66D84D693F95A46F1B5189720333FEF462CCDA9ECFC86BB9B0483F88B7676E82E4212BE4C853C8CB4D533DBA3318C83938FFAAFA017206B642778229FA962D344170666DF9DE5D33DA1335FA9771D23EB8988E9C408183C9BC44EE26D8B0C4A8CE53FF850205BA7BFEA0AB9926C85D8FD50B1B45BA29987E88D5A2B640E51C1373FC05A9C6C96B9B85DF0A9F532B9B3E8247B40E29109E663BEB3E6EEB43EE3F1DA82A42DF56A2396C576531068A602952B82021B4715578A4445042E39BE35A6F406BF0DE2B4226727FEB609C55316A528A7F801AEE82E58FEBCB870A99A01C53614DDD9231478615F4D2937242F5F4AD12BA3579D81385E6CBA019C9B7315106AF04E2ACFAA769FBEB9D829847559AA2717343391AB4A2B1DD33F2B8C6682BAD95E4A2459DF8059BF28B84EA3777A5C9ABE9751BD7E14D488A6D084898E814CD4C78F15CAC6B97B404D4FCE20D6D9DC3DF75D2F32A607E8EB9EE92897005C8718C4839F58049E69B8706C5C9D078F3CFA9FED405831E5F1788982DD37BA0484302719462664FAA9993DA174FF2962E6DFE6E0814BD52A7E45C9717E981C0B08A41E3D9C94C895468&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Detail/38614&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;Origin: http://localhost:5224&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="244" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/LogWork" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\LogWork" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="60271" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/LogWork" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/LogWork" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="244" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=2yfvs8JgFiGudPW4GURfaPaIYXEP_avwrTNVuqEgqJngRYFErWruGKZWPtc_kyTaMNlUsOQVheMlWuII3qS1ZN_NX6hmG77t4hGqYXbGZdE1; Log In=D7680CC9E8390A426068C3374E14C75DB8B4E8BB4AA52A819B2B3D814AAD3B6202984042AB69DF66D84D693F95A46F1B5189720333FEF462CCDA9ECFC86BB9B0483F88B7676E82E4212BE4C853C8CB4D533DBA3318C83938FFAAFA017206B642778229FA962D344170666DF9DE5D33DA1335FA9771D23EB8988E9C408183C9BC44EE26D8B0C4A8CE53FF850205BA7BFEA0AB9926C85D8FD50B1B45BA29987E88D5A2B640E51C1373FC05A9C6C96B9B85DF0A9F532B9B3E8247B40E29109E663BEB3E6EEB43EE3F1DA82A42DF56A2396C576531068A602952B82021B4715578A4445042E39BE35A6F406BF0DE2B4226727FEB609C55316A528A7F801AEE82E58FEBCB870A99A01C53614DDD9231478615F4D2937242F5F4AD12BA3579D81385E6CBA019C9B7315106AF04E2ACFAA769FBEB9D829847559AA2717343391AB4A2B1DD33F2B8C6682BAD95E4A2459DF8059BF28B84EA3777A5C9ABE9751BD7E14D488A6D084898E814CD4C78F15CAC6B97B404D4FCE20D6D9DC3DF75D2F32A607E8EB9EE92897005C8718C4839F58049E69B8706C5C9D078F3CFA9FED405831E5F1788982DD37BA0484302719462664FAA9993DA174FF2962E6DFE6E0814BD52A7E45C9717E981C0B08A41E3D9C94C895468" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Detail/38614" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:5224" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="__RequestVerificationToken">
+      <value string="7f34ZALbMaVdjNUfE6JSbGjWOZX2IatZXdNJN3ijGPeeq-TAJn0dVIQH8iq02rINVf1DB4fn2TxoKb9F6y4yB96Ke7SFRloXLXPW2eUdbptC_71ITGAFjkx47PF211gy0" />
+    </item>
+    <item name="ProID">
+      <value string="" />
+    </item>
+    <item name="EmpID">
+      <value string="138" />
+    </item>
+    <item name="SubTaskID">
+      <value string="253" />
+    </item>
+    <item name="Hours">
+      <value string="5" />
+    </item>
+    <item name="Description">
+      <value string=" asd" />
+    </item>
+    <item name="X-Requested-With">
+      <value string="XMLHttpRequest" />
+    </item>
+  </form>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="2yfvs8JgFiGudPW4GURfaPaIYXEP_avwrTNVuqEgqJngRYFErWruGKZWPtc_kyTaMNlUsOQVheMlWuII3qS1ZN_NX6hmG77t4hGqYXbGZdE1" />
+    </item>
+    <item name="Log In">
+      <value string="D7680CC9E8390A426068C3374E14C75DB8B4E8BB4AA52A819B2B3D814AAD3B6202984042AB69DF66D84D693F95A46F1B5189720333FEF462CCDA9ECFC86BB9B0483F88B7676E82E4212BE4C853C8CB4D533DBA3318C83938FFAAFA017206B642778229FA962D344170666DF9DE5D33DA1335FA9771D23EB8988E9C408183C9BC44EE26D8B0C4A8CE53FF850205BA7BFEA0AB9926C85D8FD50B1B45BA29987E88D5A2B640E51C1373FC05A9C6C96B9B85DF0A9F532B9B3E8247B40E29109E663BEB3E6EEB43EE3F1DA82A42DF56A2396C576531068A602952B82021B4715578A4445042E39BE35A6F406BF0DE2B4226727FEB609C55316A528A7F801AEE82E58FEBCB870A99A01C53614DDD9231478615F4D2937242F5F4AD12BA3579D81385E6CBA019C9B7315106AF04E2ACFAA769FBEB9D829847559AA2717343391AB4A2B1DD33F2B8C6682BAD95E4A2459DF8059BF28B84EA3777A5C9ABE9751BD7E14D488A6D084898E814CD4C78F15CAC6B97B404D4FCE20D6D9DC3DF75D2F32A607E8EB9EE92897005C8718C4839F58049E69B8706C5C9D078F3CFA9FED405831E5F1788982DD37BA0484302719462664FAA9993DA174FF2962E6DFE6E0814BD52A7E45C9717E981C0B08A41E3D9C94C895468" />
+    </item>
+  </cookies>
+</error>

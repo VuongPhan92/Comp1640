@@ -1,0 +1,177 @@
+﻿@model ThreadViewModel
+
+@using devPMS.Web.Models;
+@using SSTVN.DDo.Utility.Extension;
+@using devPMS.Web.CustomMembership;
+
+@{
+    ViewBag.Title = "Thread";
+    Layout = "~/Views/Shared/_LayoutLTEForum.cshtml";
+    var identity = (HttpContext.Current.User as CusPrincipal).Identity as CusIdentity;
+
+}
+@section MoreStyles{
+    <!-- select2-->
+    @Styles.Render("~/bundles/select2CSS")
+    <script src="~/vendors/ckeditor/ckeditor.js"></script>
+    <script src="~/Scripts/ckEditorConfig1.js"></script>
+}
+@section scripts{
+    <!-- select2 -->
+    @Scripts.Render("~/bundles/select2JS")
+    <script>
+        $(document).ready(function () {
+            var editorText = "";
+            $('#btnCreateThread').click(this, function () {
+                var url = '@Url.Action("CreateThread", "Forum")'; // the url to the controller
+                $.get(url, function (data) {
+                    $('#create-thread-container').html(data);
+                    $('#create-thread').modal('show');
+                });
+            })
+            $('#submit_comment').click(function () {
+                var textEditor = CKEDITOR.instances[123].getData();
+                $('#Body').val(textEditor);
+                $('#form_comment').submit();
+            })
+
+        })
+        function UpdateLikeComment(data) {
+            $('#count_like_comment_' + data.commentId + '').text(data.count).attr('style', 'color:green');
+            $('#like_comment_' + data.commentId + '').toggleClass("bg-blue");
+        }
+
+        function UpdateLikeInsideThread(data) {
+            $('#href_like_' + data.threadId + '').text(data.count + ' likes');
+            $('#insidelike_thread' + data.threadId + '').toggleClass("bg-blue");
+        }
+    </script>
+}
+<section class="content-header">
+    <h1>
+        Forum
+        <small>chit chat, relax and more</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Forum")"><i class="fa fa-dashboard"></i> University</a></li>
+        <li class="active"> Index</li>
+    </ol>
+</section>
+<section id="content" class="content">
+    <article>
+        <div class="col-lg-10 col-md-10">
+            <div class="box box-widget">
+                <div class="box-header">
+                    <h1>@Model.Title</h1>
+                    @*<h1>@Html.ThreadLink(Model)</h1>*@
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 post">
+                            @Html.CategoryLink(Model.ThreadCategory)
+                            @*<button class="btn btn-white btn-xs" type="button">@Model.ThreadCategory.CategoryName</button>*@
+                            <div class="pull-right">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <a href="#">@Model.View</a>
+                            </div>
+                             <div class="col-md-12">
+                            <img src="http://placehold.it/900x300" class="img-responsive">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 post">
+                            @Html.Raw(Model.Body)
+                        </div>
+                    </div>
+                    <!-- /related threads -->
+                    <hr>
+
+                    <div>
+                        <div class="user-block margin-bottom">
+                            @*<img class="img-circle" src="@Html.ImageUrl(Model.Author.Photo)" alt="User Image">*@
+                            <span class="username"><a href="#">@Model.Author.FullName</a></span>
+                            <span class="description">
+                                Post at @Model.CreatedDT.TimePassed()
+                                @if (identity.User.UserId == Model.Author.EmployeeID)
+                                {
+                                    <span role="presentation" aria-hidden="true">·</span>
+                                    <a style="cursor:pointer;" class="comReplyParent" id="comReplyParent-2">Edit</a>
+                                }
+                            </span>
+                        </div>
+                        <!-- /.user-block -->
+                        <div class="user-block pad">
+                            @{
+                                var btnClass = "";
+                                if (Model.ThreadLikes.Any(p => p.UserId == identity.User.UserId && p.Like == true))
+                                {
+                                    btnClass = "badge bg-blue";
+                                }
+                                else
+                                {
+                                    btnClass = "badge";
+                                }
+                            }
+                            @Ajax.ActionLink("Like", "LikeThread", "Forum", new { userId = @identity.User.UserId, threadId = @Model.ThreadId, authorId = @Model.Author.EmployeeID }, new AjaxOptions
+                            {
+                                HttpMethod = "Get",
+                                OnSuccess = "UpdateLikeInsideThread",
+                            }
+                            , new { @class = btnClass, @id = "insidelike_thread" + @Model.ThreadId })
+
+                            <span class="pull-right text-muted"><a href="#" id="href_like_@Model.ThreadId">@Model.Likes likes</a> - <a href="#" id="href_comment_@Model.ThreadId">@Model.CommentViewModel.Comments.Count comments</a></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            Tags: @Helpers.Tags(Html, Model.Tags)
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- Comment -->
+                    <div class="comImg col-md-1">
+                        @*<img src="~/images/myPic.jpg" height="40" width="40" />*@
+                    </div>
+                    @using (Ajax.BeginForm("InsertComment", "Forum", new AjaxOptions()
+                    {
+                        HttpMethod = "POST"
+                        ,
+                        InsertionMode = InsertionMode.Replace
+                        ,
+                        UpdateTargetId = "partialViewCommentListContainer"
+
+                    }, new { @id = "form_comment" }))
+                    {
+                        <div class="col-md-11">
+                            <div id="123">
+                                @Html.AntiForgeryToken()
+                                <script>
+                                    CKEDITOR.replace('123',
+                                        {
+                                            customConfig: '/Scripts/ckEditorConfig1.js'
+                                        });
+                                    var textEditor = CKEDITOR.instances[123].getData();
+                                </script>
+                                <div class="">
+                                    @Html.Hidden("Body", "")
+                                    @Html.Hidden("ThreadId", @Model.ThreadId)
+                                    @Html.Hidden("UserId", identity.User.UserId)
+                                </div>
+                            </div>
+                            <button type="button" id="submit_comment" class="btn btn-block btn-primary btn-flat pull-right">Post Comment</button>
+                        </div>
+                    }
+
+                    <!-- /Comment -->
+                    <div id="partialViewCommentListContainer">
+                        @{Html.RenderPartial("Comments", Model.CommentViewModel); }
+                    </div>
+                    <ul class="pager">
+                        <li class="previous"><a href="@Url.Action("Index", "Forum")">&larr; Back to posts</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </article>
+</section>

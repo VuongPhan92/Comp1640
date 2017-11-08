@@ -1,0 +1,49 @@
+﻿@using devPMS.Web.Models
+@model LoginViewModel
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = "Log in";
+}
+
+@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class= "form-horizontal", role = "form" }))
+{
+    @Html.AntiForgeryToken()
+    <h1>Sign In</h1>
+    @Html.ValidationSummary(false, "", new { @class = "products-list text-danger" })
+    <div class="item form-group">
+        <input type="email" class="form-control" placeholder="Email" required="required" id="Email" name="Email"/>
+    </div>
+    <div class="item form-group"> 
+        <input type="password" class="form-control" placeholder="Password" required="required" id="Password" name="Password"/>
+    </div>
+    <div>
+        @*<a class="btn btn-default submit" href="index.html">Log in</a>*@
+        <input type="submit" class="btn btn-default submit" value="Sign in"/>
+        <a class="reset_pass" href="@Url.Action("ForgotPassword", "Account")">Lost your password?</a>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="separator">
+        <p class="change_link">
+            New to site? To request an account, please contact your administrators.
+        </p>
+
+        <div class="clearfix"></div>
+        <br />
+
+        <div>
+            <h1><i class="fa fa-paw"></i> University System</h1>
+           
+        </div>
+    </div>
+}
+@section scripts{
+<!-- validator -->
+<script src="~/vendors/validator/validator.js"></script>
+<script>
+    $(function () {
+        $("#Email").focus();
+    });
+</script>
+}

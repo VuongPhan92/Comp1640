@@ -1,0 +1,1216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SSTVN_ProjectManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Assignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProID" Type="int" Nullable="false" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="AssignedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="ClosedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Point" Type="float" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="WhoModified" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DeteledDateTime" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="UnLoad" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Employees">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="255" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="255" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="EmployeeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamID" Type="int" Nullable="false" />
+          <Property Name="Permission" Type="int" Nullable="false" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Password" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="PasswordSalt" Type="nvarchar" MaxLength="255" />
+          <Property Name="DOB" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="TerminatedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="Photo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Signature" Type="nvarchar" MaxLength="50" />
+          <Property Name="RealEmployeeId" Type="int" />
+        </EntityType>
+        <EntityType Name="GroupTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TeamLeader" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Project Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Parent" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="ScopeID" Type="int" Nullable="false" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="DatetoVN" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DueDate" Type="datetime2" Precision="7" />
+          <Property Name="EOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompletedDateTime" Type="datetime2" Precision="7" />
+          <Property Name="SubjectEmail" Type="nvarchar(max)" />
+          <Property Name="CountTeam" Type="int" Nullable="false" />
+          <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Comment" Type="nvarchar(max)" />
+          <Property Name="DescriptionOfService" Type="nvarchar" MaxLength="50" />
+          <Property Name="StatusId" Type="int" />
+          <Property Name="DescriptionOfServiceId" Type="int" />
+          <Property Name="EstimatedWorkInMI" Type="int" />
+          <Property Name="SimpsonDueDate" Type="datetime2" Precision="7" />
+          <Property Name="RequestedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="SimpsonContact" Type="nvarchar" MaxLength="50" />
+          <Property Name="ReviewedBy" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectAddress" Type="nvarchar" MaxLength="150" />
+          <Property Name="ProjectCity" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectState" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectZip" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectEngineer" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectDrawingsDate" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectContractor" Type="nvarchar" MaxLength="50" />
+          <Property Name="RFI" Type="nvarchar" MaxLength="50" />
+          <Property Name="SladThickness" Type="float" />
+          <Property Name="WindSpeed" Type="nvarchar" MaxLength="50" />
+          <Property Name="ExposureCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="SeismicDesignCategory" Type="nvarchar" MaxLength="50" />
+          <Property Name="ProjectAwarded" Type="nvarchar" MaxLength="50" />
+          <Property Name="SSTQuote" Type="money" />
+          <Property Name="ProjectDescription" Type="nvarchar(max)" />
+          <Property Name="ScopeTypeId" Type="int" />
+          <Property Name="PriorityId" Type="int" />
+        </EntityType>
+        <EntityType Name="ProjectComment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Body" Type="nvarchar" MaxLength="4000" Nullable="false" />
+          <Property Name="CreatedDT" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DeletedDT" Type="datetime2" Precision="7" />
+          <Property Name="ModifiedDT" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Roles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ScopeOfService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ScopeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="UnLoad" Type="datetime2" Precision="7" />
+          <Property Name="CategoryId" Type="int" />
+        </EntityType>
+        <EntityType Name="ScopeType">
+          <Key>
+            <PropertyRef Name="ScopeTypeId" />
+          </Key>
+          <Property Name="ScopeTypeId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScopeId" Type="int" Nullable="false" />
+          <Property Name="ScopeTypeDescription" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderList" Type="int" />
+          <Property Name="Unload" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StatusName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="InActive" Type="bit" />
+        </EntityType>
+        <EntityType Name="SubTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ScopeID" Type="int" Nullable="false" />
+          <Property Name="SubTasks" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrderSubTasks" Type="int" />
+          <Property Name="UnLoad" Type="datetime2" Precision="7" />
+          <Property Name="CreatedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TimeLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProID" Type="int" Nullable="false" />
+          <Property Name="EmpID" Type="int" Nullable="false" />
+          <Property Name="SubTaskID" Type="int" Nullable="false" />
+          <Property Name="WorkedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="CreatedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="LastModifiedDateTime" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="UserRoles">
+          <Key>
+            <PropertyRef Name="RoleId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="RoleId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SSTVN_ProjectManagement_Staging.dbo.TimeLogView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TimeLogView">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="ProjectNo" />
+            <PropertyRef Name="ScopeName" />
+            <PropertyRef Name="Branch" />
+            <PropertyRef Name="Team" />
+            <PropertyRef Name="SubTasks" />
+            <PropertyRef Name="WorkedDate" />
+            <PropertyRef Name="Hours" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="ProjectNo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="Parent" Type="nvarchar" MaxLength="50" />
+          <Property Name="ScopeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Branch" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="SubTasks" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WorkedDate" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="Hours" Type="float" Nullable="false" />
+          <Property Name="Description" Type="nvarchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SSTVN_ProjectManagement_Staging.dbo.ViewApprovedVacationPerDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewApprovedVacationPerDate">
+          <Key>
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="OrderDateTime" />
+            <PropertyRef Name="RequestType" />
+          </Key>
+          <Property Name="EmpId" Type="int" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="OrderDateTime" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="RequestType" Type="int" Nullable="false" />
+          <Property Name="TotalValue" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SSTVN_ProjectManagement_Staging.dbo.ViewTimeLogPerDate' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ViewTimeLogPerDate">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Team" />
+          </Key>
+          <Property Name="FullName" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Team" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="WorkedDate" Type="date" />
+          <Property Name="TotalHours" Type="float" />
+        </EntityType>
+        <Association Name="FK__ProjectCo__Proje__75E27017">
+          <End Role="Project Log" Type="Self.Project Log" Multiplicity="1" />
+          <End Role="ProjectComment" Type="Self.ProjectComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project Log">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectComment">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProjectCo__UserI__76D69450">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="ProjectComment" Type="Self.ProjectComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="ProjectComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TimeLog__EmpID__149C0161">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="TimeLog" Type="Self.TimeLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="TimeLog">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assignment_Employees1">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="Assignment" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Assignment">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assignment_Project Log">
+          <End Role="Project Log" Type="Self.Project Log" Multiplicity="1" />
+          <End Role="Assignment" Type="Self.Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project Log">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Assignment">
+              <PropertyRef Name="ProID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_GroupTeam">
+          <End Role="GroupTeam" Type="Self.GroupTeam" Multiplicity="1" />
+          <End Role="Employees" Type="Self.Employees" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupTeam">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employees">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project Log_ScopeOfService">
+          <End Role="ScopeOfService" Type="Self.ScopeOfService" Multiplicity="1" />
+          <End Role="Project Log" Type="Self.Project Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project Log">
+              <PropertyRef Name="ScopeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project Log_ScopeType">
+          <End Role="ScopeType" Type="Self.ScopeType" Multiplicity="0..1" />
+          <End Role="Project Log" Type="Self.Project Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeType">
+              <PropertyRef Name="ScopeTypeId" />
+            </Principal>
+            <Dependent Role="Project Log">
+              <PropertyRef Name="ScopeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project Log_Status">
+          <End Role="Status" Type="Self.Status" Multiplicity="0..1" />
+          <End Role="Project Log" Type="Self.Project Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Project Log">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScopeType_ScopeOfService">
+          <End Role="ScopeOfService" Type="Self.ScopeOfService" Multiplicity="1" />
+          <End Role="ScopeType" Type="Self.ScopeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ScopeType">
+              <PropertyRef Name="ScopeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SubTask_ScopeOfService">
+          <End Role="ScopeOfService" Type="Self.ScopeOfService" Multiplicity="1" />
+          <End Role="SubTask" Type="Self.SubTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SubTask">
+              <PropertyRef Name="ScopeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Employees">
+          <End Role="Employees" Type="Self.Employees" Multiplicity="1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employees">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_UserRoles_Roles">
+          <End Role="Roles" Type="Self.Roles" Multiplicity="1" />
+          <End Role="UserRoles" Type="Self.UserRoles" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Roles">
+              <PropertyRef Name="RoleId" />
+            </Principal>
+            <Dependent Role="UserRoles">
+              <PropertyRef Name="RoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SSTVN_ProjectManagementModelStoreContainer">
+          <EntitySet Name="Assignment" EntityType="Self.Assignment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Branch" EntityType="Self.Branch" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employees" EntityType="Self.Employees" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GroupTeam" EntityType="Self.GroupTeam" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Project Log" EntityType="Self.Project Log" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProjectComment" EntityType="Self.ProjectComment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Roles" EntityType="Self.Roles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScopeOfService" EntityType="Self.ScopeOfService" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ScopeType" EntityType="Self.ScopeType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubTask" EntityType="Self.SubTask" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeLog" EntityType="Self.TimeLog" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRoles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TimeLogView" EntityType="Self.TimeLogView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TimeLogView].[ID] AS [ID], 
+    [TimeLogView].[FullName] AS [FullName], 
+    [TimeLogView].[ProjectNo] AS [ProjectNo], 
+    [TimeLogView].[Name] AS [Name], 
+    [TimeLogView].[Parent] AS [Parent], 
+    [TimeLogView].[ScopeName] AS [ScopeName], 
+    [TimeLogView].[Branch] AS [Branch], 
+    [TimeLogView].[Team] AS [Team], 
+    [TimeLogView].[SubTasks] AS [SubTasks], 
+    [TimeLogView].[WorkedDate] AS [WorkedDate], 
+    [TimeLogView].[Hours] AS [Hours], 
+    [TimeLogView].[Description] AS [Description]
+    FROM [dbo].[TimeLogView] AS [TimeLogView]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewApprovedVacationPerDate" EntityType="Self.ViewApprovedVacationPerDate" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewApprovedVacationPerDate].[EmpId] AS [EmpId], 
+    [ViewApprovedVacationPerDate].[FullName] AS [FullName], 
+    [ViewApprovedVacationPerDate].[OrderDateTime] AS [OrderDateTime], 
+    [ViewApprovedVacationPerDate].[RequestType] AS [RequestType], 
+    [ViewApprovedVacationPerDate].[TotalValue] AS [TotalValue]
+    FROM [dbo].[ViewApprovedVacationPerDate] AS [ViewApprovedVacationPerDate]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="ViewTimeLogPerDate" EntityType="Self.ViewTimeLogPerDate" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ViewTimeLogPerDate].[FullName] AS [FullName], 
+    [ViewTimeLogPerDate].[Team] AS [Team], 
+    [ViewTimeLogPerDate].[WorkedDate] AS [WorkedDate], 
+    [ViewTimeLogPerDate].[TotalHours] AS [TotalHours]
+    FROM [dbo].[ViewTimeLogPerDate] AS [ViewTimeLogPerDate]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK__ProjectCo__Proje__75E27017" Association="Self.FK__ProjectCo__Proje__75E27017">
+            <End Role="Project Log" EntitySet="Project Log" />
+            <End Role="ProjectComment" EntitySet="ProjectComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProjectCo__UserI__76D69450" Association="Self.FK__ProjectCo__UserI__76D69450">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="ProjectComment" EntitySet="ProjectComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TimeLog__EmpID__149C0161" Association="Self.FK__TimeLog__EmpID__149C0161">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="TimeLog" EntitySet="TimeLog" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assignment_Employees1" Association="Self.FK_Assignment_Employees1">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="Assignment" EntitySet="Assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assignment_Project Log" Association="Self.FK_Assignment_Project Log">
+            <End Role="Project Log" EntitySet="Project Log" />
+            <End Role="Assignment" EntitySet="Assignment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_GroupTeam" Association="Self.FK_Employees_GroupTeam">
+            <End Role="GroupTeam" EntitySet="GroupTeam" />
+            <End Role="Employees" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project Log_ScopeOfService" Association="Self.FK_Project Log_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfService" />
+            <End Role="Project Log" EntitySet="Project Log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project Log_ScopeType" Association="Self.FK_Project Log_ScopeType">
+            <End Role="ScopeType" EntitySet="ScopeType" />
+            <End Role="Project Log" EntitySet="Project Log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project Log_Status" Association="Self.FK_Project Log_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Project Log" EntitySet="Project Log" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScopeType_ScopeOfService" Association="Self.FK_ScopeType_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfService" />
+            <End Role="ScopeType" EntitySet="ScopeType" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SubTask_ScopeOfService" Association="Self.FK_SubTask_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfService" />
+            <End Role="SubTask" EntitySet="SubTask" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Employees" Association="Self.FK_UserRoles_Employees">
+            <End Role="Employees" EntitySet="Employees" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+          <AssociationSet Name="FK_UserRoles_Roles" Association="Self.FK_UserRoles_Roles">
+            <End Role="Roles" EntitySet="Roles" />
+            <End Role="UserRoles" EntitySet="UserRoles" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSTVN_ProjectManagementModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Assignments" EntityType="SSTVN_ProjectManagementModel.Assignment" />
+          <EntitySet Name="Branches" EntityType="SSTVN_ProjectManagementModel.Branch" />
+          <EntitySet Name="Employees" EntityType="SSTVN_ProjectManagementModel.Employee" />
+          <EntitySet Name="GroupTeams" EntityType="SSTVN_ProjectManagementModel.GroupTeam" />
+          <EntitySet Name="Project_Logs" EntityType="SSTVN_ProjectManagementModel.Project_Log" />
+          <EntitySet Name="ScopeOfServices" EntityType="SSTVN_ProjectManagementModel.ScopeOfService" />
+          <EntitySet Name="ScopeTypes" EntityType="SSTVN_ProjectManagementModel.ScopeType" />
+          <EntitySet Name="TimeLogs" EntityType="SSTVN_ProjectManagementModel.TimeLog" />
+          <EntitySet Name="TimeLogViews" EntityType="SSTVN_ProjectManagementModel.TimeLogView" />
+          <EntitySet Name="ViewApprovedVacationPerDates" EntityType="SSTVN_ProjectManagementModel.ViewApprovedVacationPerDate" />
+          <AssociationSet Name="FK_Assignment_Employees1" Association="SSTVN_ProjectManagementModel.FK_Assignment_Employees1">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Assignment" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Assignment_Project_Log" Association="SSTVN_ProjectManagementModel.FK_Assignment_Project_Log">
+            <End Role="Project_Log" EntitySet="Project_Logs" />
+            <End Role="Assignment" EntitySet="Assignments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__TimeLog__EmpID__149C0161" Association="SSTVN_ProjectManagementModel.FK__TimeLog__EmpID__149C0161">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="TimeLog" EntitySet="TimeLogs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employees_GroupTeam" Association="SSTVN_ProjectManagementModel.FK_Employees_GroupTeam">
+            <End Role="GroupTeam" EntitySet="GroupTeams" />
+            <End Role="Employee" EntitySet="Employees" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Log_ScopeOfService" Association="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfServices" />
+            <End Role="Project_Log" EntitySet="Project_Logs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Project_Log_ScopeType" Association="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeType">
+            <End Role="ScopeType" EntitySet="ScopeTypes" />
+            <End Role="Project_Log" EntitySet="Project_Logs" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ScopeType_ScopeOfService" Association="SSTVN_ProjectManagementModel.FK_ScopeType_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfServices" />
+            <End Role="ScopeType" EntitySet="ScopeTypes" />
+          </AssociationSet>
+          <EntitySet Name="SubTasks" EntityType="SSTVN_ProjectManagementModel.SubTask" />
+          <AssociationSet Name="FK_SubTask_ScopeOfService" Association="SSTVN_ProjectManagementModel.FK_SubTask_ScopeOfService">
+            <End Role="ScopeOfService" EntitySet="ScopeOfServices" />
+            <End Role="SubTask" EntitySet="SubTasks" />
+          </AssociationSet>
+          <EntitySet Name="ViewTimeLogPerDates" EntityType="SSTVN_ProjectManagementModel.ViewTimeLogPerDate" />
+          <EntitySet Name="Roles" EntityType="SSTVN_ProjectManagementModel.Role" />
+          <AssociationSet Name="UserRoles" Association="SSTVN_ProjectManagementModel.UserRoles">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="Role" EntitySet="Roles" />
+          </AssociationSet>
+          <EntitySet Name="ProjectComments" EntityType="SSTVN_ProjectManagementModel.ProjectComment" />
+          <AssociationSet Name="FK__ProjectCo__UserI__76D69450" Association="SSTVN_ProjectManagementModel.FK__ProjectCo__UserI__76D69450">
+            <End Role="Employee" EntitySet="Employees" />
+            <End Role="ProjectComment" EntitySet="ProjectComments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ProjectCo__Proje__75E27017" Association="SSTVN_ProjectManagementModel.FK__ProjectCo__Proje__75E27017">
+            <End Role="Project_Log" EntitySet="Project_Logs" />
+            <End Role="ProjectComment" EntitySet="ProjectComments" />
+          </AssociationSet>
+          <EntitySet Name="Status" EntityType="SSTVN_ProjectManagementModel.Status" />
+          <AssociationSet Name="FK_Project_Log_Status" Association="SSTVN_ProjectManagementModel.FK_Project_Log_Status">
+            <End Role="Status" EntitySet="Status" />
+            <End Role="Project_Log" EntitySet="Project_Logs" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Assignment">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProID" Type="Int32" Nullable="false" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="AssignedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ClosedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Point" Type="Double" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="WhoModified" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastModifiedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeteledDateTime" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Employee" Relationship="SSTVN_ProjectManagementModel.FK_Assignment_Employees1" FromRole="Assignment" ToRole="Employee" />
+          <NavigationProperty Name="Project_Log" Relationship="SSTVN_ProjectManagementModel.FK_Assignment_Project_Log" FromRole="Assignment" ToRole="Project_Log" />
+        </EntityType>
+        <EntityType Name="Branch">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Branch1" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UnLoad" Type="DateTime" Precision="7" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="EmployeeID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamID" Type="Int32" Nullable="false" />
+          <Property Name="Permission" Type="Int32" Nullable="false" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PasswordSalt" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DOB" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="TerminatedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="Photo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Signature" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RealEmployeeId" Type="Int32" />
+          <NavigationProperty Name="Assignments" Relationship="SSTVN_ProjectManagementModel.FK_Assignment_Employees1" FromRole="Employee" ToRole="Assignment" />
+          <NavigationProperty Name="TimeLogs" Relationship="SSTVN_ProjectManagementModel.FK__TimeLog__EmpID__149C0161" FromRole="Employee" ToRole="TimeLog" />
+          <NavigationProperty Name="GroupTeam" Relationship="SSTVN_ProjectManagementModel.FK_Employees_GroupTeam" FromRole="Employee" ToRole="GroupTeam" />
+          <NavigationProperty Name="Roles" Relationship="SSTVN_ProjectManagementModel.UserRoles" FromRole="Employee" ToRole="Role" />
+          <NavigationProperty Name="ProjectComments" Relationship="SSTVN_ProjectManagementModel.FK__ProjectCo__UserI__76D69450" FromRole="Employee" ToRole="ProjectComment" />
+        </EntityType>
+        <EntityType Name="GroupTeam">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TeamLeader" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Team" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employees" Relationship="SSTVN_ProjectManagementModel.FK_Employees_GroupTeam" FromRole="GroupTeam" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="Project_Log">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Parent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ScopeID" Type="Int32" Nullable="false" />
+          <Property Name="Branch" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DatetoVN" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DueDate" Type="DateTime" Precision="7" />
+          <Property Name="EOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompletedDateTime" Type="DateTime" Precision="7" />
+          <Property Name="SubjectEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CountTeam" Type="Int32" Nullable="false" />
+          <Property Name="LastModifiedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DescriptionOfService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StatusId" Type="Int32" />
+          <Property Name="DescriptionOfServiceId" Type="Int32" />
+          <Property Name="EstimatedWorkInMI" Type="Int32" />
+          <Property Name="SimpsonDueDate" Type="DateTime" Precision="7" />
+          <Property Name="RequestedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SimpsonContact" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ReviewedBy" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectAddress" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectCity" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectZip" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectEngineer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectDrawingsDate" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectContractor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RFI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SladThickness" Type="Double" />
+          <Property Name="WindSpeed" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ExposureCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SeismicDesignCategory" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectAwarded" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SSTQuote" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="ProjectDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ScopeTypeId" Type="Int32" />
+          <Property Name="PriorityId" Type="Int32" />
+          <NavigationProperty Name="Assignments" Relationship="SSTVN_ProjectManagementModel.FK_Assignment_Project_Log" FromRole="Project_Log" ToRole="Assignment" />
+          <NavigationProperty Name="ScopeOfService" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeOfService" FromRole="Project_Log" ToRole="ScopeOfService" />
+          <NavigationProperty Name="ScopeType" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeType" FromRole="Project_Log" ToRole="ScopeType" />
+          <NavigationProperty Name="ProjectComments" Relationship="SSTVN_ProjectManagementModel.FK__ProjectCo__Proje__75E27017" FromRole="Project_Log" ToRole="ProjectComment" />
+          <NavigationProperty Name="Status1" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_Status" FromRole="Project_Log" ToRole="Status" />
+        </EntityType>
+        <EntityType Name="ScopeOfService">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ScopeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="UnLoad" Type="DateTime" Precision="7" />
+          <Property Name="CategoryId" Type="Int32" />
+          <NavigationProperty Name="Project_Log" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeOfService" FromRole="ScopeOfService" ToRole="Project_Log" />
+          <NavigationProperty Name="ScopeTypes" Relationship="SSTVN_ProjectManagementModel.FK_ScopeType_ScopeOfService" FromRole="ScopeOfService" ToRole="ScopeType" />
+          <NavigationProperty Name="SubTasks" Relationship="SSTVN_ProjectManagementModel.FK_SubTask_ScopeOfService" FromRole="ScopeOfService" ToRole="SubTask" />
+        </EntityType>
+        <EntityType Name="ScopeType">
+          <Key>
+            <PropertyRef Name="ScopeTypeId" />
+          </Key>
+          <Property Name="ScopeTypeId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScopeId" Type="Int32" Nullable="false" />
+          <Property Name="ScopeTypeDescription" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderList" Type="Int32" />
+          <Property Name="Unload" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Project_Log" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeType" FromRole="ScopeType" ToRole="Project_Log" />
+          <NavigationProperty Name="ScopeOfService" Relationship="SSTVN_ProjectManagementModel.FK_ScopeType_ScopeOfService" FromRole="ScopeType" ToRole="ScopeOfService" />
+        </EntityType>
+        <EntityType Name="TimeLog">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProID" Type="Int32" Nullable="false" />
+          <Property Name="EmpID" Type="Int32" Nullable="false" />
+          <Property Name="SubTaskID" Type="Int32" Nullable="false" />
+          <Property Name="WorkedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastModifiedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Employee" Relationship="SSTVN_ProjectManagementModel.FK__TimeLog__EmpID__149C0161" FromRole="TimeLog" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="TimeLogView">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="ProjectNo" />
+            <PropertyRef Name="ScopeName" />
+            <PropertyRef Name="Branch" />
+            <PropertyRef Name="Team" />
+            <PropertyRef Name="SubTasks" />
+            <PropertyRef Name="WorkedDate" />
+            <PropertyRef Name="Hours" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProjectNo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Parent" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ScopeName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Branch" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Team" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SubTasks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkedDate" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="Hours" Type="Double" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ViewApprovedVacationPerDate">
+          <Key>
+            <PropertyRef Name="EmpId" />
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="OrderDateTime" />
+            <PropertyRef Name="RequestType" />
+          </Key>
+          <Property Name="EmpId" Type="Int32" Nullable="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="OrderDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="RequestType" Type="Int32" Nullable="false" />
+          <Property Name="TotalValue" Type="Double" />
+        </EntityType>
+        <Association Name="FK_Assignment_Employees1">
+          <End Type="SSTVN_ProjectManagementModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.Assignment" Role="Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="Assignment">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Assignment_Project_Log">
+          <End Type="SSTVN_ProjectManagementModel.Project_Log" Role="Project_Log" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.Assignment" Role="Assignment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Log">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Assignment">
+              <PropertyRef Name="ProID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__TimeLog__EmpID__149C0161">
+          <End Type="SSTVN_ProjectManagementModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.TimeLog" Role="TimeLog" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="TimeLog">
+              <PropertyRef Name="EmpID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employees_GroupTeam">
+          <End Type="SSTVN_ProjectManagementModel.GroupTeam" Role="GroupTeam" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="GroupTeam">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="TeamID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Log_ScopeOfService">
+          <End Type="SSTVN_ProjectManagementModel.ScopeOfService" Role="ScopeOfService" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.Project_Log" Role="Project_Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Project_Log">
+              <PropertyRef Name="ScopeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Project_Log_ScopeType">
+          <End Type="SSTVN_ProjectManagementModel.ScopeType" Role="ScopeType" Multiplicity="0..1" />
+          <End Type="SSTVN_ProjectManagementModel.Project_Log" Role="Project_Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeType">
+              <PropertyRef Name="ScopeTypeId" />
+            </Principal>
+            <Dependent Role="Project_Log">
+              <PropertyRef Name="ScopeTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ScopeType_ScopeOfService">
+          <End Type="SSTVN_ProjectManagementModel.ScopeOfService" Role="ScopeOfService" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.ScopeType" Role="ScopeType" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ScopeType">
+              <PropertyRef Name="ScopeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="SubTask">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ScopeID" Type="Int32" Nullable="false" />
+          <Property Name="SubTasks" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OrderSubTasks" Type="Int32" />
+          <Property Name="UnLoad" Type="DateTime" Precision="7" />
+          <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="LastModifiedDateTime" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="ScopeOfService" Relationship="SSTVN_ProjectManagementModel.FK_SubTask_ScopeOfService" FromRole="SubTask" ToRole="ScopeOfService" />
+        </EntityType>
+        <Association Name="FK_SubTask_ScopeOfService">
+          <End Type="SSTVN_ProjectManagementModel.ScopeOfService" Role="ScopeOfService" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.SubTask" Role="SubTask" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ScopeOfService">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="SubTask">
+              <PropertyRef Name="ScopeID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="ViewTimeLogPerDate">
+          <Key>
+            <PropertyRef Name="FullName" />
+            <PropertyRef Name="Team" />
+          </Key>
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Team" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="WorkedDate" Type="DateTime" Precision="0" />
+          <Property Name="TotalHours" Type="Double" />
+        </EntityType>
+        <EntityType Name="Role">
+          <Key>
+            <PropertyRef Name="RoleId" />
+          </Key>
+          <Property Name="RoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Employees" Relationship="SSTVN_ProjectManagementModel.UserRoles" FromRole="Role" ToRole="Employee" />
+        </EntityType>
+        <Association Name="UserRoles">
+          <End Type="SSTVN_ProjectManagementModel.Employee" Role="Employee" Multiplicity="*" />
+          <End Type="SSTVN_ProjectManagementModel.Role" Role="Role" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ProjectComment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="ProjectId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Body" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedDT" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeletedDT" Type="DateTime" Precision="7" />
+          <Property Name="ModifiedDT" Type="DateTime" Nullable="false" Precision="7" />
+          <NavigationProperty Name="Employee" Relationship="SSTVN_ProjectManagementModel.FK__ProjectCo__UserI__76D69450" FromRole="ProjectComment" ToRole="Employee" />
+          <NavigationProperty Name="Project_Log" Relationship="SSTVN_ProjectManagementModel.FK__ProjectCo__Proje__75E27017" FromRole="ProjectComment" ToRole="Project_Log" />
+        </EntityType>
+        <Association Name="FK__ProjectCo__UserI__76D69450">
+          <End Type="SSTVN_ProjectManagementModel.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.ProjectComment" Role="ProjectComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="EmployeeID" />
+            </Principal>
+            <Dependent Role="ProjectComment">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ProjectCo__Proje__75E27017">
+          <End Type="SSTVN_ProjectManagementModel.Project_Log" Role="Project_Log" Multiplicity="1" />
+          <End Type="SSTVN_ProjectManagementModel.ProjectComment" Role="ProjectComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Project_Log">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="ProjectComment">
+              <PropertyRef Name="ProjectId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Status">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="InActive" Type="Boolean" />
+          <NavigationProperty Name="Project_Log" Relationship="SSTVN_ProjectManagementModel.FK_Project_Log_Status" FromRole="Status" ToRole="Project_Log" />
+        </EntityType>
+        <Association Name="FK_Project_Log_Status">
+          <End Type="SSTVN_ProjectManagementModel.Status" Role="Status" Multiplicity="0..1" />
+          <End Type="SSTVN_ProjectManagementModel.Project_Log" Role="Project_Log" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Status">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="Project_Log">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSTVN_ProjectManagementModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Assignments">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Assignment">
+              <MappingFragment StoreEntitySet="Assignment">
+                <ScalarProperty Name="DeteledDateTime" ColumnName="DeteledDateTime" />
+                <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+                <ScalarProperty Name="WhoModified" ColumnName="WhoModified" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Point" ColumnName="Point" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ClosedDateTime" ColumnName="ClosedDateTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="AssignedDateTime" ColumnName="AssignedDateTime" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ProID" ColumnName="ProID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Branches">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Branch">
+              <MappingFragment StoreEntitySet="Branch">
+                <ScalarProperty Name="UnLoad" ColumnName="UnLoad" />
+                <ScalarProperty Name="Branch1" ColumnName="Branch" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employees">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Employee">
+              <MappingFragment StoreEntitySet="Employees">
+                <ScalarProperty Name="RealEmployeeId" ColumnName="RealEmployeeId" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Photo" ColumnName="Photo" />
+                <ScalarProperty Name="TerminatedDateTime" ColumnName="TerminatedDateTime" />
+                <ScalarProperty Name="DOB" ColumnName="DOB" />
+                <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Permission" ColumnName="Permission" />
+                <ScalarProperty Name="TeamID" ColumnName="TeamID" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GroupTeams">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.GroupTeam">
+              <MappingFragment StoreEntitySet="GroupTeam">
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="TeamLeader" ColumnName="TeamLeader" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Project_Logs">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Project_Log">
+              <MappingFragment StoreEntitySet="Project Log">
+                <ScalarProperty Name="PriorityId" ColumnName="PriorityId" />
+                <ScalarProperty Name="ScopeTypeId" ColumnName="ScopeTypeId" />
+                <ScalarProperty Name="ProjectDescription" ColumnName="ProjectDescription" />
+                <ScalarProperty Name="SSTQuote" ColumnName="SSTQuote" />
+                <ScalarProperty Name="ProjectAwarded" ColumnName="ProjectAwarded" />
+                <ScalarProperty Name="SeismicDesignCategory" ColumnName="SeismicDesignCategory" />
+                <ScalarProperty Name="ExposureCategory" ColumnName="ExposureCategory" />
+                <ScalarProperty Name="WindSpeed" ColumnName="WindSpeed" />
+                <ScalarProperty Name="SladThickness" ColumnName="SladThickness" />
+                <ScalarProperty Name="RFI" ColumnName="RFI" />
+                <ScalarProperty Name="ProjectContractor" ColumnName="ProjectContractor" />
+                <ScalarProperty Name="ProjectDrawingsDate" ColumnName="ProjectDrawingsDate" />
+                <ScalarProperty Name="ProjectEngineer" ColumnName="ProjectEngineer" />
+                <ScalarProperty Name="ProjectZip" ColumnName="ProjectZip" />
+                <ScalarProperty Name="ProjectState" ColumnName="ProjectState" />
+                <ScalarProperty Name="ProjectCity" ColumnName="ProjectCity" />
+                <ScalarProperty Name="ProjectAddress" ColumnName="ProjectAddress" />
+                <ScalarProperty Name="ReviewedBy" ColumnName="ReviewedBy" />
+                <ScalarProperty Name="SimpsonContact" ColumnName="SimpsonContact" />
+                <ScalarProperty Name="RequestedBy" ColumnName="RequestedBy" />
+                <ScalarProperty Name="SimpsonDueDate" ColumnName="SimpsonDueDate" />
+                <ScalarProperty Name="EstimatedWorkInMI" ColumnName="EstimatedWorkInMI" />
+                <ScalarProperty Name="DescriptionOfServiceId" ColumnName="DescriptionOfServiceId" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="DescriptionOfService" ColumnName="DescriptionOfService" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+                <ScalarProperty Name="CountTeam" ColumnName="CountTeam" />
+                <ScalarProperty Name="SubjectEmail" ColumnName="SubjectEmail" />
+                <ScalarProperty Name="CompletedDateTime" ColumnName="CompletedDateTime" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="EOR" ColumnName="EOR" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="DatetoVN" ColumnName="DatetoVN" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="ScopeID" ColumnName="ScopeID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScopeOfServices">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.ScopeOfService">
+              <MappingFragment StoreEntitySet="ScopeOfService">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="UnLoad" ColumnName="UnLoad" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="ScopeName" ColumnName="ScopeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ScopeTypes">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.ScopeType">
+              <MappingFragment StoreEntitySet="ScopeType">
+                <ScalarProperty Name="Unload" ColumnName="Unload" />
+                <ScalarProperty Name="OrderList" ColumnName="OrderList" />
+                <ScalarProperty Name="ScopeTypeDescription" ColumnName="ScopeTypeDescription" />
+                <ScalarProperty Name="ScopeId" ColumnName="ScopeId" />
+                <ScalarProperty Name="ScopeTypeId" ColumnName="ScopeTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeLogs">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.TimeLog">
+              <MappingFragment StoreEntitySet="TimeLog">
+                <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="SubTaskID" ColumnName="SubTaskID" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="ProID" ColumnName="ProID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TimeLogViews">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.TimeLogView">
+              <MappingFragment StoreEntitySet="TimeLogView">
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Hours" ColumnName="Hours" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="SubTasks" ColumnName="SubTasks" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="Branch" ColumnName="Branch" />
+                <ScalarProperty Name="ScopeName" ColumnName="ScopeName" />
+                <ScalarProperty Name="Parent" ColumnName="Parent" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewApprovedVacationPerDates">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.ViewApprovedVacationPerDate">
+              <MappingFragment StoreEntitySet="ViewApprovedVacationPerDate">
+                <ScalarProperty Name="TotalValue" ColumnName="TotalValue" />
+                <ScalarProperty Name="RequestType" ColumnName="RequestType" />
+                <ScalarProperty Name="OrderDateTime" ColumnName="OrderDateTime" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubTasks">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.SubTask">
+              <MappingFragment StoreEntitySet="SubTask">
+                <ScalarProperty Name="LastModifiedDateTime" ColumnName="LastModifiedDateTime" />
+                <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+                <ScalarProperty Name="UnLoad" ColumnName="UnLoad" />
+                <ScalarProperty Name="OrderSubTasks" ColumnName="OrderSubTasks" />
+                <ScalarProperty Name="SubTasks" ColumnName="SubTasks" />
+                <ScalarProperty Name="ScopeID" ColumnName="ScopeID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ViewTimeLogPerDates">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.ViewTimeLogPerDate">
+              <MappingFragment StoreEntitySet="ViewTimeLogPerDate">
+                <ScalarProperty Name="TotalHours" ColumnName="TotalHours" />
+                <ScalarProperty Name="WorkedDate" ColumnName="WorkedDate" />
+                <ScalarProperty Name="Team" ColumnName="Team" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Roles">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Role">
+              <MappingFragment StoreEntitySet="Roles">
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="UserRoles" TypeName="SSTVN_ProjectManagementModel.UserRoles" StoreEntitySet="UserRoles">
+            <EndProperty Name="Role">
+              <ScalarProperty Name="RoleId" ColumnName="RoleId" />
+            </EndProperty>
+            <EndProperty Name="Employee">
+              <ScalarProperty Name="EmployeeID" ColumnName="UserId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ProjectComments">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.ProjectComment">
+              <MappingFragment StoreEntitySet="ProjectComment">
+                <ScalarProperty Name="ModifiedDT" ColumnName="ModifiedDT" />
+                <ScalarProperty Name="DeletedDT" ColumnName="DeletedDT" />
+                <ScalarProperty Name="CreatedDT" ColumnName="CreatedDT" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Status">
+            <EntityTypeMapping TypeName="SSTVN_ProjectManagementModel.Status">
+              <MappingFragment StoreEntitySet="Status">
+                <ScalarProperty Name="InActive" ColumnName="InActive" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

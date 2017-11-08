@@ -1,0 +1,15 @@
+﻿@model  myEmployeeData
+@{
+    var imgUrl = string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~")) + "/images/Hinh 3 x 4/H" + @Model.Id + "_" + @Model.FullName + ".JPG";
+}
+<div class="col-md-12">
+    <div class="widget-user-header ">
+        <div class="widget-user-image">
+            <img class="img-circle" src="@imgUrl" alt="User Avatar">
+        </div>
+        <!-- /.widget-user-image -->
+        <h3 class="widget-user-username">@Model.FullName</h3>
+        <h5 class="widget-user-desc">@Model.Role</h5>
+       
+    </div>
+</div>

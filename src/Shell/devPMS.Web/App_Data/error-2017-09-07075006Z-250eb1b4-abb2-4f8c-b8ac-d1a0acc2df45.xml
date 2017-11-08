@@ -1,0 +1,182 @@
+﻿<error errorId="250eb1b4-abb2-4f8c-b8ac-d1a0acc2df45" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="App_Web_0wmaepv5" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at ASP._Page_Views_Project__ProjectCommentEdit_cshtml.Execute() in c:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Views\Project\_ProjectCommentEdit.cshtml:line 18&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)&#xD;&#xA;   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)&#xD;&#xA;   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;&gt;c__DisplayClass2b.&lt;BeginInvokeAction&gt;b__1c()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;BeginInvokeAction&gt;b__1e(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecuteCore&gt;b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecute&gt;b__15(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;BeginProcessRequest&gt;b__5(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-09-07T07:50:06.2743578Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_ACCEPT:text/html, */*; q=0.01&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=B9ZSOH0qh_TQoreMkcf1cDzv1Hh2xrPbtE3MDzvrMUZvLHzWGo9DHWdvwoQZ-1tPikI-EpjtryMFTjFbfqH6dDA7WQLED0FTXrybxS8hapI1; Log In=A42F2E278F36EC368D12477F49952FA6AC1604F48D1A0AFC163393CBF75784328B2B43A5CE1A914CD70E452567901147D71B5139D88D4FD2F079D1E8210512D7EAEF60F437207C9FB9FA8E9FEB461AE4E70492B4AC1322E1E1DB6474A7E8D7FFC7516DDD94D265A9F0C086233E925E4D766548D823D36565F70662FD9DA3C5E0CCB02C84F78A29E87398BFB5FDF61360F8C82DE299E1CFB7763E3F35C2992C7123FC01655A0AEA4877970A26D37320A1D0965F0E4EF866FA91FDD4D310CD66AB049A0E0708EA4E9B559CFACDC6B869B5635FC6BE574B78E70B578B805B09A7620AB13C89AA8EDF1CBC62A0D56D9D80F1138D0AD2DA668B0956561CAAFB9D39A7EE135AA881A65206D15854FE18B1901A36B42BFE14B5148D2A0BE63C9816B82EE4AE740C76730D0A0154E297A6AB5A8B9A2AB40766A7406E54675377A067142A431503CC8F21A9FA6C6518D01A58C9B43649FA3A951B21A663E35F3CEFA000850B675811117D65A6AC5852B4E5AFC003B726B2DC390E885DB43294ED2B1745A1784EC1CB3A087E1D7FDC9AEBC36CC4332F98EBD3E6FDBB09686B02C4C9B9379F5714C2D1F38785F4FE4BE80D47A5479BE8E6353AF9CCBFE6CD53E0D8FF3B82BAD6C4014EE3D2444B2102B05D5C7EDC0B; treeView=Projectsactive&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Detail/38061&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Accept: text/html, */*; q=0.01&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=B9ZSOH0qh_TQoreMkcf1cDzv1Hh2xrPbtE3MDzvrMUZvLHzWGo9DHWdvwoQZ-1tPikI-EpjtryMFTjFbfqH6dDA7WQLED0FTXrybxS8hapI1; Log In=A42F2E278F36EC368D12477F49952FA6AC1604F48D1A0AFC163393CBF75784328B2B43A5CE1A914CD70E452567901147D71B5139D88D4FD2F079D1E8210512D7EAEF60F437207C9FB9FA8E9FEB461AE4E70492B4AC1322E1E1DB6474A7E8D7FFC7516DDD94D265A9F0C086233E925E4D766548D823D36565F70662FD9DA3C5E0CCB02C84F78A29E87398BFB5FDF61360F8C82DE299E1CFB7763E3F35C2992C7123FC01655A0AEA4877970A26D37320A1D0965F0E4EF866FA91FDD4D310CD66AB049A0E0708EA4E9B559CFACDC6B869B5635FC6BE574B78E70B578B805B09A7620AB13C89AA8EDF1CBC62A0D56D9D80F1138D0AD2DA668B0956561CAAFB9D39A7EE135AA881A65206D15854FE18B1901A36B42BFE14B5148D2A0BE63C9816B82EE4AE740C76730D0A0154E297A6AB5A8B9A2AB40766A7406E54675377A067142A431503CC8F21A9FA6C6518D01A58C9B43649FA3A951B21A663E35F3CEFA000850B675811117D65A6AC5852B4E5AFC003B726B2DC390E885DB43294ED2B1745A1784EC1CB3A087E1D7FDC9AEBC36CC4332F98EBD3E6FDBB09686B02C4C9B9379F5714C2D1F38785F4FE4BE80D47A5479BE8E6353AF9CCBFE6CD53E0D8FF3B82BAD6C4014EE3D2444B2102B05D5C7EDC0B; treeView=Projectsactive&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Detail/38061&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/EditCommentView" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\EditCommentView" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="commentId=94" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="65234" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/EditCommentView" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/EditCommentView" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html, */*; q=0.01" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=B9ZSOH0qh_TQoreMkcf1cDzv1Hh2xrPbtE3MDzvrMUZvLHzWGo9DHWdvwoQZ-1tPikI-EpjtryMFTjFbfqH6dDA7WQLED0FTXrybxS8hapI1; Log In=A42F2E278F36EC368D12477F49952FA6AC1604F48D1A0AFC163393CBF75784328B2B43A5CE1A914CD70E452567901147D71B5139D88D4FD2F079D1E8210512D7EAEF60F437207C9FB9FA8E9FEB461AE4E70492B4AC1322E1E1DB6474A7E8D7FFC7516DDD94D265A9F0C086233E925E4D766548D823D36565F70662FD9DA3C5E0CCB02C84F78A29E87398BFB5FDF61360F8C82DE299E1CFB7763E3F35C2992C7123FC01655A0AEA4877970A26D37320A1D0965F0E4EF866FA91FDD4D310CD66AB049A0E0708EA4E9B559CFACDC6B869B5635FC6BE574B78E70B578B805B09A7620AB13C89AA8EDF1CBC62A0D56D9D80F1138D0AD2DA668B0956561CAAFB9D39A7EE135AA881A65206D15854FE18B1901A36B42BFE14B5148D2A0BE63C9816B82EE4AE740C76730D0A0154E297A6AB5A8B9A2AB40766A7406E54675377A067142A431503CC8F21A9FA6C6518D01A58C9B43649FA3A951B21A663E35F3CEFA000850B675811117D65A6AC5852B4E5AFC003B726B2DC390E885DB43294ED2B1745A1784EC1CB3A087E1D7FDC9AEBC36CC4332F98EBD3E6FDBB09686B02C4C9B9379F5714C2D1F38785F4FE4BE80D47A5479BE8E6353AF9CCBFE6CD53E0D8FF3B82BAD6C4014EE3D2444B2102B05D5C7EDC0B; treeView=Projectsactive" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Detail/38061" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <queryString>
+    <item name="commentId">
+      <value string="94" />
+    </item>
+  </queryString>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="B9ZSOH0qh_TQoreMkcf1cDzv1Hh2xrPbtE3MDzvrMUZvLHzWGo9DHWdvwoQZ-1tPikI-EpjtryMFTjFbfqH6dDA7WQLED0FTXrybxS8hapI1" />
+    </item>
+    <item name="Log In">
+      <value string="A42F2E278F36EC368D12477F49952FA6AC1604F48D1A0AFC163393CBF75784328B2B43A5CE1A914CD70E452567901147D71B5139D88D4FD2F079D1E8210512D7EAEF60F437207C9FB9FA8E9FEB461AE4E70492B4AC1322E1E1DB6474A7E8D7FFC7516DDD94D265A9F0C086233E925E4D766548D823D36565F70662FD9DA3C5E0CCB02C84F78A29E87398BFB5FDF61360F8C82DE299E1CFB7763E3F35C2992C7123FC01655A0AEA4877970A26D37320A1D0965F0E4EF866FA91FDD4D310CD66AB049A0E0708EA4E9B559CFACDC6B869B5635FC6BE574B78E70B578B805B09A7620AB13C89AA8EDF1CBC62A0D56D9D80F1138D0AD2DA668B0956561CAAFB9D39A7EE135AA881A65206D15854FE18B1901A36B42BFE14B5148D2A0BE63C9816B82EE4AE740C76730D0A0154E297A6AB5A8B9A2AB40766A7406E54675377A067142A431503CC8F21A9FA6C6518D01A58C9B43649FA3A951B21A663E35F3CEFA000850B675811117D65A6AC5852B4E5AFC003B726B2DC390E885DB43294ED2B1745A1784EC1CB3A087E1D7FDC9AEBC36CC4332F98EBD3E6FDBB09686B02C4C9B9379F5714C2D1F38785F4FE4BE80D47A5479BE8E6353AF9CCBFE6CD53E0D8FF3B82BAD6C4014EE3D2444B2102B05D5C7EDC0B" />
+    </item>
+    <item name="treeView">
+      <value string="Projectsactive" />
+    </item>
+  </cookies>
+</error>

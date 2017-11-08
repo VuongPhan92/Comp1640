@@ -1,0 +1,177 @@
+﻿<error errorId="c8492d93-06c8-46e5-9ce3-f5395848e230" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.Web.HttpException" message="The controller for path '/Project/Detail/38946' was not found or does not implement IController." source="System.Web.Mvc" detail="System.Web.HttpException (0x80004005): Execution of the child request failed. Please examine the InnerException for more information. ---&gt; System.Web.HttpException (0x80004005): The controller for path '/Project/Detail/38946' was not found or does not implement IController.&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.GetControllerInstance(RequestContext requestContext, Type controllerType)&#xD;&#xA;   at System.Web.Mvc.DefaultControllerFactory.CreateController(RequestContext requestContext, String controllerName)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.ProcessRequestInit(HttpContextBase httpContext, IController&amp; controller, IControllerFactory&amp; factory)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContextBase httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.BeginProcessRequest(HttpContext httpContext, AsyncCallback callback, Object state)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.&lt;&gt;c__DisplayClass7.&lt;BeginProcessRequest&gt;b__6()&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerWrapper.Wrap[TResult](Func`1 func)&#xD;&#xA;   at System.Web.Mvc.HttpHandlerUtil.ServerExecuteHttpHandlerAsyncWrapper.BeginProcessRequest(HttpContext context, AsyncCallback cb, Object extraData)&#xD;&#xA;   at System.Web.HttpServerUtility.ExecuteInternal(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage, VirtualPath path, VirtualPath filePath, String physPath, Exception error, String queryStringOverride)&#xD;&#xA;   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm, Boolean setPreviousPage)&#xD;&#xA;   at System.Web.HttpServerUtility.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)&#xD;&#xA;   at System.Web.HttpServerUtilityWrapper.Execute(IHttpHandler handler, TextWriter writer, Boolean preserveForm)&#xD;&#xA;   at System.Web.Mvc.Html.ChildActionExtensions.ActionHelper(HtmlHelper htmlHelper, String actionName, String controllerName, RouteValueDictionary routeValues, TextWriter textWriter)&#xD;&#xA;   at System.Web.Mvc.Html.ChildActionExtensions.RenderAction(HtmlHelper htmlHelper, String actionName, String controllerName)&#xD;&#xA;   at ASP._Page_Views_Project_Detail_cshtml.Execute() in c:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Views\Project\Detail.cshtml:line 215&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.Mvc.WebViewPage.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.WebPages.StartPage.RunPage()&#xD;&#xA;   at System.Web.WebPages.StartPage.ExecutePageHierarchy()&#xD;&#xA;   at System.Web.WebPages.WebPageBase.ExecutePageHierarchy(WebPageContext pageContext, TextWriter writer, WebPageRenderingBase startPage)&#xD;&#xA;   at System.Web.Mvc.RazorView.RenderView(ViewContext viewContext, TextWriter writer, Object instance)&#xD;&#xA;   at System.Web.Mvc.BuildManagerCompiledView.Render(ViewContext viewContext, TextWriter writer)&#xD;&#xA;   at System.Web.Mvc.ViewResultBase.ExecuteResult(ControllerContext context)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResult(ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultFilterRecursive(IList`1 filters, Int32 filterIndex, ResultExecutingContext preContext, ControllerContext controllerContext, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionResultWithFilters(ControllerContext controllerContext, IList`1 filters, ActionResult actionResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;&gt;c__DisplayClass2b.&lt;BeginInvokeAction&gt;b__1c()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;BeginInvokeAction&gt;b__1e(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecuteCore&gt;b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecute&gt;b__15(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;BeginProcessRequest&gt;b__5(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-09-05T04:06:06.5601240Z" statusCode="500">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:no-cache&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_PRAGMA:no-cache&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=zYVCHvwwVBpkWetIwE3vEev-CieIsJbpEGbFbtI0HTdqNWnd0WRtqtzPlaSi2fjooy_02AVrGR7dFWdZHqnp3q8q1PZz6Q4915QmacYzlqE1; Log In=1CA71351836665B9D8845AC7B86C860D5310A1FCC16BD7419870F334C75DE166A37A7CB4076B2B3BCFC0FABD5A699AC5C10A37C79C99CD13EA39CBC5C52405BF7FB6E012615569331B5E2A172156C62F2A6F61DB2B5CC776AE5D934F1599CFFB7E8F7FEB5D0458ECD76F4F6702F6B5F0342D4C7A3E7B3856366453E1877076857DFFB000CA31E19F2054A945DB0551A72B845C8425FF00094CCC225432C2E06EDF6839ECC3867AC9B438B4BB3F0DD7785FE8E7DAA9561E138FF8CA037A39343027372452A0B74952CB14F5430264404BCC721109FD7AF15C434FD7B7F8367BFD84527455B56A253E35E285B88646843FC3990E055E3396DB6BE53E1E604F3953094C1B4F7B36D62E4C989ED9F76FB9AD838C006D0CCF45BB4266CAFABF179F6916915EF097B52002D37EB9EF5AFCAD5766E83EC38E7AEE287C0D85D99B2AFDA6E8614C6118AFD5F6972FB477175FF7D210D0B7ED9064F4BBD117DCF3DD6BAFF6189B58F901D5F0514428727D2C9FD197CFDD9BE8130C975FE5DB08CCBCFC11F90989A55C92F75ED51AEE61EFB4EE0E364808F5195B49883175450319CE544C28F9D93441FEC38F46E43D2B58FD8FB2BDDC10D4AFA8BAB2BFBAD5A64152B1F1C9A18B371ACEE7DB34E07E8AFEE6146E0D; treeView=Projectsactive&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Table/6158d11d-3ef9-4a2d-82b4-a7d100381d68?filter=INTAKE&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: no-cache&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Pragma: no-cache&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=zYVCHvwwVBpkWetIwE3vEev-CieIsJbpEGbFbtI0HTdqNWnd0WRtqtzPlaSi2fjooy_02AVrGR7dFWdZHqnp3q8q1PZz6Q4915QmacYzlqE1; Log In=1CA71351836665B9D8845AC7B86C860D5310A1FCC16BD7419870F334C75DE166A37A7CB4076B2B3BCFC0FABD5A699AC5C10A37C79C99CD13EA39CBC5C52405BF7FB6E012615569331B5E2A172156C62F2A6F61DB2B5CC776AE5D934F1599CFFB7E8F7FEB5D0458ECD76F4F6702F6B5F0342D4C7A3E7B3856366453E1877076857DFFB000CA31E19F2054A945DB0551A72B845C8425FF00094CCC225432C2E06EDF6839ECC3867AC9B438B4BB3F0DD7785FE8E7DAA9561E138FF8CA037A39343027372452A0B74952CB14F5430264404BCC721109FD7AF15C434FD7B7F8367BFD84527455B56A253E35E285B88646843FC3990E055E3396DB6BE53E1E604F3953094C1B4F7B36D62E4C989ED9F76FB9AD838C006D0CCF45BB4266CAFABF179F6916915EF097B52002D37EB9EF5AFCAD5766E83EC38E7AEE287C0D85D99B2AFDA6E8614C6118AFD5F6972FB477175FF7D210D0B7ED9064F4BBD117DCF3DD6BAFF6189B58F901D5F0514428727D2C9FD197CFDD9BE8130C975FE5DB08CCBCFC11F90989A55C92F75ED51AEE61EFB4EE0E364808F5195B49883175450319CE544C28F9D93441FEC38F46E43D2B58FD8FB2BDDC10D4AFA8BAB2BFBAD5A64152B1F1C9A18B371ACEE7DB34E07E8AFEE6146E0D; treeView=Projectsactive&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Table/6158d11d-3ef9-4a2d-82b4-a7d100381d68?filter=INTAKE&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/Detail/38946" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\Detail\38946" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="26114" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/Detail/38946" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/Detail/38946" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_PRAGMA">
+      <value string="no-cache" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=zYVCHvwwVBpkWetIwE3vEev-CieIsJbpEGbFbtI0HTdqNWnd0WRtqtzPlaSi2fjooy_02AVrGR7dFWdZHqnp3q8q1PZz6Q4915QmacYzlqE1; Log In=1CA71351836665B9D8845AC7B86C860D5310A1FCC16BD7419870F334C75DE166A37A7CB4076B2B3BCFC0FABD5A699AC5C10A37C79C99CD13EA39CBC5C52405BF7FB6E012615569331B5E2A172156C62F2A6F61DB2B5CC776AE5D934F1599CFFB7E8F7FEB5D0458ECD76F4F6702F6B5F0342D4C7A3E7B3856366453E1877076857DFFB000CA31E19F2054A945DB0551A72B845C8425FF00094CCC225432C2E06EDF6839ECC3867AC9B438B4BB3F0DD7785FE8E7DAA9561E138FF8CA037A39343027372452A0B74952CB14F5430264404BCC721109FD7AF15C434FD7B7F8367BFD84527455B56A253E35E285B88646843FC3990E055E3396DB6BE53E1E604F3953094C1B4F7B36D62E4C989ED9F76FB9AD838C006D0CCF45BB4266CAFABF179F6916915EF097B52002D37EB9EF5AFCAD5766E83EC38E7AEE287C0D85D99B2AFDA6E8614C6118AFD5F6972FB477175FF7D210D0B7ED9064F4BBD117DCF3DD6BAFF6189B58F901D5F0514428727D2C9FD197CFDD9BE8130C975FE5DB08CCBCFC11F90989A55C92F75ED51AEE61EFB4EE0E364808F5195B49883175450319CE544C28F9D93441FEC38F46E43D2B58FD8FB2BDDC10D4AFA8BAB2BFBAD5A64152B1F1C9A18B371ACEE7DB34E07E8AFEE6146E0D; treeView=Projectsactive" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Table/6158d11d-3ef9-4a2d-82b4-a7d100381d68?filter=INTAKE" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="zYVCHvwwVBpkWetIwE3vEev-CieIsJbpEGbFbtI0HTdqNWnd0WRtqtzPlaSi2fjooy_02AVrGR7dFWdZHqnp3q8q1PZz6Q4915QmacYzlqE1" />
+    </item>
+    <item name="Log In">
+      <value string="1CA71351836665B9D8845AC7B86C860D5310A1FCC16BD7419870F334C75DE166A37A7CB4076B2B3BCFC0FABD5A699AC5C10A37C79C99CD13EA39CBC5C52405BF7FB6E012615569331B5E2A172156C62F2A6F61DB2B5CC776AE5D934F1599CFFB7E8F7FEB5D0458ECD76F4F6702F6B5F0342D4C7A3E7B3856366453E1877076857DFFB000CA31E19F2054A945DB0551A72B845C8425FF00094CCC225432C2E06EDF6839ECC3867AC9B438B4BB3F0DD7785FE8E7DAA9561E138FF8CA037A39343027372452A0B74952CB14F5430264404BCC721109FD7AF15C434FD7B7F8367BFD84527455B56A253E35E285B88646843FC3990E055E3396DB6BE53E1E604F3953094C1B4F7B36D62E4C989ED9F76FB9AD838C006D0CCF45BB4266CAFABF179F6916915EF097B52002D37EB9EF5AFCAD5766E83EC38E7AEE287C0D85D99B2AFDA6E8614C6118AFD5F6972FB477175FF7D210D0B7ED9064F4BBD117DCF3DD6BAFF6189B58F901D5F0514428727D2C9FD197CFDD9BE8130C975FE5DB08CCBCFC11F90989A55C92F75ED51AEE61EFB4EE0E364808F5195B49883175450319CE544C28F9D93441FEC38F46E43D2B58FD8FB2BDDC10D4AFA8BAB2BFBAD5A64152B1F1C9A18B371ACEE7DB34E07E8AFEE6146E0D" />
+    </item>
+    <item name="treeView">
+      <value string="Projectsactive" />
+    </item>
+  </cookies>
+</error>

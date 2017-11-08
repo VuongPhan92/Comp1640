@@ -1,0 +1,296 @@
+﻿@section MoreStyles{
+    <!--daterangepicker-->
+    <link href="~/vendors/daterangepicker/daterangepicker.css" rel="stylesheet">
+
+}
+
+@{
+    ViewBag.Title = "TimeTracking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!DOCTYPE html>
+<div class="">
+    <div class="page-title">
+        <div class="title_left">
+            <h3>@ViewBag.ShortCutNav <small>Time Tracking</small></h3>
+        </div>
+        <div class="title_right">
+            <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search for...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">Go!</button>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="clearfix"></div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="x_panel">
+                <div class="x_title">
+
+                    <h2>Team</h2>
+                    <ul class="nav navbar-right panel_toolbox">
+                        <li>
+                            <a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li>
+                                    <a href="#">Settings 1</a>
+                                </li>
+                                <li>
+                                    <a href="#">Settings 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="close-link"><i class="fa fa-close"></i></a>
+                        </li>
+                    </ul>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="x_content">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                            <ul class="pagination pagination-split"></ul>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="form-group col-md-12">
+                            <label class="control-label col-md-12">Project</label>
+                            <div class="col-md-4 col-xs-12">
+                                <input maxlength="100" type="text" list="teamlist" class="form-control" placeholder="Select Team" id="team" />
+                                <datalist id="teamlist"></datalist>
+                            </div>
+                            <div id="reportrange" class=" col-md-8 col-xs-12">
+                                <i class="glyphicon glyphicon-calendar fa fa-calendar "></i>&nbsp;
+                                <span></span> <b class="caret"></b>
+                            </div>
+                        </div>
+
+                        <hr />
+                    </div>
+
+                    <div id="emp" class="">
+                        <!-- hidden-->
+                        <div class="col-md-8 collapse " id="vuong" role="tabpanel" data-example-id="togglable-tabs">
+                            <ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#tab_content1" id="home-tab" role="tab" data-toggle="tab" aria-expanded="true">Time Log</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content2" role="tab" id="profile-tab" data-toggle="tab" aria-expanded="false">Projects Worked on</a>
+                                </li>
+                                <li role="presentation" class="">
+                                    <a href="#tab_content3" role="tab" id="profile-tab2" data-toggle="tab" aria-expanded="false">Not sure yet</a>
+                                </li>
+                            </ul>
+                            <div id="myTabContent" class="tab-content">
+                                <div role="tabpanel" class="tab-pane fade active in" id="tab_content1" aria-labelledby="home-tab">
+                                    <!-- start recent activity -->
+                                    <!-- end recent activity -->
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content2" aria-labelledby="profile-tab">
+                                    <!-- start user projects -->
+                                    <table class="data table table-striped no-margin">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Project Name</th>
+                                                <th>Client Company</th>
+                                                <th class="hidden-phone">Hours Spent</th>
+                                                <th>Contribution</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody></tbody>
+                                    </table>
+                                    <!-- end user projects -->
+                                </div>
+                                <div role="tabpanel" class="tab-pane fade" id="tab_content3" aria-labelledby="profile-tab">
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--end hidden-->
+                    </div>
+                 
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts{
+    <!--moment-->
+    <script type="text/javascript" src="~/vendors/moment/min/moment.min.js"></script>
+    <!--daterangepicker-->
+    <script type="text/javascript" src="~/vendors/daterangepicker/daterangepicker.js"></script>
+
+    <!--scripts-->
+    <script>
+        $(document).ready(function () {
+
+            $.ajax({
+                type: "POST",
+                url: "LoadTeamList",
+                contentType: "application/json; charset=utf-8",
+                //data: disputeKeyDataJSON,
+                dataType: "json",
+                success: function (data) {
+                    if (data.success == "false");
+                    else {
+                        $.each(data.teamList, function (val, element) {
+                            $('#teamlist').append(new Option(element.Team, element.ID));
+                        })
+                    }
+                },
+                error: function () {
+                    alert("Error1");
+                }
+            })
+
+        });
+
+        $(function () {
+
+            var start = moment().startOf('month');
+            var end = moment().endOf('month');
+
+            function cb(start, end) {
+
+                $('#reportrange span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
+
+            }
+
+            $('#reportrange').daterangepicker({
+                startDate: start,
+                "showCustomRangeLabel": false,
+               
+                endDate: end,
+                ranges: {
+
+                    'Today': [moment(), moment()],
+                    'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+                    'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+                    'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+                    'This Month': [moment().startOf('month'), moment().endOf('month')],
+                    'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+                }
+            }, cb);
+
+            cb(start, end);
+
+        });
+       
+        $(function () {
+            $('#team').click(function () {
+                var selectedTeamId = $(this).val();
+                getEmpByTeamId(selectedTeamId);
+            })
+        })
+
+        function getEmpByTeamId(teamId) {
+            var disputeKeyDataObj = {
+                'id': teamId
+            };
+
+            var disputeKeyDataJSON = JSON.stringify(disputeKeyDataObj);
+
+            $.ajax({
+                type: "POST",
+                url: "LoadEmpByTeamId",
+                contentType: "application/json; charset=utf-8",
+                data: disputeKeyDataJSON,
+                dataType: "json",
+                success: function (data) {
+                    if (data.success == "false");
+                    else {
+                        var photo = "/images/user.png"
+                        $('#emp').empty();
+                        $.each(data.empList, function (val, element) {
+
+                            // var photo = 'http://105vm-w764-sql-ddo/SSTVN/PMSAPI/api/Image/Getemployeeimage/' + element.Photo;
+
+                            if (element.TerminatedDateTime == null) {
+                                var javascriptDate = new Date(element.DOB.match(/\d+/)[0] * 1);
+                                var DOB = javascriptDate.getMonth() + 1 + '/' + javascriptDate.getDate() + '/' + javascriptDate.getFullYear();
+                                $('#emp').append(
+                                                    '<div class="col-md-4 col-sm-4 col-xs-12 profile_details">'
+                                           + '<div class="well profile_view" id='+element.ID+'>'
+
+                                           + ' <div class="col-sm-12">'
+
+                                           + '  <h4 class="brief"><i>' + element.Position + '</i></h4>'
+                                           + '<div class="left col-xs-6">'
+                                           + '<strong>' + element.FullName + '</strong>'
+                                           + ' <p><strong>DOB: </strong> ' + DOB + ' </p>'
+                                           + '      <ul class="list-unstyled">'
+                                           + '        <li><i class="fa fa-building"></i> Email: ' + element.Email + ' </li>'
+                                           + '  <li><i class="fa fa-phone"></i> Phone: </li>'
+                                           + ' </ul>'
+                                           + '  </div>'
+                                           + '   <div class="right col-xs-5 text-center">'
+                                           + '    <img src="' + photo + '" alt="" class="img-circle img-responsive">'
+                                           + '    </div>'
+                                           + '    </div>'
+                                           + '  <div class="col-xs-12 bottom text-center">'
+                                           + '  <div class="col-xs-12 col-sm-6 emphasis">'
+                                           + '  <p class="ratings">'
+                                                //+ '   <a>4.0</a>'
+                                                //+ '  <a href="#"><span class="fa fa-star"></span></a>'
+                                                // + '   <a href="#"><span class="fa fa-star"></span></a>'
+                                                // + '  <a href="#"><span class="fa fa-star"></span></a>'
+                                                // + '  <a href="#"><span class="fa fa-star"></span></a>'
+                                                //+ '  <a href="#"><span class="fa fa-star-o"></span></a>'
+                                           + ' </p>'
+                                           + '   </div>'
+                                           + ' <div class="col-xs-12 col-sm-6 emphasis">'
+                                           + ' <button type="button" class="btn btn-success btn-xs"> <i class="fa fa-user">'
+                                           + '      </i> <i class="fa fa-comments-o"></i> </button>'
+                                           + '<button type="button" class="btn btn-primary btn-xs" id="viewdetails'+element.ID +'"> '
+                                           + '      <i class="fa fa-user"> </i> View Profile'
+                                           + '    </button>'
+                                           + '    </div>'
+                                           + '   </div>'
+                                           + '    </div>'
+                                           + '  </div>'
+                                           )
+                            }
+                            else {
+                            }
+
+                        });
+
+                    }
+                },
+                error: function () {
+                    alert("Error2");
+                }
+            });
+        }
+       $(document).on('click', '#emp', function () {
+            document.getElementById("vuong").removeAttribute("collapse")
+        });
+     
+      
+
+        function GenerateTimeLogTable(userId, selectedMonth) {
+            var table = document.getElementById("timelogtable");
+            var header = table.createTHead();
+            var tableRow = table.insertRow();
+            var footer = table.createTFoot();
+            var rowDate = header.insertRow(0);
+            var rowDay = header.insertRow(1);
+            var rowWorked = footer.insertRow(0);
+            var rowRequired = footer.insertRow(1);
+        }
+    </script>
+}

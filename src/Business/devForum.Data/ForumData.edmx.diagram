@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="15b3f1b5ab404d458f66169631b71e22" Name="Diagram1">
+        <EntityTypeShape EntityType="SSTVN_ForumModel.Category" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.Comment" Width="1.5" PointX="5.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.CommentLike" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.Reply" Width="1.5" PointX="7.5" PointY="6.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.ReplyLike" Width="1.5" PointX="9.75" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.Thread" Width="1.5" PointX="3" PointY="4.875" IsExpanded="true" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_Thread_Category" ManuallyRouted="false" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_Comment_Thread" ManuallyRouted="false" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_CommentLike_Comment" ManuallyRouted="false" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_Reply_Comment" ManuallyRouted="false" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_Reply_Thread" ManuallyRouted="false" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_ReplyLike_Reply" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.Tag" Width="1.5" PointX="0.75" PointY="3.125" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.ThreadVideo" Width="1.5" PointX="5.25" PointY="10" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_ThreadVideos_Thread" />
+        <AssociationConnector Association="SSTVN_ForumModel.ThreadTag" />
+        <EntityTypeShape EntityType="SSTVN_ForumModel.ThreadLike" Width="1.5" PointX="5" PointY="7.375" />
+        <AssociationConnector Association="SSTVN_ForumModel.FK_ThreadLike_Thread" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

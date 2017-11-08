@@ -1,0 +1,706 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SSTVN_ForumModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CategoryName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UrlSeo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="CategoryDescription" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Checked" Type="bit" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThreadId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="CreatedDT" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DeletedDT" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="CommentLike">
+          <Key>
+            <PropertyRef Name="CommentId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="CommentId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Like" Type="bit" />
+          <Property Name="DisLike" Type="bit" />
+        </EntityType>
+        <EntityType Name="Reply">
+          <Key>
+            <PropertyRef Name="ReplyId" />
+          </Key>
+          <Property Name="ReplyId" Type="int" Nullable="false" />
+          <Property Name="ThreadId" Type="int" Nullable="false" />
+          <Property Name="CommentId" Type="int" Nullable="false" />
+          <Property Name="ParentReplyId" Type="int" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Body" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="CreatedDT" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="DeletedDT" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="ReplyLike">
+          <Key>
+            <PropertyRef Name="ReplyId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ReplyId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Like" Type="bit" />
+          <Property Name="DisLike" Type="bit" />
+        </EntityType>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TagName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="UrlSeo" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Checked" Type="bit" />
+        </EntityType>
+        <EntityType Name="Thread">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+          </Key>
+          <Property Name="ThreadId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="CategoryId" Type="int" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+          <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Meta" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="UrlSeo" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="IsPublished" Type="bit" Nullable="false" />
+          <Property Name="View" Type="int" Nullable="false" />
+          <Property Name="Image" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedDT" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="ModifiedDT" Type="datetime2" Precision="7" />
+          <Property Name="DeletedDT" Type="datetime2" Precision="7" />
+        </EntityType>
+        <EntityType Name="ThreadLike">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ThreadId" Type="int" Nullable="false" />
+          <Property Name="UserId" Type="int" Nullable="false" />
+          <Property Name="Like" Type="bit" />
+          <Property Name="DisLike" Type="bit" />
+        </EntityType>
+        <EntityType Name="ThreadTag">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="ThreadId" Type="int" Nullable="false" />
+          <Property Name="TagId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ThreadVideo">
+          <Key>
+            <PropertyRef Name="ThreadVideoId" />
+          </Key>
+          <Property Name="ThreadVideoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ThreadId" Type="int" Nullable="false" />
+          <Property Name="VideoUrl" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="VideoThumbnail" Type="varchar" MaxLength="200" />
+          <Property Name="VideoSiteName" Type="varchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK_Comment_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentLike_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="CommentLike" Type="Self.CommentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="CommentId" />
+            </Principal>
+            <Dependent Role="CommentLike">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reply_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="CommentId" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reply_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReplyLike_Reply">
+          <End Role="Reply" Type="Self.Reply" Multiplicity="1" />
+          <End Role="ReplyLike" Type="Self.ReplyLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reply">
+              <PropertyRef Name="ReplyId" />
+            </Principal>
+            <Dependent Role="ReplyLike">
+              <PropertyRef Name="ReplyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Thread_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Thread" Type="Self.Thread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Thread">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThreadLike_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="ThreadLike" Type="Self.ThreadLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="ThreadLike">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThreadTags_Tag">
+          <End Role="Tag" Type="Self.Tag" Multiplicity="1" />
+          <End Role="ThreadTag" Type="Self.ThreadTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Tag">
+              <PropertyRef Name="TagId" />
+            </Principal>
+            <Dependent Role="ThreadTag">
+              <PropertyRef Name="TagId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThreadTags_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="ThreadTag" Type="Self.ThreadTag" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="ThreadTag">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ThreadVideos_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="ThreadVideo" Type="Self.ThreadVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="ThreadVideo">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SSTVN_ForumModelStoreContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CommentLike" EntityType="Self.CommentLike" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reply" EntityType="Self.Reply" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ReplyLike" EntityType="Self.ReplyLike" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Thread" EntityType="Self.Thread" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThreadLike" EntityType="Self.ThreadLike" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThreadTag" EntityType="Self.ThreadTag" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ThreadVideo" EntityType="Self.ThreadVideo" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Comment_Thread" Association="Self.FK_Comment_Thread">
+            <End Role="Thread" EntitySet="Thread" />
+            <End Role="Comment" EntitySet="Comment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentLike_Comment" Association="Self.FK_CommentLike_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="CommentLike" EntitySet="CommentLike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reply_Comment" Association="Self.FK_Reply_Comment">
+            <End Role="Comment" EntitySet="Comment" />
+            <End Role="Reply" EntitySet="Reply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reply_Thread" Association="Self.FK_Reply_Thread">
+            <End Role="Thread" EntitySet="Thread" />
+            <End Role="Reply" EntitySet="Reply" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReplyLike_Reply" Association="Self.FK_ReplyLike_Reply">
+            <End Role="Reply" EntitySet="Reply" />
+            <End Role="ReplyLike" EntitySet="ReplyLike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Thread_Category" Association="Self.FK_Thread_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Thread" EntitySet="Thread" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThreadLike_Thread" Association="Self.FK_ThreadLike_Thread">
+            <End Role="Thread" EntitySet="Thread" />
+            <End Role="ThreadLike" EntitySet="ThreadLike" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThreadTags_Tag" Association="Self.FK_ThreadTags_Tag">
+            <End Role="Tag" EntitySet="Tag" />
+            <End Role="ThreadTag" EntitySet="ThreadTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThreadTags_Thread" Association="Self.FK_ThreadTags_Thread">
+            <End Role="Thread" EntitySet="Thread" />
+            <End Role="ThreadTag" EntitySet="ThreadTag" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ThreadVideos_Thread" Association="Self.FK_ThreadVideos_Thread">
+            <End Role="Thread" EntitySet="Thread" />
+            <End Role="ThreadVideo" EntitySet="ThreadVideo" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SSTVN_ForumModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="CategoryId" />
+          </Key>
+          <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrlSeo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CategoryDescription" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Checked" Type="Boolean" />
+          <NavigationProperty Name="Threads" Relationship="Self.FK_Thread_Category" FromRole="Category" ToRole="Thread" />
+        </EntityType>
+        <EntityType Name="Comment">
+          <Key>
+            <PropertyRef Name="CommentId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThreadId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDT" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeletedDT" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Thread" Relationship="Self.FK_Comment_Thread" FromRole="Comment" ToRole="Thread" />
+          <NavigationProperty Name="CommentLikes" Relationship="Self.FK_CommentLike_Comment" FromRole="Comment" ToRole="CommentLike" />
+          <NavigationProperty Name="Replies" Relationship="Self.FK_Reply_Comment" FromRole="Comment" ToRole="Reply" />
+        </EntityType>
+        <EntityType Name="CommentLike">
+          <Key>
+            <PropertyRef Name="CommentId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Like" Type="Boolean" />
+          <Property Name="DisLike" Type="Boolean" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_CommentLike_Comment" FromRole="CommentLike" ToRole="Comment" />
+        </EntityType>
+        <EntityType Name="Reply">
+          <Key>
+            <PropertyRef Name="ReplyId" />
+          </Key>
+          <Property Name="ReplyId" Type="Int32" Nullable="false" />
+          <Property Name="ThreadId" Type="Int32" Nullable="false" />
+          <Property Name="CommentId" Type="Int32" Nullable="false" />
+          <Property Name="ParentReplyId" Type="Int32" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="CreatedDT" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="DeletedDT" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Comment" Relationship="Self.FK_Reply_Comment" FromRole="Reply" ToRole="Comment" />
+          <NavigationProperty Name="Thread" Relationship="Self.FK_Reply_Thread" FromRole="Reply" ToRole="Thread" />
+          <NavigationProperty Name="ReplyLikes" Relationship="Self.FK_ReplyLike_Reply" FromRole="Reply" ToRole="ReplyLike" />
+        </EntityType>
+        <EntityType Name="ReplyLike">
+          <Key>
+            <PropertyRef Name="ReplyId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ReplyId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Like" Type="Boolean" />
+          <Property Name="DisLike" Type="Boolean" />
+          <NavigationProperty Name="Reply" Relationship="Self.FK_ReplyLike_Reply" FromRole="ReplyLike" ToRole="Reply" />
+        </EntityType>
+        <EntityType Name="Thread">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+          </Key>
+          <Property Name="ThreadId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryId" Type="Int32" Nullable="false" />
+          <Property Name="Title" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ShortDescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Body" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Meta" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="UrlSeo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IsPublished" Type="Boolean" Nullable="false" />
+          <Property Name="View" Type="Int32" Nullable="false" />
+          <Property Name="CreatedDT" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="ModifiedDT" Type="DateTime" Precision="7" />
+          <Property Name="DeletedDT" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="Category" Relationship="Self.FK_Thread_Category" FromRole="Thread" ToRole="Category" />
+          <NavigationProperty Name="Comments" Relationship="Self.FK_Comment_Thread" FromRole="Thread" ToRole="Comment" />
+          <NavigationProperty Name="Replies" Relationship="Self.FK_Reply_Thread" FromRole="Thread" ToRole="Reply" />
+          <NavigationProperty Name="ThreadVideos" Relationship="SSTVN_ForumModel.FK_ThreadVideos_Thread" FromRole="Thread" ToRole="ThreadVideo" />
+          <NavigationProperty Name="Tags" Relationship="SSTVN_ForumModel.ThreadTag" FromRole="Thread" ToRole="Tag" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="ThreadLikes" Relationship="SSTVN_ForumModel.FK_ThreadLike_Thread" FromRole="Thread" ToRole="ThreadLike" />
+        </EntityType>
+        <Association Name="FK_Thread_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="1" />
+          <End Role="Thread" Type="Self.Thread" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="CategoryId" />
+            </Principal>
+            <Dependent Role="Thread">
+              <PropertyRef Name="CategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Comment_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="Comment">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_CommentLike_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="CommentLike" Type="Self.CommentLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="CommentId" />
+            </Principal>
+            <Dependent Role="CommentLike">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reply_Comment">
+          <End Role="Comment" Type="Self.Comment" Multiplicity="1" />
+          <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Comment">
+              <PropertyRef Name="CommentId" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="CommentId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reply_Thread">
+          <End Role="Thread" Type="Self.Thread" Multiplicity="1" />
+          <End Role="Reply" Type="Self.Reply" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="Reply">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReplyLike_Reply">
+          <End Role="Reply" Type="Self.Reply" Multiplicity="1" />
+          <End Role="ReplyLike" Type="Self.ReplyLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Reply">
+              <PropertyRef Name="ReplyId" />
+            </Principal>
+            <Dependent Role="ReplyLike">
+              <PropertyRef Name="ReplyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SSTVN_ForumEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categories" EntityType="Self.Category" />
+          <EntitySet Name="Comments" EntityType="Self.Comment" />
+          <EntitySet Name="CommentLikes" EntityType="Self.CommentLike" />
+          <EntitySet Name="Replies" EntityType="Self.Reply" />
+          <EntitySet Name="ReplyLikes" EntityType="Self.ReplyLike" />
+          <EntitySet Name="Threads" EntityType="Self.Thread" />
+          <AssociationSet Name="FK_Thread_Category" Association="Self.FK_Thread_Category">
+            <End Role="Category" EntitySet="Categories" />
+            <End Role="Thread" EntitySet="Threads" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Comment_Thread" Association="Self.FK_Comment_Thread">
+            <End Role="Thread" EntitySet="Threads" />
+            <End Role="Comment" EntitySet="Comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_CommentLike_Comment" Association="Self.FK_CommentLike_Comment">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="CommentLike" EntitySet="CommentLikes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reply_Comment" Association="Self.FK_Reply_Comment">
+            <End Role="Comment" EntitySet="Comments" />
+            <End Role="Reply" EntitySet="Replies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reply_Thread" Association="Self.FK_Reply_Thread">
+            <End Role="Thread" EntitySet="Threads" />
+            <End Role="Reply" EntitySet="Replies" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReplyLike_Reply" Association="Self.FK_ReplyLike_Reply">
+            <End Role="Reply" EntitySet="Replies" />
+            <End Role="ReplyLike" EntitySet="ReplyLikes" />
+          </AssociationSet>
+          <EntitySet Name="Tags" EntityType="SSTVN_ForumModel.Tag" />
+          <EntitySet Name="ThreadVideos" EntityType="SSTVN_ForumModel.ThreadVideo" />
+          <AssociationSet Name="FK_ThreadVideos_Thread" Association="SSTVN_ForumModel.FK_ThreadVideos_Thread">
+            <End Role="Thread" EntitySet="Threads" />
+            <End Role="ThreadVideo" EntitySet="ThreadVideos" />
+          </AssociationSet>
+          <AssociationSet Name="ThreadTag" Association="SSTVN_ForumModel.ThreadTag">
+            <End Role="Tag" EntitySet="Tags" />
+            <End Role="Thread" EntitySet="Threads" />
+          </AssociationSet>
+          <EntitySet Name="ThreadLikes" EntityType="SSTVN_ForumModel.ThreadLike" />
+          <AssociationSet Name="FK_ThreadLike_Thread" Association="SSTVN_ForumModel.FK_ThreadLike_Thread">
+            <End Role="Thread" EntitySet="Threads" />
+            <End Role="ThreadLike" EntitySet="ThreadLikes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Tag">
+          <Key>
+            <PropertyRef Name="TagId" />
+          </Key>
+          <Property Name="TagId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TagName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="UrlSeo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Checked" Type="Boolean" />
+          <NavigationProperty Name="Threads" Relationship="SSTVN_ForumModel.ThreadTag" FromRole="Tag" ToRole="Thread" />
+        </EntityType>
+        <EntityType Name="ThreadVideo">
+          <Key>
+            <PropertyRef Name="ThreadVideoId" />
+          </Key>
+          <Property Name="ThreadVideoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ThreadId" Type="Int32" Nullable="false" />
+          <Property Name="VideoUrl" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VideoThumbnail" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VideoSiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Thread" Relationship="SSTVN_ForumModel.FK_ThreadVideos_Thread" FromRole="ThreadVideo" ToRole="Thread" />
+        </EntityType>
+        <Association Name="FK_ThreadVideos_Thread">
+          <End Type="SSTVN_ForumModel.Thread" Role="Thread" Multiplicity="1" />
+          <End Type="SSTVN_ForumModel.ThreadVideo" Role="ThreadVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="ThreadVideo">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ThreadTag">
+          <End Type="SSTVN_ForumModel.Tag" Role="Tag" Multiplicity="*" />
+          <End Type="SSTVN_ForumModel.Thread" Role="Thread" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ThreadLike">
+          <Key>
+            <PropertyRef Name="ThreadId" />
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="ThreadId" Type="Int32" Nullable="false" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
+          <Property Name="Like" Type="Boolean" />
+          <Property Name="DisLike" Type="Boolean" />
+          <NavigationProperty Name="Thread" Relationship="SSTVN_ForumModel.FK_ThreadLike_Thread" FromRole="ThreadLike" ToRole="Thread" />
+        </EntityType>
+        <Association Name="FK_ThreadLike_Thread">
+          <End Type="SSTVN_ForumModel.Thread" Role="Thread" Multiplicity="1" />
+          <End Type="SSTVN_ForumModel.ThreadLike" Role="ThreadLike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Thread">
+              <PropertyRef Name="ThreadId" />
+            </Principal>
+            <Dependent Role="ThreadLike">
+              <PropertyRef Name="ThreadId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SSTVN_ForumModelStoreContainer" CdmEntityContainer="SSTVN_ForumEntities">
+          <EntitySetMapping Name="Categories">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="CategoryName" ColumnName="CategoryName" />
+                <ScalarProperty Name="UrlSeo" ColumnName="UrlSeo" />
+                <ScalarProperty Name="CategoryDescription" ColumnName="CategoryDescription" />
+                <ScalarProperty Name="Checked" ColumnName="Checked" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Comments">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.Comment">
+              <MappingFragment StoreEntitySet="Comment">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="CreatedDT" ColumnName="CreatedDT" />
+                <ScalarProperty Name="DeletedDT" ColumnName="DeletedDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CommentLikes">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.CommentLike">
+              <MappingFragment StoreEntitySet="CommentLike">
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+                <ScalarProperty Name="DisLike" ColumnName="DisLike" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Replies">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.Reply">
+              <MappingFragment StoreEntitySet="Reply">
+                <ScalarProperty Name="ReplyId" ColumnName="ReplyId" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="CommentId" ColumnName="CommentId" />
+                <ScalarProperty Name="ParentReplyId" ColumnName="ParentReplyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="CreatedDT" ColumnName="CreatedDT" />
+                <ScalarProperty Name="DeletedDT" ColumnName="DeletedDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReplyLikes">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.ReplyLike">
+              <MappingFragment StoreEntitySet="ReplyLike">
+                <ScalarProperty Name="ReplyId" ColumnName="ReplyId" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+                <ScalarProperty Name="DisLike" ColumnName="DisLike" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Threads">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.Thread">
+              <MappingFragment StoreEntitySet="Thread">
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="ShortDescription" ColumnName="ShortDescription" />
+                <ScalarProperty Name="Body" ColumnName="Body" />
+                <ScalarProperty Name="Meta" ColumnName="Meta" />
+                <ScalarProperty Name="UrlSeo" ColumnName="UrlSeo" />
+                <ScalarProperty Name="IsPublished" ColumnName="IsPublished" />
+                <ScalarProperty Name="View" ColumnName="View" />
+                <ScalarProperty Name="CreatedDT" ColumnName="CreatedDT" />
+                <ScalarProperty Name="ModifiedDT" ColumnName="ModifiedDT" />
+                <ScalarProperty Name="DeletedDT" ColumnName="DeletedDT" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tags">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.Tag">
+              <MappingFragment StoreEntitySet="Tag">
+                <ScalarProperty Name="Checked" ColumnName="Checked" />
+                <ScalarProperty Name="UrlSeo" ColumnName="UrlSeo" />
+                <ScalarProperty Name="TagName" ColumnName="TagName" />
+                <ScalarProperty Name="TagId" ColumnName="TagId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ThreadVideos">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.ThreadVideo">
+              <MappingFragment StoreEntitySet="ThreadVideo">
+                <ScalarProperty Name="VideoSiteName" ColumnName="VideoSiteName" />
+                <ScalarProperty Name="VideoThumbnail" ColumnName="VideoThumbnail" />
+                <ScalarProperty Name="VideoUrl" ColumnName="VideoUrl" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+                <ScalarProperty Name="ThreadVideoId" ColumnName="ThreadVideoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ThreadTag" TypeName="SSTVN_ForumModel.ThreadTag" StoreEntitySet="ThreadTag">
+            <EndProperty Name="Thread">
+              <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+            </EndProperty>
+            <EndProperty Name="Tag">
+              <ScalarProperty Name="TagId" ColumnName="TagId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ThreadLikes">
+            <EntityTypeMapping TypeName="SSTVN_ForumModel.ThreadLike">
+              <MappingFragment StoreEntitySet="ThreadLike">
+                <ScalarProperty Name="DisLike" ColumnName="DisLike" />
+                <ScalarProperty Name="Like" ColumnName="Like" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="ThreadId" ColumnName="ThreadId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5fdca8435acf46b29f55fc129c19e682" Name="Diagram1" ZoomLevel="89">
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Assignment" Width="1.5" PointX="7.5" PointY="11" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Branch" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Employee" Width="1.5" PointX="5.25" PointY="2.375" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.GroupTeam" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Project_Log" Width="1.5" PointX="5.25" PointY="8.125" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.ScopeOfService" Width="1.5" PointX="0.75" PointY="6.625" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.ScopeType" Width="1.5" PointX="3" PointY="16.75" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.TimeLog" Width="1.5" PointX="7.5" PointY="3.375" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.TimeLogView" Width="1.5" PointX="9.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.ViewApprovedVacationPerDate" Width="1.5" PointX="0.75" PointY="9.75" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Assignment_Employees1" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Assignment_Project_Log" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK__TimeLog__EmpID__149C0161" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Employees_GroupTeam" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeOfService" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Project_Log_ScopeType" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_ScopeType_ScopeOfService" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.SubTask" Width="1.5" PointX="3" PointY="6.625" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_SubTask_ScopeOfService" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.ViewTimeLogPerDate" Width="1.5" PointX="10.375" PointY="5.75" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Role" Width="1.5" PointX="7.5" PointY="7.125" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.UserRoles" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.ProjectComment" Width="1.5" PointX="10.5" PointY="8.75" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK__ProjectCo__UserI__76D69450" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK__ProjectCo__Proje__75E27017" />
+        <EntityTypeShape EntityType="SSTVN_ProjectManagementModel.Status" Width="1.5" PointX="12.375" PointY="0.75" />
+        <AssociationConnector Association="SSTVN_ProjectManagementModel.FK_Project_Log_Status" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

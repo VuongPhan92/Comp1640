@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SmartTAS2012Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'SmartTAS2012.dbo.TransactionView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="TransactionView">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="TA" Type="tinyint" />
+          <Property Name="CtrlID" Type="int" />
+          <Property Name="FirstIn" Type="datetime" />
+          <Property Name="LastOut" Type="datetime" />
+          <Property Name="EventID" Type="varchar" MaxLength="20" />
+          <Property Name="EventName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="255" />
+          <Property Name="UserID" Type="bigint" />
+          <Property Name="TAWeekID" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityContainer Name="SmartTAS2012ModelStoreContainer">
+          <EntitySet Name="TransactionView" EntityType="Self.TransactionView" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [TransactionView].[StaffID] AS [StaffID], 
+    [TransactionView].[TA] AS [TA], 
+    [TransactionView].[CtrlID] AS [CtrlID], 
+    [TransactionView].[FirstIn] AS [FirstIn], 
+    [TransactionView].[LastOut] AS [LastOut], 
+    [TransactionView].[EventID] AS [EventID], 
+    [TransactionView].[EventName] AS [EventName], 
+    [TransactionView].[Name] AS [Name], 
+    [TransactionView].[UserID] AS [UserID], 
+    [TransactionView].[TAWeekID] AS [TAWeekID]
+    FROM [dbo].[TransactionView] AS [TransactionView]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SmartTAS2012Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="SmartTAS2012Entities" annotation:LazyLoadingEnabled="true" >
+          <EntitySet Name="TransactionViews" EntityType="SmartTAS2012Model.TransactionView" />
+        </EntityContainer>
+        <EntityType Name="TransactionView">
+          <Key>
+            <PropertyRef Name="StaffID" />
+          </Key>
+          <Property Name="StaffID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="TA" Type="Byte" />
+          <Property Name="CtrlID" Type="Int32" />
+          <Property Name="FirstIn" Type="DateTime" Precision="3" />
+          <Property Name="LastOut" Type="DateTime" Precision="3" />
+          <Property Name="EventID" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="EventName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UserID" Type="Int64" />
+          <Property Name="TAWeekID" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SmartTAS2012ModelStoreContainer" CdmEntityContainer="SmartTAS2012Entities" >
+          <EntitySetMapping Name="TransactionViews">
+            <EntityTypeMapping TypeName="SmartTAS2012Model.TransactionView">
+              <MappingFragment StoreEntitySet="TransactionView">
+                <ScalarProperty Name="TAWeekID" ColumnName="TAWeekID" />
+                <ScalarProperty Name="UserID" ColumnName="UserID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="EventName" ColumnName="EventName" />
+                <ScalarProperty Name="EventID" ColumnName="EventID" />
+                <ScalarProperty Name="LastOut" ColumnName="LastOut" />
+                <ScalarProperty Name="FirstIn" ColumnName="FirstIn" />
+                <ScalarProperty Name="CtrlID" ColumnName="CtrlID" />
+                <ScalarProperty Name="TA" ColumnName="TA" />
+                <ScalarProperty Name="StaffID" ColumnName="StaffID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @*@Styles.Render("~/Content/css")*@
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/ForumSite.css" rel="stylesheet" />
+    <link href="~/Content/imageupload.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/vendors/summernote-master/dist/summernote.css">
+</head>
+<body>
+    <div class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("SST Forum", "Index", "Forum", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Create Topic", "Index", "Forum")</li>
+                </ul>
+                <!-- Should include search on nav bar -->
+                @*<form class="navbar-form navbar-right" action="~/Bl" method="get" role="search">*@
+                @using (Html.BeginForm("Search", "Blog", FormMethod.Get, new { id = "search-form", @class = "navbar-form navbar-right" }))
+                {
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search" name="s">
+                    </div>
+                    <button type="submit" class="btn btn-default"><span class="glyphicon glyphicon-search"></span></button>
+                }
+                @*</form>*@
+                @Html.Partial("_LoginForumPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        <div class="row">
+            <!-- Blog Entries Column -->
+            <div class="col-md-8">
+                @RenderBody()
+            </div>
+
+            <!-- Blog Sidebar Widgets Column -->
+            <div class="col-md-4">
+                @*@Html.Action("Sidebars", "Blog")*@
+            </div>
+        </div>
+        <hr />
+        <footer>
+            <p>&copy;2017 All Rights Reserved. PMS - Simpson Strong-tie Forum </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    <script src="~/vendors/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="~/vendors/summernote-master/dist/summernote.min.js"></script>
+    @RenderSection("scripts", required: false)
+</body>
+</html>

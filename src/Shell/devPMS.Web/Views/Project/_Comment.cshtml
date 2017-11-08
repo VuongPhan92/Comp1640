@@ -1,0 +1,23 @@
+﻿@model  devPMS.Data.Project_Log
+<div class="box-footer box-comments no-bg no-border">
+    <div id="comments">
+        @{Html.RenderAction("ShowComment", "Project", new { ProjectId = Model.ID });}
+    </div>
+    <div id="TestingCommentSummerCode"></div>
+    <div id="comments-loading"class="overlay" style="display:none">
+        <i class="fa fa-refresh fa-spin"></i>
+    </div>
+</div>
+<div class="box-footer">
+    <a id="Commentbtn" href="#CommentTextBox" class="btn btn-sm btn-default" data-toggle="collapse">Comment</a>
+    @using (Ajax.BeginForm("AddComment", "Project", new { ProjectId = Model.ID }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "comments", InsertionMode = InsertionMode.Replace, LoadingElementId = "comments-loading", OnSuccess="onCommentSuccess" }, new { @class = "collapse", @id = "CommentTextBox" }))
+    {
+        <textarea id="Comment_summernote" name="Body"></textarea>
+        <div class="pull-right checkbox">
+            <label><input type="checkbox" name="IsWatching"> Watch this project</label>
+            <button id="CommentSubmitbtn" type="submit" class="btn btn-primary btn-sm editable-submit" disabled>Add</button>
+            <a id="CommentCancelBtn" href="#CommentTextBox" class="btn btn-sm btn-default" data-toggle="collapse">Cancel</a>
+        </div>
+    }
+</div>
+

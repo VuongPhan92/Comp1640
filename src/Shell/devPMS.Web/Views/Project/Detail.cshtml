@@ -1,0 +1,567 @@
+﻿@model  devPMS.Data.Project_Log
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_LayoutLTE.cshtml";
+    var priorityListForDemo = (List<devPMS.WebCore.Services.Priority>)ViewBag.PriorityListForDemo;
+}
+
+@section MoreStyles{
+    <!-- Creative-->
+    <link href="~/Content/VuongCSS.css" rel="stylesheet">
+
+    <!-- Bootstrap-editable-->
+    <link href="~/vendors/bootstrap3-editable/css/bootstrap-editable.css" rel="stylesheet" />
+
+    <!-- select2-->
+    <link href="~/vendors/select2/select2.min.css" rel="stylesheet" />
+
+    <!-- summernote -->
+    <link href="~/vendors/summernote-master/dist/summernote.css" rel="stylesheet" />
+}
+
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>
+        Project Detail
+        <small>it all starts here</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Project</a></li>
+        <li class="active"> Detail</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+    <!-- Default box -->
+    <div class="box box-primary">
+        <div class="box-header with-border">
+            @Html.HiddenFor(m => m.ScopeID)
+            <h3 class="box-title" name="ProjectNo" id="projectNumber" value="@Model.ID">
+                @Model.ProjectNo \
+                <span class="box-title"> <a id="ProjectName" data-type="text" data-pk="@Model.ID" data-name="ProjectName" data-original-title="Edit project name" name="ProjectName">@Model.Name </a></span>
+            </h3>
+            @*<div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Edit">
+                        <i class="fa fa-pencil"></i>
+                    </button>
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fa fa-minus"></i>
+                    </button>
+                </div>*@
+        </div>
+        <div class="box-body">
+            <div class="row">
+                <!-- top buttons-->
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="col-md-8 col-sm-8 col-xs-12">
+                        <div class="mtop20">
+                            <a href="#" class="btn btn-sm btn-default">Log Work</a>
+                            <a href="#" class="btn btn-sm btn-default">Email contact</a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-4 col-xs-12">
+                        <div class="mtop20 pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-default">Watching</button>
+                                <a href="#" class="btn btn-sm btn-default no-bg">1234</a>
+                            </div>
+                            <a href="#" class="btn btn-sm btn-primary">Log Work</a>
+                            <a href="#" class="btn btn-sm btn-default">Export</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /top buttons-->
+
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <!-- start General detail-->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>General</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <ul class="property-list two-cols">
+                                        <li class="item">
+                                            <div class="wrap">
+                                                <strong class="name">Scope of Service:</strong>
+
+                                                <a id="@Model.ID" data-type="select" data-pk="1" data-name="ScopeID" data-original-title="Edit scope of service">@Model.ScopeOfService.ScopeName</a>
+                                            </div>
+                                        </li>
+                                        <li class="item item-right">
+                                            <div class="wrap">
+                                                <strong class="name">Status: </strong>
+                                                @Helpers.Status(Html, Model.Status)
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="wrap">
+                                                <strong class="name" name="TaskDescription">Scope Type:</strong>
+                                                @if (Model.ScopeType == null)
+                                                {
+                                                    <a id="ScopeTypeId" data-type="select2" data-pk="@Model.ID" data-value="" data-name="ScopeTypeId" data-original-title="Edit Type"></a>
+                                                }
+                                                else
+                                                {
+                                                    <a id="ScopeTypeId" data-type="select2" data-pk="@Model.ID" data-value="@Model.ScopeTypeId" data-name="ScopeTypeId" data-original-title="Edit Type">@Model.ScopeType.ScopeTypeDescription</a>
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="item item-right">
+                                            <div class="wrap">
+                                                <strong class="name" name="BranchList">Branch: </strong>
+
+                                                <a id="BranchList" data-type="select2" data-pk="@Model.ID" data-value="@Model.Branch" data-name="BranchList" data-original-title="Edit branch">@Model.Branch</a>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="wrap">
+                                                <strong class="name">Priority:</strong>
+                                                @{
+                                                    var obj = priorityListForDemo.SingleOrDefault(p => p.PriorityId == Model.PriorityId);
+                                                    if (obj != null)
+                                                    {
+                                                        <a id="Priority" data-type="select2" data-pk="@Model.ID" data-name="Priority" data-value="@Model.PriorityId" data-original-title="Edit Project Priority">@obj.PriorityDescription</a>
+                                                    }
+                                                    else
+                                                    {
+                                                        <a id="Priority" data-type="select2" data-pk="@Model.ID" data-name="Priority" data-value="@Model.PriorityId" data-original-title="Edit Project Priority"></a>
+                                                    }
+
+                                                }
+                                            </div>
+                                        </li>
+                                        <li class="item item-right">
+                                            <div class="wrap">
+                                                <strong class="name">Simpson Due:</strong>
+                                                <a id="SimpsonDueDate" data-type="combodate" data-pk="@Model.ID" data-name="projectSimpsonDuedate" data-original-title="Edit Simpson due date" data-format="YYYY-MM-DD" data-viewformat="DD/MMM/YYYY" date-value="@Model.SimpsonDueDate">@string.Format("{0:dd/MMM/yyyy}", Model.SimpsonDueDate)</a>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="wrap">
+                                                <strong class="name">Labels:</strong>N/A
+                                            </div>
+                                        </li>
+                                        <li class="item item-right">
+                                            <div class="wrap">
+                                                <strong class="name">Vietnam Due:</strong>
+                                                <a id="VNDueDate" data-type="combodate" data-pk="@Model.ID" data-name="projectVietNameDuedate" data-original-title="Edit VietNam due date" data-format="YYYY-MM-DD" data-viewformat="DD/MMM/YYYY" date-value="@Model.DueDate">@string.Format("{0:dd/MMM/yyyy}", Model.DueDate)</a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                @*<div class="col-md-12 col-sm-12 col-xs-12">
+                                        <dl class="dl-horizontal">
+                                            <dt>Completed:</dt>
+                                            <dd>
+                                                <div class="progress progress-striped active m-b-sm">
+                                                    <div style="width: 60%;" class="progress-bar"></div>
+                                                </div>
+                                                <small>Project completed in <strong>60%</strong>. Remaining close the project, sign a contract and invoice.</small>
+                                            </dd>
+                                        </dl>
+                                    </div>*@
+                            </div>
+                            <br />
+
+                            <!-- tabs project data -->
+                            <div class="nav-tabs-custom">
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">More Specific Information</a></li>
+                                    <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Project Data</a></li>
+                                    <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Sub Tasks</a></li>
+                                    <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                                </ul>
+                                <div class="tab-content">
+                                    <div class="tab-pane active" id="tab_1">
+                                        <ul class="property-list">
+                                            <li class="item">
+                                                <div class="wrap">
+                                                    <strong class="name" name="ProjectAddress">Project Address:</strong>
+                                                    <a id="Address" data-type="text" data-pk="@Model.ID" data-name="ProjectAddress" data-original-title="Edit project address">@Model.ProjectAddress</a>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="wrap">
+                                                    <strong class="name" name="ProjectCity">Project City:</strong>
+                                                    <a id="City" data-type="text" data-pk="@Model.ID" data-name="ProjectCity" data-original-title="Edit project city">@Model.ProjectCity</a>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="wrap">
+                                                    <strong class="name" name="ProjectState">Project State:</strong>
+
+                                                    <a id="State" data-type="text" data-pk="@Model.ID" data-name="ProjectState" data-original-title="Edit project state">@Model.ProjectState</a>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="wrap">
+                                                    <strong class="name" name="ProjectZipCode">Project Zip/Code:</strong>
+
+                                                    <a id="Zip" data-type="text" data-pk="@Model.ID" data-name="ProjectZip" data-original-title="Edit project zip code">@Model.ProjectZip</a>
+                                                </div>
+                                            </li>
+                                            <li class="item">
+                                                <div class="wrap">
+                                                    <strong class="name" name="ProjectEngineer">Project Engineer (EOR):</strong>
+                                                    <a id="EOR" data-type="text" data-pk="@Model.ID" data-name="EOR" data-original-title="Edit Project Engineer">@Model.EOR</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_2">
+                                        The European languages are members of the same family. Their separate existence is a myth.
+                                        For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ
+                                        in their grammar, their pronunciation and their most common words. Everyone realizes why a
+                                        new common language would be desirable: one could refuse to pay expensive translators. To
+                                        achieve this, it would be necessary to have uniform grammar, pronunciation and more common
+                                        words. If several languages coalesce, the grammar of the resulting language is more simple
+                                        and regular than that of the individual languages.
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                    <div class="tab-pane" id="tab_3">
+                                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                                    </div>
+                                    <!-- /.tab-pane -->
+                                </div>
+                                <!-- /.tab-content -->
+                            </div>
+                            <!-- /tabs project data -->
+                        </div>
+                    </section>
+                    <!-- end General detail-->
+                    <!-- start Description detail-->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>Description</h2>
+                            <div class="box-tools pull-right" id="summernote_toggle">
+                                <button type="button" id="editDescription" class="btn btn-box-tool" data-toggle="tooltip" title="Edit">
+                                    <i class="fa fa-pencil"></i>
+                                </button>
+                                <button id="submitBtn" type="submit" style="display:none" class="btn btn-primary btn-sm editable-submit">
+                                    <i class="glyphicon glyphicon-ok"></i>
+                                </button>
+                                <button id="cancelBtn" type="button" style="display:none" class="btn btn-default btn-sm editable-cancel">
+                                    <i class="glyphicon glyphicon-remove"></i>
+                                </button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+
+                        <div class="panel-body">
+                            <div id="Description_summernote">
+                                @Html.Raw(@Model.Description)
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end Description detail-->
+                    <!-- start activity detail-->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>Activity</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="" role="tabpanel" data-example-id="togglable-tabs">
+                                <!-- tabs activity -->
+                                <div class="nav-tabs-custom">
+                                    <ul class="nav nav-tabs">
+                                        <li class="active"><a href="#tab_contentComments" data-toggle="tab" aria-expanded="true">Comments</a></li>
+                                        <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+                                    </ul>
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="myTabContent">
+                                            <div role="tabpanel" class="tab-pane fade active in" id="tab_contentComments" aria-labelledby="comment-tab">
+                                                @Html.Partial("_Comment", Model)
+                                            </div>
+                                        </div>
+                                        <!-- /.tab-pane -->
+                                    </div>
+                                    <!-- /.tab-content -->
+                                </div>
+                                <!-- /tabs activity -->
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end activity detail-->
+                </div>
+
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <!-- start people sidebar -->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>People</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="property-list">
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name" name="Assignee">Participants:</strong>
+                                            <div>
+                                                <a class="project-people" id="participantList" data-html="" tabindex="0" role="button" data-toggle="popover">
+                                                </a>
+                                            </div>
+                                            <a id="addParticipants" href=" #">Assign to ...</a>
+                                           
+                                            @Html.Action("AddParticipants")
+                                            @*<a href="#" class="btn btn-warning" data-toggle="popover" tabindex="3" data-trigger="focus" title="Popover title" data-content="The last tip!">Last popover</a>*@
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name" name="SimpsonContact">Simpson Contact:</strong>
+                                            <a id="Contact" data-type="text" data-pk="@Model.ID" data-name="SimpsonContact" data-original-title="Edit Simpson Contact">@Model.SimpsonContact</a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name" name="Requestor">Requestor:</strong>
+                                            <a id="Requestor" data-type="text" data-pk="@Model.ID" data-name="RequestedBy" data-original-title="Edit Requestor">@Model.RequestedBy</a>
+                                        </div>
+                                    </li>
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name" name="Reviewer">Reviewer:</strong>
+                                            <a id="Reviewer" data-type="text" data-pk="@Model.ID" data-name="ReviewedBy" data-original-title="Edit Reviewer">@Model.ReviewedBy</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end people sidebar -->
+                    <!-- start dates sidebar -->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>Dates</h2>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <ul class="property-list">
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name">Created:</strong>
+                                            <a id="CreatedDate" data-type="date" data-pk="@Model.ID" data-name="DatetoVN" data-original-title="Edit created date"> @Model.DatetoVN</a>
+                                        </div>
+                                    </li>
+                                    @*<li class="item">
+                                            <div class="wrap">
+                                                <strong class="name">Vietnam Due:</strong>
+                                                <a id="VNDueDate" data-type="date" data-pk="@Model.ID" data-name="DatetoVN" data-original-title="Edit VietNam due date">@Model.DatetoVN</a>
+                                            </div>
+                                        </li>
+                                        <li class="item">
+                                            <div class="wrap">
+                                                <strong class="name">Simpson Due:</strong>
+                                                <a id="SimpsonDueDate" data-type="date" data-pk="@Model.ID" data-name="projectvnduedate" data-original-title="Edit Simpson due date">@Model.DueDate</a>
+                                            </div>
+                                        </li>*@
+                                    <li class="item">
+                                        <div class="wrap">
+                                            <strong class="name">Updated: </strong>
+                                            <a id="UpdateDate" data-type="date" data-pk="@Model.ID" data-name="projectvnduedate" data-original-title="">@Model.LastModifiedDateTime</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- end dates sidebar -->
+                    <!-- start project files -->
+                    <section class="panel">
+                        <div class="x_title">
+                            <h2>Project Files</h2>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-toggle="tooltip" title="Add File">
+                                    <i class="fa fa-plus"></i>
+                                </button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-body">
+                            <h2>Contract Documents</h2>
+                            <div class="clearfix"></div>
+                            <ul class="list-unstyled project_files">
+                                <li>
+                                    <a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
+                                </li>
+                            </ul>
+                            <hr />
+                            <h2>Final Documents</h2>
+                            <div class="clearfix"></div>
+                            <ul class="list-unstyled project_files">
+                                <li>
+                                    <a href=""><i class="fa fa-file-word-o"></i> Functional-requirements.docx</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-file-pdf-o"></i> UAT.pdf</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-mail-forward"></i> Email-from-flatbal.mln</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-picture-o"></i> Logo.png</a>
+                                </li>
+                                <li>
+                                    <a href=""><i class="fa fa-file-word-o"></i> Contract-10_12_2014.docx</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </section>
+                    <!-- end project files -->
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!-- /.box -->
+</section>
+<!-- /.content -->
+@section scripts{
+    <!-- summernote js-->
+    <script src="~/vendors/summernote-master/dist/summernote.min.js"></script>
+
+    <!-- Moment -->
+    <script src="~/vendors/moment/min/moment.min.js"></script>
+
+    <!-- select2 -->
+    <script src="~/vendors/select2/select2.full.min.js"></script>
+
+    <!-- Bootstrap-editable-->
+    <script src="~/vendors/bootstrap3-editable/js/bootstrap-editable.js"></script>
+    @*<script src="~/Scripts/ProjectDetail.js"></script>*@
+    <script src="~/Scripts/ProjectDetailFV.js"></script>
+    <script>
+        jQuery.fn.clickToggle = function (a, b) {
+            var ab = [b, a];
+            return this.on("click", function () { ab[this._tog ^= 1].call(this); });
+        };
+
+        function onCommentSuccess() {
+            $('#CommentCancelBtn').click();
+        }
+
+        $(document).ready(function () {
+            $('#editDescription').click(this, function () {
+                $('#Description_summernote').summernote({
+                    height: 300
+                });
+                $('#editDescription').attr('style', 'display:none');
+                $('#submitBtn').show();
+                $('#cancelBtn').show();
+
+            })
+            $('#Comment_summernote').summernote({
+                callbacks: {
+                    onChange: function (contents, $editable) {
+                        //console.log('onChange:', contents, $editable);
+                        if ($('#Comment_summernote').summernote('isEmpty')) {
+                            $('#CommentSubmitbtn').prop('disabled', true);
+                        }
+                        else {
+                            $('#CommentSubmitbtn').prop('disabled', false);
+                        }
+                    }
+                },
+                placeholder: 'Write your comment here...',
+                height: 100
+            });
+            $('#Commentbtn').click(this, function () {
+                $('#Commentbtn').hide();
+            });
+            $('#CommentCancelBtn').click(this, function () {
+                $('#Comment_summernote').summernote('reset');
+                $('#Commentbtn').show();
+            });
+
+        });
+
+        $('#submitBtn').click(this, function Update() {
+            $('#Description_summernote').summernote('destroy');
+            $('#editDescription').show();
+            $('#submitBtn').hide();
+            $('#cancelBtn').hide();
+            var id = $('#projectNumber').attr('value');
+            var des = $('#Description_summernote').html();
+            $.ajax({
+                url: '@Url.Action("UpdateDescription", "Project")',
+                type: 'POST',
+                data: { id: id, description: des },
+                async: false,
+                dataType: 'html',
+                //contentType: 'application/json; charset=utf-8',
+                success: function (respond) {
+                    if (respond != null) {
+                        new PNotify({
+                            title: 'Success',
+                            text: 'Project description updated ',
+                            type: 'success',
+                            styling: 'bootstrap3'
+                        });
+                    }
+                    else {
+                        new PNotify({
+                            title: 'Ops,',
+                            text: 'Cannot update description',
+                            type: 'alert',
+                            styling: 'bootstrap3'
+                        });
+
+                    }
+                },
+                error: function () {
+                    new PNotify({
+                        title: 'Ops,',
+                        text: 'Action unable to finish ',
+                        type: 'error',
+                        styling: 'bootstrap3'
+                    });
+                }
+            });
+        });
+
+        $('#cancelBtn').click(this, function () {
+            $('#Description_summernote').summernote('reset');
+            $('#Description_summernote').summernote('destroy');
+            $('#editDescription').show();
+            $('#submitBtn').hide();
+            $('#cancelBtn').hide();
+            //new PNotify({
+            //    title: 'Ops,',
+            //    text: 'Cancel description update',
+            //    type: 'alert',
+            //    styling: 'bootstrap3'
+            //});
+        });
+        $('[data-toggle="popover"]').popover({
+            placement: 'top'
+        });
+        $('#addParticipants').click(this, function () {
+            $('#participantModal').modal();
+        })
+        $('#participants').select2({
+            theme: 'classic'
+        }
+       );
+
+    </script>
+}

@@ -1,0 +1,87 @@
+﻿@model string
+<script>
+    function ProjectTableControl() {
+        if ($('#projectlog').length) {
+            var mTable = $('#projectlog').DataTable({
+                fixedHeader: true,
+                dom: "Blfrtip",
+                buttons: [
+                    {
+                        extend: "copy",
+                        className: "btn-sm"
+                    },
+                    {
+                        extend: "csv",
+                        className: "btn-sm"
+                    },
+                    {
+                        extend: "excel",
+                        className: "btn-sm"
+                    },
+                    {
+                        extend: "pdfHtml5",
+                        className: "btn-sm"
+                    },
+                    {
+                        extend: "print",
+                        className: "btn-sm"
+                    },
+                ],
+                responsive: true,
+                "processing": true,
+                "serverSide": true,
+                "info": true,
+                "stateSave": true,
+                //"searchDelay": 2000,
+                "lengthMenu": [[10, 20, 50, -1], [10, 20, 50, "All"]],
+                "ajax": {
+                    url: "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/Project/AjaxGetJsonProjectData?ShortCutNav=@Model",
+                    type: 'POST'
+                },
+                "columns": [
+                    {
+                        "data": "ProjectNo"
+                        , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            $(nTd).html("<a class='a_projectDetail' href='" + "Detail?Id=" + oData.ID + "'>" + oData.ProjectNo + "</a>");
+                        }
+                    },
+                    { "data": "Name", "width": '30%' },
+                    { "data": "ScopeOfService" },
+                    { "data": "Branch" },
+                    { "data": "DatetoVN" },
+                    { "data": "DueDate" },
+                    { "data": "EOR" },
+                    {
+                        "data": "Status"
+                        , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            switch (oData.Status) {
+                                case "Completed":
+                                    $(nTd).html('<span class="label label-success">' + oData.Status + '</span>');
+                                    break;
+                                case "Unassigned":
+                                    $(nTd).html('<span class="label label-default">' + oData.Status + '</span>');
+                                    break;
+                                case "Canceled":
+                                    $(nTd).html('<span class="label label-warning">' + oData.Status + '</span>');
+                                    break;
+                                case "Hold":
+                                    $(nTd).html('<span class="label label-warning">' + oData.Status + '</span>');
+                                    break;
+                                case "InProgress":
+                                    $(nTd).html('<span class="label label-danger">' + oData.Status + '</span>');
+                                    break;
+                                case "NeedToReview":
+                                    $(nTd).html('<span class="label label-primary">' + "NeedToReview" + '</span>');
+                                    break;
+                                default:
+                                    $(nTd).html('<span class="label label-default">' + 'Open' + '</span>');
+                                    break;
+                            }
+                        }
+                    }
+                ],
+            });
+        }
+
+    }
+</script>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1c857983-ae5b-4540-837a-3fd282689895" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeneralService.xsd" MetadataType="Schema" ID="d84af0db-1fa7-40ef-8351-412942c8cd50" SourceId="1" SourceUrl="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeneralService1.xsd" MetadataType="Schema" ID="2e71a3f2-b57d-4e28-bea2-65698719b51a" SourceId="1" SourceUrl="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc?xsd=xsd1" />
+    <MetadataFile FileName="GeneralService2.xsd" MetadataType="Schema" ID="1a684e92-47cb-4a8e-b920-ab58d4a3d9a8" SourceId="1" SourceUrl="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeneralService.disco" MetadataType="Disco" ID="3cd2ca43-44f7-43ae-8b64-f196d1a6d431" SourceId="1" SourceUrl="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc?disco" />
+    <MetadataFile FileName="GeneralService.wsdl" MetadataType="Wsdl" ID="ca3b057f-0b85-46e7-819c-10beaf1128fd" SourceId="1" SourceUrl="http://105vm-w764-sql-ddo/SSTVN/GeneralService/GeneralService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

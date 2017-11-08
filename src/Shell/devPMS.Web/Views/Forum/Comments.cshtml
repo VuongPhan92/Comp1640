@@ -1,0 +1,74 @@
+﻿@model CommentViewModel
+@using devPMS.Web.Models
+@using SSTVN.DDo.Utility.Extension
+@using devPMS.Web.CustomMembership
+@using devPMS.Web.Controllers
+@{
+    var identity = (HttpContext.Current.User as CusPrincipal).Identity as CusIdentity;
+    
+ }    
+<div class="row">
+    <div class="col-lg-12 article">
+        <h2>Comments:</h2>
+
+        @foreach (var c in Model.Comments)
+        {
+            var idForEditComment = ForumController.CommentIdsForView(c.CommentId,"editComment");
+          
+            
+            <div class="social-feed-box">
+                <div class="social-avatar">
+                    <a href="" class="pull-left">
+                        @*<img alt="image" src="@Html.ImageUrl(c.UserPhoto)">*@
+                    </a>
+                    <div class="media-body">
+                        <a href="#">
+                            @c.UserName
+                        </a>
+                        <small class="text-muted">@c.CreatedDT.TimePassed()</small>
+                    </div>
+                </div>
+                <div class="social-body" >
+                    <!-- body -->
+                    <p>@Html.Raw(c.Body)</p>
+                    <!-- /body -->
+                    <a class="likecount" id="idsd" style="color:green;">
+                        @c.Likes
+                </a>
+                @{
+                    var commentClass = "";
+
+                    if (c.CommentLikes.Any(p => p.Like == true && p.UserId == identity.User.UserId))
+                    {
+                        commentClass = "badge bg-blue";
+
+                    }
+                    else
+                    {
+                        commentClass = "badge";
+                    }
+                }
+                @Ajax.ActionLink("Like", "LikeComment", "Forum", new { userId = @identity.User.UserId, commentId = @c.CommentId, authorId = @c.UserId },
+                                        new AjaxOptions
+                                        {
+                                            HttpMethod = "Get",
+                                            OnSuccess = "UpdateLikeComment",
+                                        }, new { @class = commentClass, @id = "like_comment_" + @c.CommentId })
+
+
+                @if (identity.User.UserId == c.UserId)
+                {
+                    <span role="presentation" aria-hidden="true"></span>
+                    @*<a data-toggle="modal" data-target="edit_comment_modal" id="edit_comment_@c.CommentId">Edit</a>*@
+                    @Html.ActionLink("Edit", "EditComment", "Forum", new {c }, new { @data_toggle = "modal", @data_target = "edit_comment_modal" })                  
+                }
+            </div>
+        </div>
+            <!-- /comment -->
+        }
+    </div>
+    <div>
+     
+    </div>
+</div>
+

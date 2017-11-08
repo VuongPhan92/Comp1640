@@ -1,0 +1,191 @@
+﻿<error errorId="be34cba9-25cb-4854-86ea-a5911942ae0f" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.NullReferenceException" message="Object reference not set to an instance of an object." source="devPMS.Web" detail="System.NullReferenceException: Object reference not set to an instance of an object.&#xD;&#xA;   at devPMS.Web.Controllers.ProjectController.Assign(Int32 projectId, Int32[] empIdArr, String message) in C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Controllers\ProjectController.cs:line 651" user="vuphan@strongtie.com" time="2017-09-10T07:55:44.5476557Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_CONTENT_LENGTH:213&#xD;&#xA;HTTP_CONTENT_TYPE:application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;HTTP_ACCEPT:*/*&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=0NavPtsMesr1lRYimUKOHHhEuUXWRCtqcx04HSvut1KeMPKRnU9DOmoDq0DE_PcFK-MWQ87Y5eH0rirYVEjeBCPFqVNlwHbOzECzbzLHL6Q1; Log In=7154C3495F119DAEAB10F42825FF1B1C3F3E6C956D91DC94808C37D36C4571932A24D7A504B40A4F1B5612A36542E2D21AAD07CADC0F23B483C20761B5FD49A9C1A1DAE22FE8B275506FA56647C02E162507022D8498A1582E4B3F358387D7451A3438D60DB74DB696CAD665521EF6CDD6769560606F1F300C741A1086537A2FBA22CDCF514A5B1B1E0962BE867AF2B494C75171980F272FF813C75AFD39BA8235EC61550B25CAD11F6A03B5C560F9FAD81F00437CF3BA01507EDFFA06E3E639D2F5F9E37ABDA05CE6488051D7BA8747F59A668D5480DE3486B8C16C2C883BA51F91ED65F46FFBFDC3B8D55A0DC5027FC2AA43C2443680C0710E56D4709C56406BE8BAE6366989B789DD9F620FF17B411A0DBF19E735F9C79C9BB555A2EC3C53C4A509DBAE9C3A4F42A22E56AB491D54C1A9BF22C5AE8F11F1E46FE8E63E1D12604FAC8726B56D750D02CDF5311223E988625E3DC9A08581255937F03072F6DC30A95127D0AB81FF957FB14B3071393E734023AE646E384905495BF084821E14861E391D9F1CF583AB2AC2D9359CE8421C08BEC3036E30C4E0F4313C316757AE2330272333AA0EDA37AADE607A6E9CB0AC43F31660E08D356EC51A4F825DA8FA6ACF230C0CCD3442A24CC3271F3590EA&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Project/Detail/38946&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_ORIGIN:http://localhost:5224&#xD;&#xA;HTTP_X_REQUESTED_WITH:XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Connection: keep-alive&#xD;&#xA;Content-Length: 213&#xD;&#xA;Content-Type: application/x-www-form-urlencoded; charset=UTF-8&#xD;&#xA;Accept: */*&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=0NavPtsMesr1lRYimUKOHHhEuUXWRCtqcx04HSvut1KeMPKRnU9DOmoDq0DE_PcFK-MWQ87Y5eH0rirYVEjeBCPFqVNlwHbOzECzbzLHL6Q1; Log In=7154C3495F119DAEAB10F42825FF1B1C3F3E6C956D91DC94808C37D36C4571932A24D7A504B40A4F1B5612A36542E2D21AAD07CADC0F23B483C20761B5FD49A9C1A1DAE22FE8B275506FA56647C02E162507022D8498A1582E4B3F358387D7451A3438D60DB74DB696CAD665521EF6CDD6769560606F1F300C741A1086537A2FBA22CDCF514A5B1B1E0962BE867AF2B494C75171980F272FF813C75AFD39BA8235EC61550B25CAD11F6A03B5C560F9FAD81F00437CF3BA01507EDFFA06E3E639D2F5F9E37ABDA05CE6488051D7BA8747F59A668D5480DE3486B8C16C2C883BA51F91ED65F46FFBFDC3B8D55A0DC5027FC2AA43C2443680C0710E56D4709C56406BE8BAE6366989B789DD9F620FF17B411A0DBF19E735F9C79C9BB555A2EC3C53C4A509DBAE9C3A4F42A22E56AB491D54C1A9BF22C5AE8F11F1E46FE8E63E1D12604FAC8726B56D750D02CDF5311223E988625E3DC9A08581255937F03072F6DC30A95127D0AB81FF957FB14B3071393E734023AE646E384905495BF084821E14861E391D9F1CF583AB2AC2D9359CE8421C08BEC3036E30C4E0F4313C316757AE2330272333AA0EDA37AADE607A6E9CB0AC43F31660E08D356EC51A4F825DA8FA6ACF230C0CCD3442A24CC3271F3590EA&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Project/Detail/38946&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;Origin: http://localhost:5224&#xD;&#xA;X-Requested-With: XMLHttpRequest&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="213" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/Assign" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\Assign" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="33021" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="POST" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/Assign" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/Assign" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_CONTENT_LENGTH">
+      <value string="213" />
+    </item>
+    <item name="HTTP_CONTENT_TYPE">
+      <value string="application/x-www-form-urlencoded; charset=UTF-8" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="*/*" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=0NavPtsMesr1lRYimUKOHHhEuUXWRCtqcx04HSvut1KeMPKRnU9DOmoDq0DE_PcFK-MWQ87Y5eH0rirYVEjeBCPFqVNlwHbOzECzbzLHL6Q1; Log In=7154C3495F119DAEAB10F42825FF1B1C3F3E6C956D91DC94808C37D36C4571932A24D7A504B40A4F1B5612A36542E2D21AAD07CADC0F23B483C20761B5FD49A9C1A1DAE22FE8B275506FA56647C02E162507022D8498A1582E4B3F358387D7451A3438D60DB74DB696CAD665521EF6CDD6769560606F1F300C741A1086537A2FBA22CDCF514A5B1B1E0962BE867AF2B494C75171980F272FF813C75AFD39BA8235EC61550B25CAD11F6A03B5C560F9FAD81F00437CF3BA01507EDFFA06E3E639D2F5F9E37ABDA05CE6488051D7BA8747F59A668D5480DE3486B8C16C2C883BA51F91ED65F46FFBFDC3B8D55A0DC5027FC2AA43C2443680C0710E56D4709C56406BE8BAE6366989B789DD9F620FF17B411A0DBF19E735F9C79C9BB555A2EC3C53C4A509DBAE9C3A4F42A22E56AB491D54C1A9BF22C5AE8F11F1E46FE8E63E1D12604FAC8726B56D750D02CDF5311223E988625E3DC9A08581255937F03072F6DC30A95127D0AB81FF957FB14B3071393E734023AE646E384905495BF084821E14861E391D9F1CF583AB2AC2D9359CE8421C08BEC3036E30C4E0F4313C316757AE2330272333AA0EDA37AADE607A6E9CB0AC43F31660E08D356EC51A4F825DA8FA6ACF230C0CCD3442A24CC3271F3590EA" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Project/Detail/38946" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_ORIGIN">
+      <value string="http://localhost:5224" />
+    </item>
+    <item name="HTTP_X_REQUESTED_WITH">
+      <value string="XMLHttpRequest" />
+    </item>
+  </serverVariables>
+  <form>
+    <item name="__RequestVerificationToken">
+      <value string="ryQexYVsBfjnKDl31NXzwanZxCclEept2kEUo_hwzrlCTZc9_exSjNeVwxBW-3B5j3clI1uFAnT0ZTX94uFSabsCrvOcGftZd89dtz0pqETGM6sh-DzDJZmOM8pD1s000" />
+    </item>
+    <item name="Message">
+      <value string="" />
+    </item>
+    <item name="projectId">
+      <value string="38946" />
+    </item>
+    <item name="X-Requested-With">
+      <value string="XMLHttpRequest" />
+    </item>
+  </form>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="0NavPtsMesr1lRYimUKOHHhEuUXWRCtqcx04HSvut1KeMPKRnU9DOmoDq0DE_PcFK-MWQ87Y5eH0rirYVEjeBCPFqVNlwHbOzECzbzLHL6Q1" />
+    </item>
+    <item name="Log In">
+      <value string="7154C3495F119DAEAB10F42825FF1B1C3F3E6C956D91DC94808C37D36C4571932A24D7A504B40A4F1B5612A36542E2D21AAD07CADC0F23B483C20761B5FD49A9C1A1DAE22FE8B275506FA56647C02E162507022D8498A1582E4B3F358387D7451A3438D60DB74DB696CAD665521EF6CDD6769560606F1F300C741A1086537A2FBA22CDCF514A5B1B1E0962BE867AF2B494C75171980F272FF813C75AFD39BA8235EC61550B25CAD11F6A03B5C560F9FAD81F00437CF3BA01507EDFFA06E3E639D2F5F9E37ABDA05CE6488051D7BA8747F59A668D5480DE3486B8C16C2C883BA51F91ED65F46FFBFDC3B8D55A0DC5027FC2AA43C2443680C0710E56D4709C56406BE8BAE6366989B789DD9F620FF17B411A0DBF19E735F9C79C9BB555A2EC3C53C4A509DBAE9C3A4F42A22E56AB491D54C1A9BF22C5AE8F11F1E46FE8E63E1D12604FAC8726B56D750D02CDF5311223E988625E3DC9A08581255937F03072F6DC30A95127D0AB81FF957FB14B3071393E734023AE646E384905495BF084821E14861E391D9F1CF583AB2AC2D9359CE8421C08BEC3036E30C4E0F4313C316757AE2330272333AA0EDA37AADE607A6E9CB0AC43F31660E08D356EC51A4F825DA8FA6ACF230C0CCD3442A24CC3271F3590EA" />
+    </item>
+  </cookies>
+</error>

@@ -1,0 +1,38 @@
+﻿@helper Tags(System.Web.Mvc.HtmlHelper htmlHelper, ICollection<University.Tag> tags)
+{
+foreach (var tag in tags)
+{
+        <div class="tags-div">@devPMS.Web.ActionLinkExtensions.TagLink(htmlHelper, tag)</div>
+}
+}
+
+@helper Status(System.Web.Mvc.HtmlHelper htmlHelper, string status)
+{
+    switch (status)
+    {
+        case "Completed":
+                <span class="label label-success">@status</span>
+            break;
+        case "Unassigned":
+                <span class="label label-default">@status</span>
+            break;
+        case "Canceled":
+                <span class="label label-warning">@status</span>
+            break;
+        case "Hold":
+                <span class="label label-warning">@status</span>
+            break;
+        case "InProgress":
+                <span class="label label-danger">@status</span>
+            break;
+        case "NeedToReview":
+                <span class="label label-primary">@status</span>
+            break;
+        case "INTAKE":
+                <span class="label label-primary">@status</span>
+            break;
+        default:
+                <span class="label label-primary">Open</span>
+            break;
+    }
+}

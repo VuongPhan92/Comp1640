@@ -1,0 +1,76 @@
+﻿@model IEnumerable<devPMS.Web.Models.TimeTrackingModel>
+
+@{
+    ViewBag.Title = "TransactionView";
+    Layout = "~/Views/Shared/_LayoutLTE.cshtml";
+}
+
+<h2>TransactionView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fullname)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstIn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastOut)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EventNote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ValueVacation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TAWeekID)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fullname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstIn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastOut)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EventNote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ValueVacation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TAWeekID)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

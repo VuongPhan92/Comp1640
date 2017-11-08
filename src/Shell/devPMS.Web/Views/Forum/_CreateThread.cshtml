@@ -1,0 +1,127 @@
+﻿@model devPMS.Web.Models.ThreadsViewModel
+@using devPMS.Web.CustomMembership
+
+@{
+    var identity = (HttpContext.Current.User as CusPrincipal).Identity as CusIdentity;
+    var staticViewModel = devPMS.Web.Controllers.ForumController.ThreadVM;
+}
+<div class="modal-dialog modal-lg ">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h4 class="modal-title pull-left" id="modalLabel"><b>Create new Thread</b></h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        @using (Html.BeginForm("CreateThread", "Forum", FormMethod.Post, new { role = "form", @id="CreateThreadForm" }))
+        {
+            @Html.ValidationSummary(true, "", new { @class = "products-list text-danger" })
+            @Html.AntiForgeryToken()
+            <div class="modal-body">
+                @Html.HiddenFor(m => m.UserId, new { Value = identity.User.UserId })
+                <!-- Title -->
+                <div class="form-group">
+                    <label for="threadTitle" class="form-control-label">Title <span style="color:red; display:inline-block"> * </span></label>
+                    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Title)
+
+                </div>
+                <!-- /Title -->
+
+                <!-- Category -->
+                <div class="form-group">
+                    <label for="CategoryId" class="form-control-label">Category <span style="color:red; display:inline-block"> * </span></label>
+                    @Html.DropDownListFor(m => m.CategoryId, new SelectList(staticViewModel.Categories, "CategoryId", "CategoryName"), new { @class = "form-control select2" })
+                    @Html.ValidationMessageFor(m => m.CategoryId)
+                </div>
+                <!-- /Category -->
+
+                <!-- Thumbnail -->
+                <div class="form-group">
+                    <label>Thumbnail</label>
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <span class="btn btn-default btn-file">
+                                Browse… <input type="file" name="Image">
+                            </span>
+                        </span>
+                        <input type="text" class="form-control" readonly>
+                    </div>
+                    <img id='img-upload' />
+                </div>
+                <!-- /Thumbnail -->
+
+                <!-- Tags -->
+                <div class="form-group">
+                    <label for="TagIds" class="form-control-label">Tags <span style="color:red; display:inline-block"> * </span></label>
+                    @Html.ListBoxFor(m => m.TagStringIds, new SelectList(staticViewModel.Tags, "TagId", "TagName"), new { @class = "form-control select2"})
+                    @Html.ValidationMessageFor(m => m.TagStringIds)
+                    @*<input class='select2' type='hidden' id='tags' style='width:300px' />*@
+                </div>
+                <!-- /Tags -->
+
+                <!-- Short Description -->
+                <div class="form-group">
+                    <label for="ShortDescription" class="form-control-label">Short Description <span style="color:red; display:inline-block"> * </span></label>
+                    @Html.TextAreaFor(m => m.ShortDescription, new { @class = "form-control", @rows = "5" })
+                    @Html.ValidationMessageFor(m => m.ShortDescription)
+                </div>
+                <!-- /Short Description -->
+
+                <!-- Description -->
+                <div class="form-group">
+                    <label for="summerNote" class="form-control-label">Description <span style="color:red; display:inline-block"> * </span></label>
+                    @Html.TextAreaFor(m => m.Body, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(m => m.Body)
+                </div>
+                <!-- /Description -->
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="closeModal" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="createNewThread">Create Thread</button>
+            </div>
+        }
+    </div>
+</div>
+<script>
+  
+
+        $("#CategoryId").select2({
+            placeholder: "Select a Category",
+            width: '100%',
+            multiple: false
+        });
+        $("#TagStringIds").select2({
+            theme: 'classic',
+            tags: true,
+            placeholder: 'Select tags',
+            allowClear: true,
+            //minimumInputLength: 1,
+            width: '100%',
+            
+            createTag: function (tag) {
+                // Check if the option is already there
+                var found = false;
+                $('#TagStringIds option').each(function () {
+                    if ($.trim(tag.term).toUpperCase() === $.trim($(this).text()).toUpperCase()) {
+                        found = true;
+                    }
+                });
+
+                // Show the suggestion only if a match was not found
+                if (!found) {
+                    return {
+                        id: 'new:' + tag.term,
+                        text: tag.term + ' (new)',
+                        isNew: true
+                    };
+                }
+            }
+        });
+        $('#Body').summernote({
+            height: 300
+        });
+        $('.note-codable').attr('required', true).attr('data-summernote', true)
+        $.validator.unobtrusive.parse("#CreateThreadForm");
+</script>

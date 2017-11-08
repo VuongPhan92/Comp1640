@@ -1,0 +1,49 @@
+﻿@model devPMS.Web.Models.ThreadsViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutLTEForum.cshtml";
+}
+<section class="content-header">
+    <h1>
+        Forum
+        <small>chit chat, relax and more</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Forum")"><i class="fa fa-dashboard"></i> Univeristy</a></li>
+        <li class="active"> Index</li>
+    </ol>
+</section>
+<section id="content" class="content">
+    <div class="col-md-8">
+        @if (Model.Threads.Count > 0)
+        {
+            foreach (var athread in Model.Threads)
+            {
+                @Html.Partial("_aThread", athread)
+            }
+        }
+        else
+        {
+            <p>No posts found!</p>
+        }
+
+        @Html.Partial("_Pager", Model)
+    </div>
+</section>
+@section scripts{
+<script>
+    function UpdateLikeNumber(data) {
+        if (data.like != true)
+        {
+            $('#like_' + data.threadId + '').html(data.count + ' <span class="fa fa-thumbs-o-up" ></span>');
+        }
+        else
+        {
+            $('#like_' + data.threadId + '').html(data.count + ' <span class="fa fa-thumbs-o-up thumb-color-blue" ></span>');
+        }     
+        $('#like_thread' + data.threadId).toggleClass("bg-blue");
+    }
+</script>
+
+}

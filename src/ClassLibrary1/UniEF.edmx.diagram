@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="037de1519e42454aa9943866095ff9e5" Name="Diagram1" ZoomLevel="72">
+        <EntityTypeShape EntityType="UniversityModel.Category" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="UniversityModel.Comment" Width="1.5" PointX="3" PointY="14.625" />
+        <EntityTypeShape EntityType="UniversityModel.CommentLike" Width="1.5" PointX="5.25" PointY="9.75" />
+        <EntityTypeShape EntityType="UniversityModel.Employee" Width="1.5" PointX="3" PointY="8.375" />
+        <EntityTypeShape EntityType="UniversityModel.Reply" Width="1.5" PointX="3" PointY="18.5" />
+        <EntityTypeShape EntityType="UniversityModel.ReplyLike" Width="1.5" PointX="5.25" PointY="12.75" />
+        <EntityTypeShape EntityType="UniversityModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2" />
+        <EntityTypeShape EntityType="UniversityModel.Tag" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="UniversityModel.Thread" Width="1.5" PointX="3" PointY="2.625" />
+        <EntityTypeShape EntityType="UniversityModel.ThreadLike" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="UniversityModel.ThreadVideo" Width="1.5" PointX="5.25" PointY="6.625" />
+        <AssociationConnector Association="UniversityModel.FK_Thread_Category" />
+        <AssociationConnector Association="UniversityModel.FK_CommentLike_Comment" />
+        <AssociationConnector Association="UniversityModel.FK_CommentLike_Employees" />
+        <AssociationConnector Association="UniversityModel.FK_ReplyLike_Employees" />
+        <AssociationConnector Association="UniversityModel.FK_ThreadLike_Employees" />
+        <AssociationConnector Association="UniversityModel.FK_ReplyLike_Reply" />
+        <AssociationConnector Association="UniversityModel.FK_ThreadLike_Thread" />
+        <AssociationConnector Association="UniversityModel.FK_ThreadVideo_Thread" />
+        <AssociationConnector Association="UniversityModel.ThreadTag" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

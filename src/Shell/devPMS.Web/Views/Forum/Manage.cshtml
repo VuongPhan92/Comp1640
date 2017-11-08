@@ -1,0 +1,203 @@
+﻿@{
+    ViewBag.Title = "Manage";
+    Layout = "~/Views/Shared/_LayoutLTEForum.cshtml";
+}
+@section MoreStyles{
+    <!-- Datatables -->
+    <link href="~/vendors/datatables.net-bs/css/dataTables.bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+}
+
+<section class="content-header">
+    <h1>
+        Forum
+        <small>Manage</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "Forum")"><i class="fa fa-dashboard"></i> Forum</a></li>
+        <li class="active"> Manage</li>
+    </ol>
+</section>
+<section id="content">
+    <!-- tabs manage data -->
+    <div class="nav-tabs-custom">
+        <ul class="nav nav-tabs">
+            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true">Thread</a></li>
+            <li class=""><a href="#tab_2" data-toggle="tab" aria-expanded="false">Category</a></li>
+            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="false">Tag</a></li>
+            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="tab_1">
+                @Html.Partial("_threads")
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_2">
+                @Html.Partial("_categories")
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_3">
+                @Html.Partial("_tags")
+            </div>
+            <!-- /.tab-pane -->
+        </div>
+        <!-- /.tab-content -->
+    </div>
+    <!-- /tabs manage data -->
+
+    <!-- modal definition-->
+    <div class="row">
+        <div class="modal fade in" id="modal-template" role="dialog" aria-hidden="true">
+            <div id="modal-template-container"></div>
+        </div>
+    </div>
+    <div class="popupWindow" style="overflow:auto" id="popupWindowTemplate"></div>
+    <!-- /modal definition-->
+</section>
+@section scripts{
+    <!-- Datatables -->
+    <script src="~/vendors/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+
+    <script>
+        var dialogCount = 0;
+        $(document).ready(function () {
+            var manageThreadTable = $('#ManageThread').DataTable({
+                "ajax": {
+                    url: "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/Forum/_Thread",
+                type: 'POST'
+                },
+                "columns": [
+                    { "data": "CategoryId" },
+                    { "data": "CategoryName" },
+                    { "data": "UrlSeo" },
+                    { "data": "CategoryDescription" },
+                    {
+                        "data": "CategoryId"
+                        , orderable: false
+                        , searchable: false
+                        , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            $(nTd).html('<td>' +
+                                '<a href="@Url.Action("CategoryUpdate", "Forum")/' + oData.CategoryId + '" class="btn btn-info btn-xs popup"><i class="fa fa-pencil"></i> Edit </a> ' +
+                                '<a href="@Url.Action("CategoryDelete", "Forum")/' + oData.CategoryId + '" class="btn btn-danger btn-xs popup"><i class="fa fa-trash-o"></i> Delete </a>' +
+                            '</td>');
+                        }
+                    }
+                ]
+            });
+
+            var manageCategoryTable = $('#ManageCategory').DataTable({
+                "ajax": {
+                    url: "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/Forum/_Category",
+                    type: 'POST'
+                },
+                "columns": [
+                    { "data": "CategoryId" },
+                    { "data": "CategoryName" },
+                    { "data": "UrlSeo" },
+                    { "data": "CategoryDescription" },
+                    {
+                        "data": "CategoryId"
+                        , orderable: false
+                        , searchable: false
+                        , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            $(nTd).html('<td>' +
+                                '<a href="@Url.Action("CategoryUpdate", "Forum")/' + oData.CategoryId + '" class="btn btn-info btn-xs popup"><i class="fa fa-pencil"></i> Edit </a> ' +
+                                '<a href="@Url.Action("CategoryDelete", "Forum")/' + oData.CategoryId + '" class="btn btn-danger btn-xs popup"><i class="fa fa-trash-o"></i> Delete </a>' +
+                            '</td>');
+                        }
+                    }
+                ]
+            });
+
+            var manageTagTable = $('#ManageTag').DataTable({
+                ajax: {
+                    url: "@string.Format("{0}://{1}{2}", Request.Url.Scheme, Request.Url.Authority, Url.Content("~"))/Forum/_Tag",
+                    type: 'POST'
+                },
+                columns: [
+                    { "data": "TagId" },
+                    { "data": "TagName" },
+                    { "data": "UrlSeo" },
+                    {
+                        "data": "TagId"
+                        , orderable: false
+                        , searchable: false
+                        , "fnCreatedCell": function (nTd, sData, oData, iRow, iCol) {
+                            $(nTd).html('<td>' +
+                                '<a href="@Url.Action("TagUpdate", "Forum")/' + oData.TagId + '" class="btn btn-info btn-xs popup"><i class="fa fa-pencil"></i> Edit </a> ' +
+                                '<a href="@Url.Action("TagDelete", "Forum")/' + oData.TagId + '" class="btn btn-danger btn-xs popup"><i class="fa fa-trash-o"></i> Delete </a>' +
+                            '</td>');
+                        }
+                    }
+                ]
+            });
+
+            $('.tablecontainer').on('click', 'a.popup', function (e) {
+                e.preventDefault();
+                OpenPopup($(this).attr('href'));
+            });
+
+            $('.tab-pane').on('click', 'button.popup', function (e) {
+                e.preventDefault();
+                OpenPopup($(this).attr('href'));
+            });
+
+            //$('#btnCreate').click('button.popup', function (e) {
+            //    e.preventDefault();
+            //    OpenPopup($(this).attr('href'));
+            //});
+
+            function OpenPopup(pageUrl) {
+                if (dialogCount > 0) {
+                    return false;
+                };
+                dialogCount++;
+                var $pageContent = $('<div/>');
+                $pageContent.load(pageUrl, function () {
+                    $('#popupForm', $pageContent).removeData('validator');
+                    $('#popupForm', $pageContent).removeData('unobtrusiveValidation');
+                    $.validator.unobtrusive.parse('form');
+
+                });
+                var template = $("#popupWindowTemplate").clone();
+                template.attr("id", "popupWindow");
+                $dialog = template
+                          .html($pageContent)
+                          .dialog({
+                              draggable: true,
+                              autoOpen: false,
+                              resizable: false,
+                              model: true,
+                              title: 'Popup Dialog',
+                              height: 550,
+                              width: 600,
+                              close: function () {
+                                  $dialog.dialog('destroy').remove();
+                                  dialogCount = 0;
+                              }
+                          })
+
+                $('#popupWindow').on('submit', '#popupForm', function (e) {
+                    var url = $('#popupForm')[0].action;
+                    $.ajax({
+                        type: "POST",
+                        url: url,
+                        data: $('#popupForm').serialize(),
+                        success: function (data) {
+                            if (data.status) {
+                                $dialog.dialog('close');
+                                manageTagTable.ajax.reload();
+                                manageCategoryTable.ajax.reload();
+                            }
+                        }
+                    })
+
+                    e.preventDefault();
+                })
+                $dialog.dialog('open');
+            }
+
+        });
+    </script>
+}

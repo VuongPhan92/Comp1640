@@ -1,0 +1,171 @@
+﻿<error errorId="9cb21626-4d0c-4008-91a0-f155b9a99386" application="/LM/W3SVC/2/ROOT" host="105VN66" type="System.ArgumentException" message="The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Detail(Int32)' in 'devPMS.Web.Controllers.ProjectController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.&#xD;&#xA;Parameter name: parameters" source="System.Web.Mvc" detail="System.ArgumentException: The parameters dictionary contains a null entry for parameter 'Id' of non-nullable type 'System.Int32' for method 'System.Web.Mvc.ActionResult Detail(Int32)' in 'devPMS.Web.Controllers.ProjectController'. An optional parameter must be a reference type, a nullable type, or be declared as an optional parameter.&#xD;&#xA;Parameter name: parameters&#xD;&#xA;   at System.Web.Mvc.ActionDescriptor.ExtractParameterFromDictionary(ParameterInfo parameterInfo, IDictionary`2 parameters, MethodInfo methodInfo)&#xD;&#xA;   at System.Web.Mvc.ReflectedActionDescriptor.Execute(ControllerContext controllerContext, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.ControllerActionInvoker.InvokeActionMethod(ControllerContext controllerContext, ActionDescriptor actionDescriptor, IDictionary`2 parameters)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;BeginInvokeSynchronousActionMethod&gt;b__39(IAsyncResult asyncResult, ActionInvocation innerInvokeState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`2.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethod(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__3d()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.AsyncInvocationWithFilters.&lt;&gt;c__DisplayClass46.&lt;InvokeActionMethodFilterAsynchronouslyRecursive&gt;b__3f()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass33.&lt;BeginInvokeActionMethodWithFilters&gt;b__32(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeActionMethodWithFilters(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;&gt;c__DisplayClass2b.&lt;BeginInvokeAction&gt;b__1c()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.&lt;&gt;c__DisplayClass21.&lt;BeginInvokeAction&gt;b__1e(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResult`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Async.AsyncControllerActionInvoker.EndInvokeAction(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecuteCore&gt;b__1d(IAsyncResult asyncResult, ExecuteCoreState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecuteCore(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.&lt;BeginExecute&gt;b__15(IAsyncResult asyncResult, Controller controller)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.Controller.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Controller.System.Web.Mvc.Async.IAsyncController.EndExecute(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.&lt;BeginProcessRequest&gt;b__5(IAsyncResult asyncResult, ProcessRequestState innerState)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncVoid`1.CallEndDelegate(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.Async.AsyncResultWrapper.WrappedAsyncResultBase`1.End()&#xD;&#xA;   at System.Web.Mvc.MvcHandler.EndProcessRequest(IAsyncResult asyncResult)&#xD;&#xA;   at System.Web.Mvc.MvcHandler.System.Web.IHttpAsyncHandler.EndProcessRequest(IAsyncResult result)&#xD;&#xA;   at System.Web.HttpApplication.CallHandlerExecutionStep.System.Web.HttpApplication.IExecutionStep.Execute()&#xD;&#xA;   at System.Web.HttpApplication.ExecuteStep(IExecutionStep step, Boolean&amp; completedSynchronously)" user="vuphan@strongtie.com" time="2017-09-10T13:43:21.2956270Z">
+  <serverVariables>
+    <item name="ALL_HTTP">
+      <value string="HTTP_CACHE_CONTROL:max-age=0&#xD;&#xA;HTTP_CONNECTION:keep-alive&#xD;&#xA;HTTP_ACCEPT:text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;HTTP_ACCEPT_ENCODING:gzip, deflate, br&#xD;&#xA;HTTP_ACCEPT_LANGUAGE:en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;HTTP_COOKIE:__RequestVerificationToken=FBcaZi_pw_rNRUju5ZExvz0NnOJ3VGbBpZzO2w1K3m7vPZZENievk35wD8QZ3JJ8QC0le53ePEbZqgbPVNem58v9qZWicdaGY8bw9olIglY1; Log In=C60AFCFDDCBF7D8BACEAB64CE69305595E51486D77D35968D5DF2E1BE1C24D16DBA265834040B68D538655A2D81AA9415B47FB778FBC65170E29C788530D35127BC32810C2FBC1CB504F3A5EA4CC47693CBEE4BB8C882B1D65C0E380B88084151F74D54FCAABB7296AA6F645DD97564054A9976BE5F2D8E81F36A438FEA265B3E5A7F1C37183A40D4810F0C2E4C89D3CBBA42035FAA146C7A85BAA107CA371C48CC13B0177249C6F21337FDAD91381FCE1436A95B1F8B43FB31EC3406797F88B21E2FB54326AE92F0CE443D3E441FCF1482F10CA01657A54AB4A58805CF7E74BDFC3B4DD89013E81DDE639D653BAB5C73A231D2664A373AE2F6F8CE72C7A230F99578185538C3EDC3DAA4078541A9BCFCCDA17669BEE203B9019776677C328F432A22D638B5A728034ACD5D8613E77B635551F8128C403F786E1EEE937DEE828B0D7314BB4970E8DF9C5E05E01AD859B330A6275AE7FBD17DCC06C49164141556721DE61D735BDF755A68BA2A8DB0DF5BDBBBD6EFD2821EF0BB5648094A330ED06DC44025D4F9BB46CE68A1B577C258398EC30189980065A8E39214C6D9B6B94411410DD8DB11DDFF9E30B97400362452C7FA86D4C1C339FB2B77ECD8CFE791E97BE7A2C6FAD63F1E180CB4172B5A3D4&#xD;&#xA;HTTP_HOST:localhost:5224&#xD;&#xA;HTTP_REFERER:http://localhost:5224/Account/Login?ReturnUrl=%2FProject%2FDetail&#xD;&#xA;HTTP_USER_AGENT:Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;HTTP_UPGRADE_INSECURE_REQUESTS:1&#xD;&#xA;" />
+    </item>
+    <item name="ALL_RAW">
+      <value string="Cache-Control: max-age=0&#xD;&#xA;Connection: keep-alive&#xD;&#xA;Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#xD;&#xA;Accept-Encoding: gzip, deflate, br&#xD;&#xA;Accept-Language: en-US,en;q=0.8,vi;q=0.6&#xD;&#xA;Cookie: __RequestVerificationToken=FBcaZi_pw_rNRUju5ZExvz0NnOJ3VGbBpZzO2w1K3m7vPZZENievk35wD8QZ3JJ8QC0le53ePEbZqgbPVNem58v9qZWicdaGY8bw9olIglY1; Log In=C60AFCFDDCBF7D8BACEAB64CE69305595E51486D77D35968D5DF2E1BE1C24D16DBA265834040B68D538655A2D81AA9415B47FB778FBC65170E29C788530D35127BC32810C2FBC1CB504F3A5EA4CC47693CBEE4BB8C882B1D65C0E380B88084151F74D54FCAABB7296AA6F645DD97564054A9976BE5F2D8E81F36A438FEA265B3E5A7F1C37183A40D4810F0C2E4C89D3CBBA42035FAA146C7A85BAA107CA371C48CC13B0177249C6F21337FDAD91381FCE1436A95B1F8B43FB31EC3406797F88B21E2FB54326AE92F0CE443D3E441FCF1482F10CA01657A54AB4A58805CF7E74BDFC3B4DD89013E81DDE639D653BAB5C73A231D2664A373AE2F6F8CE72C7A230F99578185538C3EDC3DAA4078541A9BCFCCDA17669BEE203B9019776677C328F432A22D638B5A728034ACD5D8613E77B635551F8128C403F786E1EEE937DEE828B0D7314BB4970E8DF9C5E05E01AD859B330A6275AE7FBD17DCC06C49164141556721DE61D735BDF755A68BA2A8DB0DF5BDBBBD6EFD2821EF0BB5648094A330ED06DC44025D4F9BB46CE68A1B577C258398EC30189980065A8E39214C6D9B6B94411410DD8DB11DDFF9E30B97400362452C7FA86D4C1C339FB2B77ECD8CFE791E97BE7A2C6FAD63F1E180CB4172B5A3D4&#xD;&#xA;Host: localhost:5224&#xD;&#xA;Referer: http://localhost:5224/Account/Login?ReturnUrl=%2FProject%2FDetail&#xD;&#xA;User-Agent: Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36&#xD;&#xA;Upgrade-Insecure-Requests: 1&#xD;&#xA;" />
+    </item>
+    <item name="APPL_MD_PATH">
+      <value string="/LM/W3SVC/2/ROOT" />
+    </item>
+    <item name="APPL_PHYSICAL_PATH">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\" />
+    </item>
+    <item name="AUTH_TYPE">
+      <value string="" />
+    </item>
+    <item name="AUTH_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="AUTH_PASSWORD">
+      <value string="*****" />
+    </item>
+    <item name="LOGON_USER">
+      <value string="" />
+    </item>
+    <item name="REMOTE_USER">
+      <value string="vuphan@strongtie.com" />
+    </item>
+    <item name="CERT_COOKIE">
+      <value string="" />
+    </item>
+    <item name="CERT_FLAGS">
+      <value string="" />
+    </item>
+    <item name="CERT_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="CERT_SERIALNUMBER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="CERT_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CERT_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="CONTENT_LENGTH">
+      <value string="0" />
+    </item>
+    <item name="CONTENT_TYPE">
+      <value string="" />
+    </item>
+    <item name="GATEWAY_INTERFACE">
+      <value string="CGI/1.1" />
+    </item>
+    <item name="HTTPS">
+      <value string="off" />
+    </item>
+    <item name="HTTPS_KEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SECRETKEYSIZE">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_ISSUER">
+      <value string="" />
+    </item>
+    <item name="HTTPS_SERVER_SUBJECT">
+      <value string="" />
+    </item>
+    <item name="INSTANCE_ID">
+      <value string="2" />
+    </item>
+    <item name="INSTANCE_META_PATH">
+      <value string="/LM/W3SVC/2" />
+    </item>
+    <item name="LOCAL_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="PATH_INFO">
+      <value string="/Project/Detail" />
+    </item>
+    <item name="PATH_TRANSLATED">
+      <value string="C:\Users\vuphan\Documents\_Source\devPMS_Latest\src\Shell\devPMS.Web\Project\Detail" />
+    </item>
+    <item name="QUERY_STRING">
+      <value string="" />
+    </item>
+    <item name="REMOTE_ADDR">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_HOST">
+      <value string="::1" />
+    </item>
+    <item name="REMOTE_PORT">
+      <value string="4109" />
+    </item>
+    <item name="REQUEST_METHOD">
+      <value string="GET" />
+    </item>
+    <item name="SCRIPT_NAME">
+      <value string="/Project/Detail" />
+    </item>
+    <item name="SERVER_NAME">
+      <value string="localhost" />
+    </item>
+    <item name="SERVER_PORT">
+      <value string="5224" />
+    </item>
+    <item name="SERVER_PORT_SECURE">
+      <value string="0" />
+    </item>
+    <item name="SERVER_PROTOCOL">
+      <value string="HTTP/1.1" />
+    </item>
+    <item name="SERVER_SOFTWARE">
+      <value string="Microsoft-IIS/10.0" />
+    </item>
+    <item name="URL">
+      <value string="/Project/Detail" />
+    </item>
+    <item name="HTTP_CACHE_CONTROL">
+      <value string="max-age=0" />
+    </item>
+    <item name="HTTP_CONNECTION">
+      <value string="keep-alive" />
+    </item>
+    <item name="HTTP_ACCEPT">
+      <value string="text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8" />
+    </item>
+    <item name="HTTP_ACCEPT_ENCODING">
+      <value string="gzip, deflate, br" />
+    </item>
+    <item name="HTTP_ACCEPT_LANGUAGE">
+      <value string="en-US,en;q=0.8,vi;q=0.6" />
+    </item>
+    <item name="HTTP_COOKIE">
+      <value string="__RequestVerificationToken=FBcaZi_pw_rNRUju5ZExvz0NnOJ3VGbBpZzO2w1K3m7vPZZENievk35wD8QZ3JJ8QC0le53ePEbZqgbPVNem58v9qZWicdaGY8bw9olIglY1; Log In=C60AFCFDDCBF7D8BACEAB64CE69305595E51486D77D35968D5DF2E1BE1C24D16DBA265834040B68D538655A2D81AA9415B47FB778FBC65170E29C788530D35127BC32810C2FBC1CB504F3A5EA4CC47693CBEE4BB8C882B1D65C0E380B88084151F74D54FCAABB7296AA6F645DD97564054A9976BE5F2D8E81F36A438FEA265B3E5A7F1C37183A40D4810F0C2E4C89D3CBBA42035FAA146C7A85BAA107CA371C48CC13B0177249C6F21337FDAD91381FCE1436A95B1F8B43FB31EC3406797F88B21E2FB54326AE92F0CE443D3E441FCF1482F10CA01657A54AB4A58805CF7E74BDFC3B4DD89013E81DDE639D653BAB5C73A231D2664A373AE2F6F8CE72C7A230F99578185538C3EDC3DAA4078541A9BCFCCDA17669BEE203B9019776677C328F432A22D638B5A728034ACD5D8613E77B635551F8128C403F786E1EEE937DEE828B0D7314BB4970E8DF9C5E05E01AD859B330A6275AE7FBD17DCC06C49164141556721DE61D735BDF755A68BA2A8DB0DF5BDBBBD6EFD2821EF0BB5648094A330ED06DC44025D4F9BB46CE68A1B577C258398EC30189980065A8E39214C6D9B6B94411410DD8DB11DDFF9E30B97400362452C7FA86D4C1C339FB2B77ECD8CFE791E97BE7A2C6FAD63F1E180CB4172B5A3D4" />
+    </item>
+    <item name="HTTP_HOST">
+      <value string="localhost:5224" />
+    </item>
+    <item name="HTTP_REFERER">
+      <value string="http://localhost:5224/Account/Login?ReturnUrl=%2FProject%2FDetail" />
+    </item>
+    <item name="HTTP_USER_AGENT">
+      <value string="Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/60.0.3112.113 Safari/537.36" />
+    </item>
+    <item name="HTTP_UPGRADE_INSECURE_REQUESTS">
+      <value string="1" />
+    </item>
+  </serverVariables>
+  <cookies>
+    <item name="__RequestVerificationToken">
+      <value string="FBcaZi_pw_rNRUju5ZExvz0NnOJ3VGbBpZzO2w1K3m7vPZZENievk35wD8QZ3JJ8QC0le53ePEbZqgbPVNem58v9qZWicdaGY8bw9olIglY1" />
+    </item>
+    <item name="Log In">
+      <value string="C60AFCFDDCBF7D8BACEAB64CE69305595E51486D77D35968D5DF2E1BE1C24D16DBA265834040B68D538655A2D81AA9415B47FB778FBC65170E29C788530D35127BC32810C2FBC1CB504F3A5EA4CC47693CBEE4BB8C882B1D65C0E380B88084151F74D54FCAABB7296AA6F645DD97564054A9976BE5F2D8E81F36A438FEA265B3E5A7F1C37183A40D4810F0C2E4C89D3CBBA42035FAA146C7A85BAA107CA371C48CC13B0177249C6F21337FDAD91381FCE1436A95B1F8B43FB31EC3406797F88B21E2FB54326AE92F0CE443D3E441FCF1482F10CA01657A54AB4A58805CF7E74BDFC3B4DD89013E81DDE639D653BAB5C73A231D2664A373AE2F6F8CE72C7A230F99578185538C3EDC3DAA4078541A9BCFCCDA17669BEE203B9019776677C328F432A22D638B5A728034ACD5D8613E77B635551F8128C403F786E1EEE937DEE828B0D7314BB4970E8DF9C5E05E01AD859B330A6275AE7FBD17DCC06C49164141556721DE61D735BDF755A68BA2A8DB0DF5BDBBBD6EFD2821EF0BB5648094A330ED06DC44025D4F9BB46CE68A1B577C258398EC30189980065A8E39214C6D9B6B94411410DD8DB11DDFF9E30B97400362452C7FA86D4C1C339FB2B77ECD8CFE791E97BE7A2C6FAD63F1E180CB4172B5A3D4" />
+    </item>
+  </cookies>
+</error>
